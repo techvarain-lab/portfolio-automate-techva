@@ -22,17 +22,22 @@
   flex-direction: column;
   align-items: center;
   margin: 0;
-  /* "DIMASACAT JR" in Geist 700 at -0.05em measures 6.4511em wide: 14.571cqi
-     fills ~94% of the column (6.4511 x 14.571 = 94). The 2.3rem floor keeps the
-     smallest phones' line readable (~290px at 320).
+  /* "DIMASACAT JR" in Geist 700 at -0.05em measures 6.8245em wide: 13.774cqi
+     fills 94% of the column (6.8245 x 13.774 = 94).
 
      To re-measure after changing the words: npm run measure:headline
      (scripts/measure-headline.mjs), read widthEm, then cqi = 94 / widthEm.
 
      Do NOT copy a cqi from another line: .hero sets overflow-x: clip, which
      hides an overflow instead of showing it. A wrong value crops the headline
-     silently, with no error anywhere. */
-  font-size: clamp(2.3rem, 14.571cqi, 10rem);
+     silently, with no error anywhere.
+
+     The floor is 1.9rem, NOT 2.3rem. Any floor above 6.8245 x contentWidth
+     crops the line on the narrowest phones: at 2.3rem the line is 251px wide
+     while a 280px viewport leaves only 217px, and the clip hides the 34px
+     difference. The floor only needs to stop the line getting silly inside a
+     pathological container; 1.9rem stays uncropped down to a ~270px viewport. */
+  font-size: clamp(1.9rem, 13.774cqi, 10rem);
   line-height: 0.86;
   letter-spacing: -0.05em;
   text-transform: uppercase;

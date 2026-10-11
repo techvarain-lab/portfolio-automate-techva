@@ -15,7 +15,13 @@ const page = await browser.newPage()
 await page.setContent('<div id="t"></div>')
 await page.evaluate(async (bytes) => {
   const blob = new Blob([new Uint8Array(bytes)], { type: 'font/woff2' })
-  const face = new FontFace('GeistMeasure', await blob.arrayBuffer())
+  // The weight RANGE is required. Without it the face registers as 400 only, so
+  // `font-weight: 700` never resolves to the variable font's real 700 instance and
+  // the browser substitutes the 400 instance (plus synthetic bold). That silently
+  // mis-measures every bold line: `DIMASACAT JR` reads 6.4511em instead of the
+  // 6.8245em the page actually renders, a 5.8% error that shrinks the headline.
+  // Keep this in sync with the `font-weight: 100 900` in src/styles/index.css.
+  const face = new FontFace('GeistMeasure', await blob.arrayBuffer(), { weight: '100 900' })
   await face.load()
   document.fonts.add(face)
 }, [...font])
