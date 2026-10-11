@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState, type MouseEvent, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { ArrowRight, ArrowUpRight, X } from '@phosphor-icons/react'
-import { HeadMeta } from '@/app/PageMeta'
 import { chapterPath, workChapters } from '@/content/home'
 import type { WorkChapter, WorkItem } from '@/content/schema'
+import { site } from '@/content/site'
 import { gsap, MOTION_CONDITIONS, spring } from '@/lib/motion/gsap'
-import { chapterJsonLd, chapterTitle } from '@/lib/seo'
 import { useSheet } from './use-sheet'
 import './work-sheet.css'
 
@@ -50,6 +49,12 @@ export function WorkSheet({ chapter }: { chapter: WorkChapter | null }) {
     }
   }, [shown])
 
+  // The chapter's own title in the tab. Replaces the deleted lib/seo `chapterTitle`/HeadMeta pair.
+  useEffect(() => {
+    if (!shown) return
+    document.title = `${shown.title}: ${shown.count} ${shown.unit} | Work by ${site.name}`
+  }, [shown])
+
   const onBodyScroll = () => {
     const scrolled = (bodyRef.current?.scrollTop ?? 0) > 4
     headRef.current?.toggleAttribute('data-scrolled', scrolled)
@@ -74,12 +79,6 @@ export function WorkSheet({ chapter }: { chapter: WorkChapter | null }) {
       onClick={onDialogClick}
     >
       <div ref={scrimRef} className="sh__scrim" />
-      {chapter ? (
-        <>
-          <HeadMeta title={chapterTitle(chapter)} description={chapter.description} path={chapterPath(chapter.id)} />
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: chapterJsonLd(chapter, chapterPath(chapter.id)) }} />
-        </>
-      ) : null}
 
       <div ref={panelRef} className="sh__panel" tabIndex={-1}>
         <div className="sh__grab" onPointerDown={onDragStart} aria-hidden>
