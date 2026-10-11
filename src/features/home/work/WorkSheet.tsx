@@ -124,20 +124,11 @@ export function WorkSheet({ chapter }: { chapter: WorkChapter | null }) {
 
 /** Picture-led builds: the first one leads in a wide row, the rest in a grid. */
 function Showcase({ items }: { items: WorkItem[] }) {
-  // Items with a `group` (Websites) render as one titled grid per group, in first-seen order.
-  const groups = [...new Set(items.map((item) => item.group ?? ''))]
   return (
     <div className="sh__sets">
-      {groups.map((group, gi) => (
-        <section key={group} className="sh__set">
-          {group ? (
-            <h3 className="sh__group-title" data-reveal>
-              {group}
-            </h3>
-          ) : null}
-          <Grid items={items.filter((item) => (item.group ?? '') === group)} lead={gi === 0} />
-        </section>
-      ))}
+      <section className="sh__set">
+        <Grid items={items} lead />
+      </section>
     </div>
   )
 }
@@ -163,7 +154,6 @@ function Grid({ items, lead }: { items: WorkItem[]; lead: boolean }) {
             <span className="sh__cap">
               <span className="wk-count">
                 {item.kicker}
-                {item.status ? <span className="sh__status">{item.status}</span> : null}
               </span>
               <h3 className="sh__name">
                 {item.name}
@@ -178,7 +168,7 @@ function Grid({ items, lead }: { items: WorkItem[]; lead: boolean }) {
   )
 }
 
-/** Builds with no pictures (side projects and experiments): grouped rows. */
+/** Builds with no pictures: grouped rows. */
 function Groups({ items }: { items: WorkItem[] }) {
   const groups = [...new Set(items.map((item) => item.kicker))]
   return (
@@ -193,10 +183,6 @@ function Groups({ items }: { items: WorkItem[] }) {
                 <li key={item.id} className="sh__row">
                   <h4 className="sh__name">{item.name}</h4>
                   <p className="sh__sum">{item.summary}</p>
-                  <p className="wk-count">
-                    {item.stack}
-                    {item.status ? <span className="sh__status">{item.status}</span> : null}
-                  </p>
                 </li>
               ))}
           </ul>

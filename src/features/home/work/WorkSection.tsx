@@ -9,7 +9,7 @@ import './work.css'
 const TILE_SIZES = 'auto, (min-width: 1280px) 38vw, (min-width: 1024px) 62vw, 88vw'
 
 /**
- * Work: a bento of the eight chapters. Every chapter on one screen as tiles of different sizes, the biggest
+ * Work: a bento of the six chapters. Every chapter on one screen as tiles of different sizes, the biggest
  * chapters largest (grid areas in work.css, keyed by chapter id); the tile is "A Clean frame". Nothing
  * holds: tiles rise in as they scroll into view. Every tile is a real link to /work/<chapter>, which opens that chapter's sheet over Home.
  */
