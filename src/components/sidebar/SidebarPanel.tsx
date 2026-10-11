@@ -22,7 +22,6 @@ type Props = {
  * Everything inside the sidebar card. Shared by the desktop float and the phone drawer.
  * Header: your live local time on top, the logo centered on a soft accent band, a big picture
  * overlapping the band's edge with a check, name, role, then the socials (all from content/site.ts).
- * Search is not in the card; it stays on Ctrl+K and in the phone top bar.
  */
 export function SidebarPanel({ variant, collapsed = false, onNavigate, onHoverChange, headerAction }: Props) {
   const panelRef = useRef<HTMLDivElement>(null)
@@ -48,14 +47,12 @@ export function SidebarPanel({ variant, collapsed = false, onNavigate, onHoverCh
           </span>
         </Link>
 
-        <Link
-          to="/about"
+        {/* Not a link: the profile block used to open /about, which the rebuild deletes. It stays a
+            plain block so it does not look clickable and dead-end on the not-found route. */}
+        <div
           className="sb-profile"
-          onClick={onNavigate}
-          onPointerEnter={(e: PointerEvent<HTMLAnchorElement>) => reportProfile(e.currentTarget)}
+          onPointerEnter={(e: PointerEvent<HTMLDivElement>) => reportProfile(e.currentTarget)}
           onPointerLeave={clearHover}
-          onFocus={(e) => reportProfile(e.currentTarget)}
-          onBlur={clearHover}
         >
           <span className="sb-pic">
             <img className="sb-pic__img" src={site.avatarSmall} alt="" width={224} height={224} />
@@ -67,7 +64,7 @@ export function SidebarPanel({ variant, collapsed = false, onNavigate, onHoverCh
           <span className="sb-profile__role sb-fade">
             {site.role}
           </span>
-        </Link>
+        </div>
 
         <SocialLinks className="sb-socials sb-fade" />
 

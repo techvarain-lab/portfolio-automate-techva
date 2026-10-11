@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router'
-import { List, MagnifyingGlass, X } from '@phosphor-icons/react'
+import { List, X } from '@phosphor-icons/react'
 import { useShell } from '@/app/shell-context'
 import { pages } from '@/app/routes'
 import { site } from '@/content/site'
@@ -16,7 +16,7 @@ import './drawer.css'
  * and back to the menu button on close.
  */
 export function MobileNav() {
-  const { drawerOpen, setDrawerOpen, setSearchOpen } = useShell()
+  const { drawerOpen, setDrawerOpen } = useShell()
   const { pathname } = useLocation()
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const close = () => setDrawerOpen(false)
@@ -47,9 +47,6 @@ export function MobileNav() {
       <header className="mb-bar">
         <BrandMark className="mb-bar__mark" />
         <span className="mb-bar__title">{current?.label ?? site.brand}</span>
-        <button type="button" className="mb-bar__btn" onClick={() => setSearchOpen(true)} aria-label="Search">
-          <MagnifyingGlass size={20} aria-hidden />
-        </button>
         <button
           ref={menuButtonRef}
           type="button"

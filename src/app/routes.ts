@@ -1,18 +1,17 @@
 import type { Icon } from '@phosphor-icons/react'
-import { Briefcase, Compass, House } from '@phosphor-icons/react'
+import { Briefcase, House } from '@phosphor-icons/react'
 import { workCount } from '@/content/work'
-import { externalLinks, site } from '@/content/site'
+import { site } from '@/content/site'
 
 /**
- * The route registry: the one list that drives the router, the sidebar, the search palette
- * and every page title. Add a page = add one entry here.
+ * The route registry: the one list that drives the router and the sidebar.
+ * Add a page = add one entry here.
  */
 
-export type NavGroupId = 'menu' | 'discover' | 'general'
+export type NavGroupId = 'menu' | 'general'
 
 export const NAV_GROUPS: { id: NavGroupId; label: string }[] = [
   { id: 'menu', label: 'Menu' },
-  { id: 'discover', label: 'Discover' },
   { id: 'general', label: 'General' },
 ]
 
@@ -77,17 +76,9 @@ export const pages: PageRoute[] = [
   },
 ]
 
-export const externals: ExternalRoute[] = [
-  {
-    kind: 'external',
-    id: 'resource',
-    href: externalLinks.resource,
-    label: 'Resources',
-    description: 'PLACEHOLDER - tell me what to put here: one line on the off-site link (a blog, a guide, a store), or delete this entry.',
-    icon: Compass,
-    group: 'discover',
-  },
-]
+/** Off-site links. Empty until a real destination replaces the `#` placeholders in content/site.ts:
+ *  an entry pointing at `#` is a link that looks live and goes nowhere, so none ship. */
+export const externals: ExternalRoute[] = []
 
 /** Sidebar entries per group, in registry order (pages first, then external links). */
 export function navEntries(group: NavGroupId): NavEntry[] {
