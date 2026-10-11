@@ -44,7 +44,7 @@ The spec is a vision document; these are the inputs it implies but no requiremen
 
 **Modified:** `src/styles/tokens.css`, `src/styles/index.css`, `src/app/AppShell.tsx`, `src/app/router.tsx`, `src/app/routes.ts`, `src/app/RouteStage.tsx`, `src/features/home/HomePage.tsx`, `src/features/home/sections.ts`, `src/features/home/hero/*`, `src/features/home/work/*`, `src/content/{site,home,work,schema}.ts`, `src/components/sidebar/SidebarPanel.tsx`, `package.json`, `index.html`, `scripts/check-work-sheet.mjs`
 
-**Deleted:** `src/components/{background,search,page}/`, `src/features/home/{manifesto,automation,services,about}/`, `src/features/{showcase,proof,legal,contact}/`, `src/app/{PageMeta.tsx,sitemap.ts}`, `src/lib/{seo,mail,storage,theme}.ts`, `src/hooks/use-hash-landing.ts`, `src/content/{about,automation,contact,faqs,legal,method,proof,services,showcase,tools}.ts`, 10 `scripts/check-*.mjs`, `scripts/make-placeholders.mjs` + `scripts/placeholders/`, `scripts/csp-hash.mjs` + `scripts/audit/`, `scripts/write-version.mjs`, `deploy/`, `public/demos/`
+**Deleted:** `src/components/{background,search,page}/`, `src/features/home/{manifesto,automation,services,about}/`, `src/features/{showcase,proof,legal,contact}/`, `src/app/{PageMeta.tsx,sitemap.ts}`, `src/lib/{seo,mail}.ts`, `src/hooks/use-hash-landing.ts`, `src/content/{about,automation,contact,faqs,legal,method,proof,services,showcase,tools}.ts`, 10 `scripts/check-*.mjs`, `scripts/make-placeholders.mjs` + `scripts/placeholders/`, `scripts/csp-hash.mjs` + `scripts/audit/`, `scripts/write-version.mjs`, `deploy/`, `public/demos/`
 
 **Dependency order:** Task 1 (measure — done, verify) → Task 2 (delete) → Task 3 (palette) → Task 4 (shell) → Task 5 (hero) → Task 6 (assets+content) → Task 7 (bento) → Task 8 (sheet) → Task 9 (checks) → Task 10 (verify).
 
@@ -106,7 +106,7 @@ git rm -r --quiet `
   src/features/home/manifesto src/features/home/automation src/features/home/services src/features/home/about `
   src/features/showcase src/features/proof src/features/legal src/features/contact `
   src/app/PageMeta.tsx src/app/sitemap.ts `
-  src/lib/seo.ts src/lib/mail.ts src/lib/storage.ts src/lib/theme.ts `
+  src/lib/seo.ts src/lib/mail.ts `
   src/hooks/use-hash-landing.ts `
   src/content/about.ts src/content/automation.ts src/content/contact.ts src/content/faqs.ts `
   src/content/legal.ts src/content/method.ts src/content/proof.ts src/content/services.ts `
@@ -130,7 +130,9 @@ Expected: roughly 70 deletions staged, and **no** unexpected modifications.
 The tree is *expected* not to compile yet — `AppShell`, `router`, `HomePage` and `sections.ts` still import deleted modules. That is Task 4's work. Confirm the failures are **only** unresolved-import errors:
 
 Run: `npx tsc -b --pretty false 2>&1 | Select-String "error TS" | Measure-Object -Line`
-Expected: every error line matches `Cannot find module './(PageMeta|sitemap|seo|mail|storage|theme)'` or a named deleted component. **Any error that is not a missing-module error means a delete was wrong — stop and restore that file.**
+Expected: every error line matches `Cannot find module './(PageMeta|sitemap|seo|mail)'` or a named deleted component. **Any error that is not a missing-module error means a delete was wrong — stop and restore that file.**
+
+**`src/lib/storage.ts` and `src/lib/theme.ts` are NOT deleted.** An earlier draft of this plan listed them for removal, which was wrong. `shell-context.tsx` reads `STORAGE_KEYS` from storage; `use-theme.ts` and `SidebarNav.tsx` import `getInitialTheme`/`setTheme`/`isThemeSwitching` from theme. The theme toggle is a shipped feature (spec keeps it; Task 9 verifies it), and `index.css` points at `lib/theme.ts` in a comment. Deleting them would break the one control the palette exists to demonstrate.
 
 - [ ] **Step 4: Commit**
 
