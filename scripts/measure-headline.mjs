@@ -2,7 +2,8 @@ import { chromium } from 'playwright'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const root = process.argv[2]
+// Default to the repo root (the parent of scripts/), so the script runs with no arguments.
+const root = process.argv[2] ?? path.resolve(import.meta.dirname, '..')
 const font = readFileSync(path.join(root, 'public/fonts/geist-var.woff2'))
 
 // Measures a hero headline in em so the `cqi` size in hero.css can be set from a real number.
