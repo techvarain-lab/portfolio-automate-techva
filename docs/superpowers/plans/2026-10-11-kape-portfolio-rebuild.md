@@ -44,7 +44,7 @@ The spec is a vision document; these are the inputs it implies but no requiremen
 
 **Modified:** `src/styles/tokens.css`, `src/styles/index.css`, `src/app/AppShell.tsx`, `src/app/router.tsx`, `src/app/routes.ts`, `src/app/RouteStage.tsx`, `src/features/home/HomePage.tsx`, `src/features/home/sections.ts`, `src/features/home/hero/*`, `src/features/home/work/*`, `src/content/{site,home,work,schema}.ts`, `src/components/sidebar/SidebarPanel.tsx`, `package.json`, `index.html`, `scripts/check-work-sheet.mjs`
 
-**Deleted:** `src/components/{background,search,page}/`, `src/features/home/{manifesto,automation,services,about}/`, `src/features/{showcase,proof,legal,contact}/`, `src/app/{PageMeta.tsx,sitemap.ts}`, `src/lib/{seo,mail}.ts`, `src/hooks/use-hash-landing.ts`, `src/content/{about,automation,contact,faqs,legal,method,proof,services,showcase,tools}.ts`, 10 `scripts/check-*.mjs`, `scripts/make-placeholders.mjs` + `scripts/placeholders/`, `scripts/csp-hash.mjs` + `scripts/audit/`, `scripts/write-version.mjs`, `deploy/`, `public/demos/`
+**Deleted:** `src/components/{background,search,page}/`, `src/features/home/{manifesto,automation,services,about}/`, `src/features/{showcase,proof,legal,contact}/`, `src/app/{PageMeta.tsx,sitemap.ts}`, `src/lib/{seo,mail}.ts`, `src/content/{about,automation,contact,faqs,legal,method,proof,services,showcase,tools}.ts`, 10 `scripts/check-*.mjs`, `scripts/make-placeholders.mjs` + `scripts/placeholders/`, `scripts/csp-hash.mjs` + `scripts/audit/`, `scripts/write-version.mjs`, `deploy/`, `public/demos/`
 
 **Dependency order:** Task 1 (measure — done, verify) → Task 2 (delete) → Task 3 (palette) → Task 4 (shell) → Task 5 (hero) → Task 6 (assets+content) → Task 7 (bento) → Task 8 (sheet) → Task 9 (checks) → Task 10 (verify).
 
@@ -107,6 +107,9 @@ git rm -r --quiet `
   src/features/showcase src/features/proof src/features/legal src/features/contact `
   src/app/PageMeta.tsx src/app/sitemap.ts `
   src/lib/seo.ts src/lib/mail.ts `
+
+**`src/hooks/use-hash-landing.ts` is NOT deleted either** - see Task 4 Step 4, which explains why the
+hook's post-fonts re-measure cannot be replaced by Lenis `anchors: true`. It is restored in Task 4.
   src/hooks/use-hash-landing.ts `
   src/content/about.ts src/content/automation.ts src/content/contact.ts src/content/faqs.ts `
   src/content/legal.ts src/content/method.ts src/content/proof.ts src/content/services.ts `
@@ -301,7 +304,7 @@ Keep only the `home` page entry, with `title` set to Rainier's name and the `sec
 
 - [ ] **Step 4: Trim `HomePage.tsx`**
 
-Remove the `PageMeta` import and its render at line 22. `useHashLanding` goes too — `src/hooks/use-hash-landing.ts` is deleted in Task 2, and with no non-Home sections the sidebar only needs `/#hero` and `/#work`, which the router's `anchors: true` handles. Keep `findChapter`, the `Navigate` redirect for an unknown chapter, and the `<WorkSheet>`.
+Remove the `PageMeta` import and its render at line 22. **Keep `useHashLanding()` and its import** — an earlier draft of this plan removed it, reasoning that Lenis's `anchors: true` covers it. That is wrong, and a Task 4 implementer caught it. `use-hash-landing.ts` exists because the browser's own hash jump fires at commit, *before* fonts load and before the pinned sections measure themselves, so the offset can be off by a screen. Lenis anchors do not re-measure after fonts land. The hook waits for `document.fonts.ready`, calls `ScrollTrigger.refresh()`, then jumps instantly. Delete the file only if you first confirm nothing depends on that re-measure.
 
 - [ ] **Step 5: Trim `sections.ts` to two entries**
 
