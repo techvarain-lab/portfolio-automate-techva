@@ -135,7 +135,7 @@ One accent. Exactly as the law requires. Everything else derives.
 | `--ink` | `#14181d` | `#e8eaed` |
 | `--ink-2` | `#44505e` | `#a7afb9` |
 | `--ink-3` | `#566170` | `#8b94a0` |
-| `--accent` | `#c2410c` | `#f97316` |
+| `--accent` | `#b63d0b` | `#f97316` |
 | `--on-accent` | `#ffffff` | `#1a0d05` |
 
 **The asymmetry is intentional:** light is warm paper, dark is cool black. The theme toggle reads as a real switch, not an inversion.
@@ -155,11 +155,14 @@ Every pair measured against WCAG 2.1 relative luminance. All pass.
 | `ink-2` / `surface-3` | 6.25 AA | — |
 | `ink-3` / `bg` | 5.78 AA | 6.34 AA |
 | `ink-3` / `surface-3` | **4.78** AA | 4.52 AA |
-| `accent` / `bg` | 4.76 AA | 6.94 AA |
-| `accent` / `surface` | 5.18 AA | 6.36 AA |
-| `on-accent` / `accent` | 5.18 AA | 6.79 AA |
+| `accent` / `bg` | 5.27 AA | 6.94 AA |
+| `accent` / `surface` | 5.74 AA | 6.36 AA |
+| `accent` / `--band` composite | **4.96** AA | 5.60 AA |
+| `on-accent` / `accent` | 5.74 AA | 6.79 AA |
 
-The tightest margins are `ink-3` on `surface-3` (4.78 light, 4.52 dark) and `accent` on `bg` in light (4.76). None has more than 0.5 of headroom, so any future darkening of a surface must re-run the check.
+The tightest margins are `ink-3` on `surface-3` (4.78 light, 4.52 dark) and `accent` on the `--band` composite in light (4.96). The tightest pairs have under half a point of headroom, so any future surface change must re-run the check.
+
+**Amended during implementation.** Light `--accent` was originally specified as `#c2410c`. That value scores **4.48:1** on the `--band` composite `#f9ece7` — the actual backdrop of `.sb-logo__accent`, the one place the accent renders as live text. It was darkened to **`#b63d0b`** (4.96:1). The band composite is an alpha blend (`--accent-soft` over `--surface`), so `check:contrast` composites it properly rather than dropping alpha; asserting `accent/bg` alone gives a false all-clear, which is exactly what the first run of the check reported.
 
 ### 4.2 Derived tokens
 
