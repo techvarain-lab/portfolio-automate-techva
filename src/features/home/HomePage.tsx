@@ -1,8 +1,6 @@
 import { Navigate, useMatch } from 'react-router'
-import { PageMeta } from '@/app/PageMeta'
 import type { PageRoute } from '@/app/routes'
 import { findChapter } from '@/content/home'
-import { useHashLanding } from '@/hooks/use-hash-landing'
 import { WorkSheet } from './work/WorkSheet'
 import { homeSectionList } from './sections'
 
@@ -12,14 +10,18 @@ import { homeSectionList } from './sections'
  * the page title, description and canonical URL).
  */
 export function HomePage({ page }: { page: PageRoute }) {
-  useHashLanding()
   const chapterId = useMatch('/work/:chapter')?.params.chapter
   const chapter = findChapter(chapterId) ?? null
   if (chapterId && !chapter) return <Navigate to="/" replace />
 
   return (
     <>
-      {chapter ? null : <PageMeta page={page} />}
+      {chapter ? null : (
+        <>
+          <title>{page.title}</title>
+          <meta name="description" content={page.description} />
+        </>
+      )}
       {homeSectionList.map(({ id, Component }) => (
         <Component key={id} />
       ))}

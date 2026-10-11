@@ -1,10 +1,6 @@
 import type { ComponentType } from 'react'
 import { createBrowserRouter, Navigate, type RouteObject } from 'react-router'
-import { ContactPage } from '@/features/contact/ContactPage'
 import { HomePage } from '@/features/home/HomePage'
-import { ShowcasePage } from '@/features/showcase/ShowcasePage'
-import { LegalPage } from '@/features/legal/LegalPage'
-import { ProofPage } from '@/features/proof/ProofPage'
 import { AppShell } from './AppShell'
 import { RouteStage } from './RouteStage'
 import { notFoundTitle, pages, type PageRoute } from './routes'
@@ -12,11 +8,6 @@ import { notFoundTitle, pages, type PageRoute } from './routes'
 /** Built pages by registry id. Any page not listed here still renders the bare RouteStage. */
 const PAGE_COMPONENTS: Partial<Record<string, ComponentType<{ page: PageRoute }>>> = {
   home: HomePage,
-  'showcase': ShowcasePage,
-  proof: ProofPage,
-  contact: ContactPage,
-  privacy: LegalPage,
-  terms: LegalPage,
 }
 
 function elementFor(page: PageRoute) {

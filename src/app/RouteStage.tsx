@@ -1,4 +1,3 @@
-import { PageMeta } from './PageMeta'
 import type { PageRoute } from './routes'
 
 type Props = {
@@ -17,7 +16,14 @@ export function RouteStage({ page, title, label }: Props) {
   const heading = page?.label ?? label ?? ''
   return (
     <section className="mx-auto flex min-h-dvh max-w-[var(--content-max)] flex-col justify-center px-6 py-24 lg:px-12">
-      {page ? <PageMeta page={page} /> : <title>{title}</title>}
+      {page ? (
+        <>
+          <title>{page.title}</title>
+          <meta name="description" content={page.description} />
+        </>
+      ) : (
+        <title>{title}</title>
+      )}
       {/* A placeholder (or the 404) is never worth indexing: thin content. Built pages drop RouteStage. */}
       <meta name="robots" content="noindex, follow" />
 
