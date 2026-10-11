@@ -1,14 +1,14 @@
 /*
  * Design tokens. Every color, shadow, radius and motion value in the app comes from here.
  * Brand: warm paper (#F7F5F2) over cool black (#0B0D10), with one orange accent.
- * #C2410C light / #F97316 dark. One accent, no second hue, and the asymmetry is
+ * #B63D0B light / #F97316 dark. One accent, no second hue, and the asymmetry is
  * deliberate: light is warm paper, dark is cool black, so the theme toggle reads
  * as a switch rather than an inversion.
  *
  * Contrast: measured by scripts/check-contrast.mjs (npm run check:contrast), not by eye.
- * The tightest pairs are ink-3/surface-3 (4.78 light, 4.52 dark) and accent/bg (4.76 light),
- * so none of them has more than half a point of headroom over AA. Darkening any surface
- * means re-running the check, not re-eyeballing a comment.
+ * The tightest pairs are ink-3/surface-3 (4.78 light, 4.52 dark) and accent on the band
+ * composite (4.96 light), so the tight ones carry almost no headroom over AA. Darkening
+ * any surface means re-running the check, not re-eyeballing a comment.
  */
 
 :root {
@@ -26,7 +26,7 @@
   --ink-3: #566170; /* 4.78:1 on --surface-3; #5a6675 fell to 4.45 and failed AA by 0.05 */
 
   /* Accent */
-  --accent: #c2410c;
+  --accent: #b63d0b; /* 4.96:1 on the band composite (#f9ece7); #c2410c fell to 4.48 and failed AA there */
   --accent-ink: #9a3412;
   --accent-deep: #7c2d12; /* pulse heads in the signal-flow background */
   --accent-soft: rgb(194 65 12 / 0.1);
@@ -59,8 +59,10 @@
   /* Transparent cutouts (the About desk illustration): no rim on light, a faint 1px edge on Onyx. */
   --cutout-rim: none;
 
-  /* Lines and depth */
-  --drop-float: drop-shadow(0 1px 1.5px rgb(20 24 29 / 0.06)) drop-shadow(0 16px 28px rgb(194 65 12 / 0.13));
+  /* Lines and depth. The shadow family is neutral in both themes: the long shadow is ink-tinted
+     here (rgb(20 24 29)) and black on dark, never the accent. A glow on one theme only reads
+     as a rendering fault when the theme is toggled. */
+  --drop-float: drop-shadow(0 1px 1.5px rgb(20 24 29 / 0.06)) drop-shadow(0 16px 28px rgb(20 24 29 / 0.13));
   --line: rgb(20 24 29 / 0.08);
   --line-strong: rgb(20 24 29 / 0.14);
   --scrim: rgb(20 24 29 / 0.32);
