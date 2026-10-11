@@ -22,11 +22,17 @@
   flex-direction: column;
   align-items: center;
   margin: 0;
-  /* "MAKE IT YOURS." in Geist 700 at -0.05em is 7.20em wide: 13.05cqi fills ~94% of the column (7.20 x
-     13.05 = 94). The 2.3rem floor keeps the smallest phones' line readable (~265px at 320). To re-measure
-     for your own words: set the bold line in the browser, read its width in em (range width / font-size),
-     and use 94 / that width. Keep the thin line narrower than the bold one, or it overflows. */
-  font-size: clamp(2.3rem, 13.05cqi, 10rem);
+  /* "DIMASACAT JR" in Geist 700 at -0.05em measures 6.4511em wide: 14.571cqi
+     fills ~94% of the column (6.4511 x 14.571 = 94). The 2.3rem floor keeps the
+     smallest phones' line readable (~290px at 320).
+
+     To re-measure after changing the words: npm run measure:headline
+     (scripts/measure-headline.mjs), read widthEm, then cqi = 94 / widthEm.
+
+     Do NOT copy a cqi from another line: .hero sets overflow-x: clip, which
+     hides an overflow instead of showing it. A wrong value crops the headline
+     silently, with no error anywhere. */
+  font-size: clamp(2.3rem, 14.571cqi, 10rem);
   line-height: 0.86;
   letter-spacing: -0.05em;
   text-transform: uppercase;
@@ -70,6 +76,16 @@
   text-transform: uppercase;
   text-wrap: balance;
   animation: hero-rise var(--dur-slow) var(--ease-spring) 180ms both;
+}
+
+.hero__lede {
+  max-width: 60ch;
+  margin: 24px 0 0;
+  color: var(--ink-2);
+  font-size: 18px;
+  line-height: 1.6;
+  text-wrap: balance;
+  animation: hero-rise var(--dur-slow) var(--ease-spring) 220ms both;
 }
 
 .hero__cta {

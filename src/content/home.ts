@@ -1,7 +1,5 @@
 import type { Demo, Image, ToolMark, WorkChapter, WorkItem } from './schema'
 import { site } from './site'
-import { method } from './method'
-import { tools } from './tools'
 import {
   apps,
   bookingPages,
@@ -22,10 +20,11 @@ import {
  * (see the comment on `.hero__title` there).
  */
 export const homeHero = {
-  headlineThin: 'Your headline.',
-  headlineBold: 'Make it yours.',
-  subhead: 'PLACEHOLDER - tell me what to put here: one sentence on who you help and the result you get them.',
-  cta: { label: 'Get in touch', to: '/#contact' },
+  headlineThin: 'Rainier',
+  headlineBold: 'Dimasacat Jr',
+  subhead: 'GHL SPECIALIST / FUNNEL BUILDER',
+  lede: 'I build GoHighLevel systems that turn inquiries into booked conversations. Funnels, automations, routing, and follow-up for businesses that are tired of losing leads between \'contact us\' and \'booked\'.',
+  cta: { label: 'Hire me', to: '/#contact' },
 }
 
 /**
@@ -36,7 +35,7 @@ export const homeHero = {
 export type ManifestoPart = string | { key: string }
 
 export const homeManifesto = {
-  eyebrow: method.eyebrow,
+  eyebrow: 'Method',
   parts: [
     'This is your',
     { key: 'statement.' },
@@ -117,6 +116,20 @@ const groupItems = (groups: typeof sideProjects): WorkItem[] =>
 
 /** The site's own mark for the Experiments card. The card ground is always light. */
 const siteMark: ToolMark = { name: site.brand, logo: site.logo.light }
+const tool = (name: string): ToolMark => ({ name, logo: `/images/tools/${name.toLowerCase().replace(/\s+/g, '-')}.svg` })
+
+const toolA = tool('Tool A')
+const toolB = tool('Tool B')
+const toolC = tool('Tool C')
+const toolD = tool('Tool D')
+const toolE = tool('Tool E')
+const toolF = tool('Tool F')
+const toolG = tool('Tool G')
+const toolH = tool('Tool H')
+const toolI = tool('Tool I')
+const toolJ = tool('Tool J')
+const toolK = tool('Tool K')
+const toolL = tool('Tool L')
 
 /** The URL of a chapter's showcase sheet. Real, shareable and in the sitemap. */
 export const chapterPath = (id: string) => `/work/${id}`
@@ -153,7 +166,7 @@ export const workChapters: WorkChapter[] = [
     count: 1,
     unit: 'project',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on your featured project (under 160 characters).',
-    marks: [tools.toolA, siteMark],
+    marks: [toolA, siteMark],
     items: [],
     lead: cover('featured-project', featuredProject.title, 'cover'),
     gallery: featuredProject.gallery,
@@ -166,7 +179,7 @@ export const workChapters: WorkChapter[] = [
     count: caseStudies.length,
     unit: 'cases',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on your case studies (under 160 characters).',
-    marks: [tools.toolB, tools.toolC, tools.toolD],
+    marks: [toolB, toolC, toolD],
     items: caseStudies.map((study) => ({
       id: study.id,
       name: study.title,
@@ -183,7 +196,7 @@ export const workChapters: WorkChapter[] = [
     count: 1,
     unit: 'doc',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on the process document you show (under 160 characters).',
-    marks: [tools.toolE],
+    marks: [toolE],
     items: [],
     lead: cover('process-doc', processDoc.title, 'cover'),
     link: processDoc.link,
@@ -195,7 +208,7 @@ export const workChapters: WorkChapter[] = [
     count: screenItems.length,
     unit: 'screens',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on the screens you show (under 160 characters).',
-    marks: [tools.toolF, tools.toolG, tools.toolH],
+    marks: [toolF, toolG, toolH],
     items: screenItems,
   },
   {
@@ -205,7 +218,7 @@ export const workChapters: WorkChapter[] = [
     count: sampleSites.length + funnelPages.length + bookingPages.length,
     unit: 'pages',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on the sites and pages people can open live (under 160 characters).',
-    marks: [tools.toolI, tools.toolJ, tools.toolK],
+    marks: [toolI, toolJ, toolK],
     items: [
       ...sampleSites.map(demoItem('Sample sites')),
       ...funnelPages.map(demoItem('Funnel pages')),
@@ -227,7 +240,7 @@ export const workChapters: WorkChapter[] = [
       height: 928,
       srcSet: '/images/apps/320/app-1-tile.webp 320w, /images/apps/app-1-tile.webp 540w',
     },
-    marks: [tools.toolL, tools.toolA, tools.toolB],
+    marks: [toolL, toolA, toolB],
     items: apps.map((app) => ({ id: app.id, name: app.name, kicker: app.kind, summary: app.summary, image: app.image, status: app.status })),
   },
   {
@@ -237,7 +250,7 @@ export const workChapters: WorkChapter[] = [
     count: sideProjectItems.length,
     unit: 'builds',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on your side projects (under 160 characters).',
-    marks: [tools.toolC, tools.toolD, tools.toolE],
+    marks: [toolC, toolD, toolE],
     items: sideProjectItems,
   },
   {
@@ -247,7 +260,7 @@ export const workChapters: WorkChapter[] = [
     count: experimentItems.length,
     unit: 'tests',
     description: 'PLACEHOLDER - tell me what to put here: one or two sentences on your experiments (under 160 characters).',
-    marks: [siteMark, tools.toolF],
+    marks: [siteMark, toolF],
     items: experimentItems,
   },
 ]
