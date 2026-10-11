@@ -490,6 +490,10 @@ Keep `Image`, `LinkRef`, `SocialLink`, `WorkChapter`, `WorkItem`. Delete `Faq`, 
 
 `WorkItem` drops `group?`, `stack?`, `status?` — nothing in the six builds uses them, and `WorkSheet`'s `Showcase` groups on `group`.
 
+- [ ] **Step 3b: Strip the dead section-copy exports from `home.ts`**
+
+Task 2 deleted `src/content/method.ts` and `src/content/tools.ts`, but `home.ts:3-4` still imports both and `home.ts:39` still reads `method.eyebrow`. Tasks 5 and 7 only touch `homeHero` and `workChapters`, so nothing else removes them. Delete the dead section-copy exports — `homeManifesto`, the `ManifestoPart` type, `homeSections`, and every `tools`/`ToolMark` reference — along with those two imports. This is the last surviving TS2307 in a file this task owns, and Task 10 Step 2 asserts `tsc -b` is clean.
+
 - [ ] **Step 4: Write the six chapters**
 
 Real summaries, taken from the live site — no invented metrics:
