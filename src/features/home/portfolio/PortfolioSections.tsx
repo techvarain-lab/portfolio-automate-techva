@@ -1,7 +1,8 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import content from '@/content/portfolio-sections.json'
 import { site, socials } from '@/content/site'
+import { loadGhlTracking } from '@/lib/ghl-tracking'
 import './portfolio.css'
 
 const linkedIn = socials.find(link => link.icon === 'linkedin')?.href
@@ -28,14 +29,29 @@ export function AboutSection() {
 }
 
 export function ContactSection() {
-  const [opened, setOpened] = useState(false)
+  const [tracking, setTracking] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [attempted, setAttempted] = useState(false)
+  useEffect(() => {
+    let active = true
+    loadGhlTracking().then(() => { if (active) setTracking('ready') }, () => { if (active) setTracking('error') })
+    return () => { active = false }
+  }, [])
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const subject = encodeURIComponent(`Project inquiry: ${data.get('topic')}`)
-    const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`)
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
-    setOpened(true)
+    // GHL captures the native submit event directly on the form. Do not stop propagation,
+    // reset fields, or claim delivery: its external tracker exposes no receipt callback.
+    if (tracking === 'ready') setAttempted(true)
   }
-  return <section id="contact" className="portfolio-section contact-section" aria-labelledby="contact-title"><div><h2 id="contact-title">Let’s make<br />ops lighter.</h2><p>Tell me the flow eating your week — I’ll map it and ship the first automation in days.</p><div className="portfolio-contact-links"><a href={`mailto:${site.email}`}>{site.email}</a><a href="tel:+639951462765">0995 146 2765</a><a href={linkedIn} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={16} aria-hidden /><span className="sr-only"> (opens in a new tab)</span></a></div><small>Cavite, PH · Replies in 24h</small></div><form onSubmit={submit} className="brief-form"><label htmlFor="brief-name">Name</label><input id="brief-name" name="name" autoComplete="name" required placeholder="Your name" /><label htmlFor="brief-email">Email</label><input id="brief-email" name="email" type="email" autoComplete="email" required placeholder="you@company.com" /><label htmlFor="brief-topic">What would you like to automate?</label><select id="brief-topic" name="topic">{['Lead routing & follow-up', 'Missed-call & review recovery', 'Booking & payment flow', 'Content / AI pipeline', 'Other'].map(topic => <option key={topic}>{topic}</option>)}</select><label htmlFor="brief-message">Message</label><textarea id="brief-message" name="message" rows={4} placeholder="The flow that hurts most…" required /><button className="hero__primary" type="submit">Create email brief <ArrowUpRight size={18} aria-hidden /></button><p className="form-note" role="status">{opened ? 'Your email app was requested. Review the draft and send it there. If it didn’t open, email me directly using the link.' : 'Opens a draft in your email app. Nothing is sent until you send it.'}</p></form></section>
+  return <section id="contact" className="portfolio-section contact-section" aria-labelledby="contact-title">
+    <div><h2 id="contact-title">Let’s make<br />ops lighter.</h2><p>Have a funnel to build or a process to simplify? Tell me what you need, and we’ll figure out the next step.</p><div className="portfolio-contact-links"><a href={`mailto:${site.email}`}>{site.email}</a><a href="tel:+639951462765">0995 146 2765</a><a href={linkedIn} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={16} aria-hidden /><span className="sr-only"> (opens in a new tab)</span></a></div><small>Cavite, PH</small></div>
+    <form id="portfolio-project-inquiry" name="Portfolio project inquiry" onSubmit={submit} className="brief-form" aria-describedby="inquiry-note" onChange={() => setAttempted(false)}>
+      <label htmlFor="brief-name">Name</label><input id="brief-name" name="full_name" autoComplete="name" required maxLength={120} placeholder="Your name" />
+      <label htmlFor="brief-email">Email</label><input id="brief-email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder="you@company.com" />
+      <label htmlFor="brief-topic">What do you need help with?</label><select id="brief-topic" name="service_interest" required defaultValue=""><option value="" disabled>Select an option</option>{['Automations', 'Funnels', 'GHL Setup', 'Not sure yet'].map(topic => <option key={topic}>{topic}</option>)}</select>
+      <label htmlFor="brief-message">What would you like to improve?</label><textarea id="brief-message" name="message" rows={4} maxLength={5000} placeholder="Tell me a little about your business and what you’d like to work better." required />
+      {/* Explicit validation before requestSubmit avoids GHL's click listener capturing invalid forms. */}
+      <button className="hero__primary" type="button" disabled={tracking !== 'ready' || attempted} onClick={event => { const form = event.currentTarget.form; if (form?.reportValidity()) form.requestSubmit() }}>{attempted ? 'Submission requested' : tracking === 'loading' ? 'Connecting…' : 'Send inquiry'} <ArrowUpRight size={18} aria-hidden /></button>
+      <p id="inquiry-note" className="form-note" role="status">{tracking === 'error' ? 'The form connection is unavailable. Please refresh or email me directly.' : attempted ? 'Your submission was requested. Delivery cannot be confirmed here; if you don’t hear back, please email me directly. Your details are kept below.' : 'All fields are required. Your details are processed through GoHighLevel so I can respond to your inquiry.'}</p>
+    </form>
+  </section>
 }
