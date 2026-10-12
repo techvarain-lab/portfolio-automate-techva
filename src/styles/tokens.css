@@ -26,10 +26,12 @@
   --ink-3: #566170; /* 4.78:1 on --surface-3; #5a6675 fell to 4.45 and failed AA by 0.05 */
 
   /* Accent */
-  --accent: #b63d0b; /* 4.96:1 on the band composite (#f9ece7); #c2410c fell to 4.48 and failed AA there */
-  --accent-ink: #9a3412;
-  --accent-deep: #7c2d12; /* pulse heads in the signal-flow background */
-  --accent-soft: rgb(194 65 12 / 0.1);
+  --accent: #716000; /* Dark ochre keeps accent text readable on light surfaces. */
+  --accent-ink: #645400;
+  --equipment: #edc641;
+  --equipment-hover: #e0b82e;
+  --accent-deep: #504400;
+  --accent-soft: rgb(233 193 43 / 0.1);
   --on-accent: #ffffff;
   /* Third-party marks: the social keys take these on hover. */
   --brand-facebook: #0866ff;
@@ -73,8 +75,8 @@
   /* Shape */
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
 
   /* Layout */
   --sidebar-w: 272px;
@@ -109,10 +111,10 @@
   --ink-2: #a7afb9;
   --ink-3: #8b94a0; /* 4.52:1 on --surface-3, the tightest pair in the system */
 
-  --accent: #f97316;
-  --accent-ink: #fb923c;
-  --accent-deep: #fdba74;
-  --accent-soft: rgb(249 115 22 / 0.18);
+  --accent: #edc641;
+  --accent-ink: #f0d36f;
+  --accent-deep: #f5df96;
+  --accent-soft: rgb(237 198 65 / 0.12);
   --on-accent: #1a0d05;
   --band: rgb(255 255 255 / 0.05);
   --grid-line: rgb(255 255 255 / 0.03);

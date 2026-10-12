@@ -102,8 +102,20 @@ export function WorkSheet({ chapter }: { chapter: WorkChapter | null }) {
             </header>
 
             <div ref={bodyRef} className="sh__body" onScroll={onBodyScroll}>
+              <div className="sh__columns">
+              <div className="sh__details">
+              <p className="wb__disclosure">Self-initiated project</p>
               <p className="sh__intro">{shown.description}</p>
+              {shown.business && <p className="wk-count">Example: {shown.business}</p>}
+              {shown.problem && <div className="wb__workflow-detail"><h3>Problem</h3><p>{shown.problem}</p></div>}
+              {shown.solution && <div className="wb__workflow-detail"><h3>Solution</h3><p>{shown.solution}</p></div>}
+              {shown.intendedOutcome && <div className="wb__workflow-detail"><h3>Outcome</h3><p>{shown.intendedOutcome}</p><small className="wk-count">Intended benefit of this concept, not a measured client result.</small></div>}
+              </div>
+              <div className="sh__visuals">
               {shown.lead ? <Single chapter={shown} /> : shown.items.some((item) => item.image) ? <Showcase items={shown.items} /> : <Groups items={shown.items} />}
+              {!shown.lead && !shown.items.length && <p className="sh__intro">Workflow screenshots haven’t been added to this concept yet.</p>}
+              </div>
+              </div>
 
               {next && next !== shown ? (
                 <nav className="sh__next" aria-label="More work" data-reveal>
@@ -209,7 +221,7 @@ function Single({ chapter }: { chapter: WorkChapter }) {
         </a>
       ) : null}
       <ul className="sh__gallery">
-        {gallery.map((img) => (
+        {gallery.filter(img => img.src !== lead?.src).map((img) => (
           <li key={img.src} data-reveal>
             <a className="sh__shot" href={img.src} target="_blank" rel="noopener">
               <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" decoding="async" />

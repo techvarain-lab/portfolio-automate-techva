@@ -1,5 +1,5 @@
 import type { Icon } from '@phosphor-icons/react'
-import { Briefcase, House } from '@phosphor-icons/react'
+import { Briefcase, House, Wrench, Stack, User, Envelope } from '@phosphor-icons/react'
 import { workCount } from '@/content/work'
 import { site } from '@/content/site'
 
@@ -56,8 +56,8 @@ export const pages: PageRoute[] = [
     id: 'home',
     path: '/',
     label: 'Home',
-    title: 'Rainier Dimasacat Jr. | Your Headline Here',
-    description: 'PLACEHOLDER - tell me what to put here: the one-sentence search result description of you and what you do (under 160 characters).',
+    title: 'Rainier Dimasacat | GoHighLevel Systems & Automations',
+    description: 'GoHighLevel funnels, automations, lead routing, and follow-up systems built by Rainier Dimasacat.',
     icon: House,
     group: 'menu',
   },
@@ -68,12 +68,19 @@ export const pages: PageRoute[] = [
     path: '/work',
     label: 'Work',
     title: `Work | ${SUFFIX}`,
-    description: 'PLACEHOLDER - tell me what to put here: one line on the kinds of work you show.',
+    description: 'Explore GoHighLevel funnels and automation builds.',
     icon: Briefcase,
     group: 'menu',
     badge: workCount,
     section: 'work',
   },
+  ...[
+    { id: 'services', label: 'Services', icon: Wrench },
+    { id: 'ghl', label: 'GoHighLevel', icon: Stack },
+    { id: 'process', label: 'How I work', icon: Wrench },
+    { id: 'about', label: 'About me', icon: User },
+    { id: 'contact', label: 'Contact', icon: Envelope },
+  ].map(({ id, label, icon }): PageRoute => ({ kind: 'page', id, path: `/${id}`, label, title: `${label} | ${SUFFIX}`, description: `${label} — ${site.role}`, icon, group: 'menu', section: id, draft: true })),
 ]
 
 /** Off-site links. Empty until a real destination replaces the `#` placeholders in content/site.ts:

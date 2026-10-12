@@ -5,7 +5,7 @@ import type { SocialLink } from './schema'
  * these values, so changing them here changes them everywhere.
  */
 export const site = {
-  name: 'Rainier Dimasacat Jr',
+  name: 'Rainier Dimasacat',
   brand: 'Rainier D.',
   /** The brand name as the sidebar logo shows it: the second part takes the accent color. */
   brandParts: ['Rainier', 'D.'],
@@ -27,7 +27,7 @@ export const site = {
   timeZone: 'Asia/Manila',
   timePlace: 'in Cavite',
   /** The sidebar picture (112px, 44px on the rail). */
-  avatarSmall: '/images/profile/avatar-224.webp',
+  avatarSmall: '/images/profile/rainier-flat-cartoon.png',
 } as const
 
 /** Up to five fit the sidebar header. `icon` picks the glyph in components/brand/SocialIcon.tsx. */

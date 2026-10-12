@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:hero": "node scripts/check-hero.mjs",
+    "check:bento": "node scripts/check-bento.mjs",
     "check:work-sheet": "node scripts/check-work-sheet.mjs",
     "measure:headline": "node scripts/measure-headline.mjs"
   },

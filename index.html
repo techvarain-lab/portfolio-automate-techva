@@ -5,27 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- data-static-meta: for crawlers that do not run JS. main.tsx removes them on boot so each route owns one title + description.
          Keep this head in step with content/site.ts and the Home entry in src/app/routes.ts. -->
-    <title data-static-meta>Your Name | Your Headline Here</title>
-    <meta data-static-meta name="description" content="PLACEHOLDER - tell me what to put here: the one-sentence description of you and what you do (under 160 characters)." />
+    <title data-static-meta>Rainier Dimasacat | Funnels &amp; Automations</title>
+    <meta data-static-meta name="description" content="Funnels and GoHighLevel automations that keep leads moving—from the first inquiry to the booked appointment. Built by Rainier Dimasacat." />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin />
     <!-- The phone bar's mark is the mobile LCP; dark is the default theme, so its mark loads first. -->
-    <link rel="preload" href="/images/brand/mark-light-96.webp" as="image" fetchpriority="high" />
     <meta name="theme-color" content="#0A0A0A" />
 
     <meta property="og:type" content="website" />
     <!-- Link previews: absolute URLs on your domain. Re-render og-image.png with scripts/make-og-image.mjs. -->
-    <meta property="og:site_name" content="Your Name - Your Brand" />
-    <meta property="og:url" content="https://example.com/" />
-    <meta property="og:title" content="Your Name | Your Headline Here" />
-    <meta property="og:description" content="PLACEHOLDER - tell me what to put here: the one-sentence description of you and what you do (under 160 characters)." />
-    <meta property="og:image" content="https://example.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Your Name, Your Role" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://example.com/og-image.png" />
+    <meta property="og:site_name" content="Rainier Dimasacat" />
+    <meta property="og:url" content="https://techvarain-lab.github.io/portfolio-automate-techva/" />
+    <meta property="og:title" content="Rainier Dimasacat | Funnels &amp; Automations" />
+    <meta property="og:description" content="Funnels and automations that keep leads moving—from the first inquiry to the booked appointment." />
+    <meta name="twitter:card" content="summary" />
 
     <!-- Dark by default; a saved light pick is applied before first paint, so it never flashes dark first.
          Mirrors src/lib/theme.ts. The deploy CSP allows this script by hash: after any edit run npm run csp:check. -->

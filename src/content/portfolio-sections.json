@@ -1,0 +1,512 @@
+{
+  "services": [
+    {
+      "title": "Workflow Automation",
+      "description": "I map how your business actually handles leads, then build automations where every lead always has a next step. If something fails, it retries or alerts you. You get follow-up that runs on its own, and no leads slip through.",
+      "tags": [
+        "GHL Snapshots",
+        "Routers",
+        "Missed-call"
+      ]
+    },
+    {
+      "title": "Funnel Building",
+      "description": "I map the path someone takes from first click to booked appointment, then build every step of it. If they stall or drop off, the page catches them instead of losing them. You get a funnel that works on any phone and holds up when traffic hits it.",
+      "tags": [
+        "GHL Funnels",
+        "Custom Code",
+        "Responsive"
+      ]
+    },
+    {
+      "title": "AI & Prompts",
+      "description": "I use AI to help build the automations, then test every path before I hand it over. If something would break, I find it first instead of you finding it later. You get the same dependable result every time, without the build taking longer.",
+      "tags": [
+        "Claude",
+        "Claude Code",
+        "Prompt chains"
+      ]
+    },
+    {
+      "title": "API Integrations",
+      "description": "I connect the apps you already use so they keep each other up to date. If two don’t talk on their own, I wire them another way — Make, Zapier and n8n included. You get one place where your data stays in sync.",
+      "tags": [
+        "API",
+        "Webhooks",
+        "GHL"
+      ]
+    },
+    {
+      "title": "No-Code / Low-Code",
+      "description": "I can build this without code, and I can write code when that’s the better route. That means later changes are easy, whether you make them or I do. You get something that stays easy to update instead of locked in.",
+      "tags": [
+        "JS",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "n": "01",
+      "icon": "◈",
+      "fan": "right",
+      "title": "Contacts & Lead Records",
+      "short": "Manage contact records end-to-end — add, edit, safely delete.\nAware of the downstream impact on automations and data.",
+      "desc": "I'm confident managing HighLevel contact records — editing details and safely deleting contacts, with awareness of the downstream impact on automations and data.",
+      "chips": [
+        "Contact Management",
+        "Edit & Delete",
+        "Data Safety"
+      ],
+      "proof": [
+        "assets/ghl/proof-contact-1.png",
+        "assets/ghl/proof-contact-2.png",
+        "assets/ghl/proof-contact-3.png",
+        "assets/ghl/proof-contact-4.png"
+      ],
+      "subs": [
+        {
+          "title": "Custom Fields",
+          "desc": "I'm able to create and organize custom fields in HighLevel to hold data unique to a specific business.",
+          "chips": [
+            "Custom Fields",
+            "Create & Organize",
+            "Business Data"
+          ],
+          "proof": [
+            "assets/ghl/proof-fields-1.png",
+            "assets/ghl/proof-fields-2.png"
+          ]
+        },
+        {
+          "title": "Contacts Import",
+          "desc": "I'm skilled at CSV-based contact imports in HighLevel, from data cleanup and field mapping (standard and custom) to post-import validation.",
+          "chips": [
+            "CSV Import",
+            "Field Mapping",
+            "Validation"
+          ],
+          "proof": [
+            "assets/ghl/proof-import-1.png",
+            "assets/ghl/proof-import-2.png"
+          ]
+        },
+        {
+          "title": "Smart Lists",
+          "desc": "I build and manage Smart Lists in GoHighLevel to automatically segment leads and customers — dynamic filters on tags, pipeline stages, engagement, and opportunity status — powering marketing campaigns, follow-ups, and reactivation strategies.",
+          "chips": [
+            "Smart Lists",
+            "Dynamic Filters",
+            "Tag & Stage Segmentation"
+          ],
+          "proof": [
+            "assets/ghl/proof-lists-1.png",
+            "assets/ghl/proof-lists-2.png"
+          ]
+        }
+      ]
+    },
+    {
+      "n": "02",
+      "icon": "◭",
+      "title": "Pipelines & Opportunities",
+      "short": "Track deals from first contact to close — custom stages and opportunity movement.\nAutomation-aware — pipeline movement feeds follow-up sequences.",
+      "desc": "In GHL, I create and manage Pipelines and Opportunities to visualize and track deals from first contact to close — configuring custom stages, moving opportunities as leads progress, and tying pipeline movement into automations and follow-up sequences.",
+      "chips": [
+        "Pipeline Stages",
+        "Opportunity Tracking",
+        "Automation Integration"
+      ],
+      "proof": [
+        "assets/ghl/proof-pipeline-1.png",
+        "assets/ghl/proof-pipeline-2.png"
+      ],
+      "subs": [
+        {
+          "title": "Pipeline Builder",
+          "desc": "Configure pipelines with custom stages that match how the business sells — from first contact to close.",
+          "chips": [
+            "Custom Stages",
+            "Pipeline Setup"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Opportunity Management",
+          "desc": "Move opportunities through stages as leads progress and keep deal data clean.",
+          "chips": [
+            "Opportunity Movement",
+            "Stage Updates"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Automation Integration",
+          "desc": "Trigger automations and follow-up sequences off pipeline stage changes.",
+          "chips": [
+            "Stage Triggers",
+            "Follow-up Sequences"
+          ],
+          "proof": [],
+          "skipProof": true
+        }
+      ]
+    },
+    {
+      "n": "03",
+      "icon": "◷",
+      "title": "Calendars & Booking",
+      "short": "Manage appointment booking — round robin, personal, and group calendars.\nAutomation-ready — calendar events trigger follow-ups and no-shows.",
+      "desc": "I can set up and manage Calendars in GoHighLevel to handle appointment booking and scheduling. I configure calendar types (round robin, personal, group), set availability windows and booking rules, connect calendars to forms and funnels, and use calendar events to trigger automations like reminders, follow-ups, and no-show sequences.",
+      "chips": [
+        "Calendar Types",
+        "Availability & Rules",
+        "Automation Triggers"
+      ],
+      "proof": [
+        "assets/ghl/proof-calendar-1.png",
+        "assets/ghl/proof-calendar-2.png"
+      ],
+      "subs": [
+        {
+          "title": "Calendar Types",
+          "desc": "Set up round robin, personal, and group calendars for different booking flows.",
+          "chips": [
+            "Round Robin",
+            "Personal & Group"
+          ],
+          "proof": [
+            "assets/ghl/proof-calendar-types-1.png",
+            "assets/ghl/proof-calendar-types-2.png"
+          ]
+        },
+        {
+          "title": "Availability & Booking Rules",
+          "desc": "Configure availability windows and booking rules that control when and how leads book.",
+          "chips": [
+            "Availability Windows",
+            "Booking Rules"
+          ],
+          "proof": [
+            "assets/ghl/proof-availability-1.png",
+            "assets/ghl/proof-availability-2.png"
+          ]
+        },
+        {
+          "title": "Automation Triggers",
+          "desc": "Connect calendars to forms and funnels, and trigger reminders, follow-ups, and no-show sequences off booking events.",
+          "chips": [
+            "Reminders",
+            "No-show Sequences"
+          ],
+          "proof": [
+            "assets/ghl/proof-automation-triggers-1.png",
+            "assets/ghl/proof-automation-triggers-2.png"
+          ]
+        }
+      ]
+    },
+    {
+      "n": "04",
+      "icon": "⚙",
+      "title": "Workflows & Automations",
+      "short": "Build multi-step GHL/Make.com automations — defensive suppression, Stripe·Sheets·Slack, lead routing, dormant win-back, Conversation AI.\nTailored to how your business actually runs — tested live, fixed before it reaches your customers.",
+      "desc": "I build custom GHL/Make.com automations tailored to how your business actually runs — not generic templates. Whether it's routing leads the moment they come in, following up automatically so no one falls through the cracks, connecting your tools so data flows without manual work, or re-engaging cold leads before they're gone for good — I design the workflow around your process, test it live, and fix what breaks before it reaches your customers.",
+      "chips": [],
+      "pop": [
+        "Workflow",
+        "Automations"
+      ],
+      "proof": [],
+      "subs": []
+    },
+    {
+      "n": "05",
+      "icon": "▤",
+      "fan": "left",
+      "title": "Funnels & Websites",
+      "short": "Build the front door — clear funnels, landing pages, and capture flows inside GHL.\nTurn first clicks into qualified conversations, then hand off cleanly to the rest of your system.",
+      "desc": "I build conversion-focused funnels and websites in GoHighLevel — landing pages, funnel steps, forms, and thank-you pages that give visitors a reason to keep moving. I shape the page around the offer, connect each capture point to the contact record, and make the handoff into calendars, pipelines, and automations feel natural.",
+      "chips": [],
+      "pop": [
+        "Funnel",
+        "Websites"
+      ],
+      "proof": [],
+      "subs": []
+    },
+    {
+      "n": "06",
+      "icon": "✦",
+      "fan": "right",
+      "title": "Marketing",
+      "short": "Run end-to-end marketing in GHL — email campaigns with analytics, social scheduling, and reusable snippets.\nPerformance-aware — built-in analytics, trigger links, and a consistent brand across every asset.",
+      "desc": "I can execute end-to-end marketing tasks in GoHighLevel. I build and send Email Campaigns and track performance through built-in analytics (open rates, click rates, deliverability). I use the Social Planner to schedule and manage posts across multiple platforms from one place. I create reusable SMS and Email Snippets to speed up messaging and keep communication consistent. I set up Countdown Timers to drive urgency in email and landing page campaigns, and Trigger Links to fire automations based on link clicks. I also build Brand Boards to maintain consistent colors, fonts, and logos across all marketing assets.",
+      "chips": [
+        "Email Campaigns",
+        "Social Planner",
+        "Snippets",
+        "Trigger Links"
+      ],
+      "proof": [],
+      "subs": [
+        {
+          "title": "Email Campaigns & Analytics",
+          "desc": "Build and send email campaigns and track performance through GHL's built-in analytics — open rates, click rates, and deliverability.",
+          "chips": [
+            "Campaign Builder",
+            "Broadcasts",
+            "Open & Click Rates"
+          ],
+          "proof": [
+            "assets/ghl/proof-email-1.png",
+            "assets/ghl/proof-email-2.png"
+          ]
+        },
+        {
+          "title": "Social Planner",
+          "desc": "Schedule and manage posts across multiple social platforms from one place, so content goes out consistently without juggling tabs.",
+          "chips": [
+            "Post Scheduling",
+            "Multi-platform"
+          ],
+          "proof": []
+        },
+        {
+          "title": "Snippets",
+          "desc": "Create reusable SMS and Email snippets to speed up messaging and keep communication consistent.",
+          "chips": [
+            "SMS & Email",
+            "Reusable",
+            "Consistency"
+          ],
+          "proof": [
+            "assets/ghl/proof-snippet-1.png"
+          ]
+        },
+        {
+          "title": "Countdown Timers",
+          "desc": "Set up countdown timers that drive urgency in email and landing page campaigns.",
+          "chips": [
+            "Urgency",
+            "Email & Landing Pages"
+          ],
+          "proof": [
+            "assets/ghl/proof-timer-1.png"
+          ]
+        },
+        {
+          "title": "Trigger Links",
+          "desc": "Use trigger links inside emails and messages to fire automations based on link clicks.",
+          "chips": [
+            "Link Clicks",
+            "Automation Triggers"
+          ],
+          "proof": [
+            "assets/ghl/proof-trigger-1.png",
+            "assets/ghl/proof-trigger-2.png",
+            "assets/ghl/proof-trigger-3.png",
+            "assets/ghl/proof-trigger-4.png",
+            "assets/ghl/proof-trigger-5.png"
+          ]
+        },
+        {
+          "title": "Brand Boards",
+          "desc": "Build GHL brand boards that keep colors, fonts, and logos consistent across all marketing assets.",
+          "chips": [
+            "Colors",
+            "Fonts",
+            "Logos"
+          ],
+          "proof": [
+            "assets/ghl/proof-brand-1.png"
+          ]
+        }
+      ]
+    },
+    {
+      "n": "07",
+      "icon": "⬡",
+      "title": "Custom Objects",
+      "short": "Model the things a business actually sells — vehicles, pets, properties, students, treatment packages.\nNot just the people who buy them.",
+      "desc": "I design custom data structures in GoHighLevel — vehicles, pets, properties, students, treatment packages — so businesses can track the things they actually sell and service, not just the people who buy them. Custom objects let me model real inventory and service records, link them back to the contact, and give the whole system a data backbone instead of cramming everything into free-text notes.",
+      "chips": [
+        "Custom Objects",
+        "Data Modeling",
+        "Linked Records"
+      ],
+      "proof": [],
+      "subs": [
+        {
+          "title": "Vehicle Custom Object",
+          "desc": "One of the custom objects I model: a Vehicle object with fields for make, model, year, plate number, last service date, next service due, and mileage. Associated as one contact to many vehicles — so a workflow can text \"Your Toyota Vios is due for an oil change\" based on that vehicle's next service date, not the contact's. Activity tracks per vehicle, which is exactly what a TorqueWorks-style dormant win-back needs.",
+          "chips": [
+            "Fields: make/model/year/plate",
+            "Last & next service",
+            "1 contact : many vehicles",
+            "Per-vehicle service triggers"
+          ],
+          "proof": [
+            "assets/ghl/proof-customobject-1.png",
+            "assets/ghl/proof-customobject-2.png",
+            "assets/ghl/proof-customobject-3.png"
+          ]
+        }
+      ]
+    },
+    {
+      "n": "08",
+      "icon": "◇",
+      "title": "Snapshots & Sub-Account Setup",
+      "short": "Package a full GHL setup — funnels, calendars, pipelines, workflows, forms, templates — into a reusable Snapshot.\nA new client sub-account goes from empty to live in minutes, not days.",
+      "desc": "I package a complete GoHighLevel setup into a reusable Snapshot — funnels, calendars, pipelines, workflows, forms, and templates captured as one template. A new client sub-account loads from empty to live in minutes instead of days, with the structure, copy, and automations already proven from a previous build instead of rebuilt from scratch.",
+      "chips": [
+        "Snapshot Templates",
+        "Sub-Account Setup",
+        "Rapid Onboarding",
+        "Reusable Builds"
+      ],
+      "pop": [
+        "Snapshot Template",
+        "Reusable Builds"
+      ],
+      "proof": [
+        "assets/ghl/proof-snapshot-1.png",
+        "assets/ghl/proof-snapshot-2.png"
+      ],
+      "subs": []
+    },
+    {
+      "n": "09",
+      "featured": true,
+      "title": "PSGCIMBTFLO — Automation Building System",
+      "short": "My 11-step system for shipping client automations — scoped live on discovery calls, built in GHL, tested with proof, optimized under retainer.",
+      "desc": "PSGCIMBTFLO is the acronym system I run on every client build: Problem, Solution, Goal, Customer Journey, Identify Pipeline Stage, Mapping, Build, Test, Final Revision, Live, Optimize. It turns vague asks into specific problems, anchors each automation to a customer journey, mirrors that journey into pipeline stages, and never calls a build done until it's tested with proof.",
+      "chips": [
+        "Problem-first",
+        "Pipeline mirrors journey",
+        "Tested with proof",
+        "Optimize & retainer"
+      ],
+      "chart": true,
+      "proof": [],
+      "subs": [
+        {
+          "title": "Problem",
+          "desc": "Identify the specific problem or need — never build on vague answers. Probe until the real need is concrete.",
+          "chips": [
+            "Specific Need",
+            "Discovery Questions"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Solution",
+          "desc": "The fix isn't always an automation — a pipeline, form, calendar, landing page, notification, nurture sequence, or a combination. Clear problem → clear solution.",
+          "chips": [
+            "Right Tool Choice",
+            "Plain Language"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Goal",
+          "desc": "Every system needs an ending. Agree the client's desired outcome and start with one goal so the build stays focused.",
+          "chips": [
+            "Desired Outcome",
+            "One Goal"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Customer Journey",
+          "desc": "The anchor of the automation. Map each step a lead takes to reach the goal — it doesn't have to be perfect, just clear.",
+          "chips": [
+            "Journey Anchor",
+            "Clear, Not Perfect"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Identify Pipeline Stage",
+          "desc": "Pipeline stages mirror the customer journey — one stage per meaningful change, so the pipeline reads the journey back to you.",
+          "chips": [
+            "Stage Design",
+            "Mirror the Journey"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Mapping",
+          "desc": "For each stage define the trigger (how the contact enters) and the action steps — every action must lead the contact to the next stage.",
+          "chips": [
+            "Triggers",
+            "Action Steps",
+            "Next-Stage Push"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Build",
+          "desc": "Build it in GoHighLevel or the chosen tool with a keeper-simple structure — no overcomplication.",
+          "chips": [
+            "GoHighLevel",
+            "Simple Structure"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Test",
+          "desc": "Never say done until tested. Test the real trigger (actually book, actually submit) and screenshot or record the pass as your proof receipt.",
+          "chips": [
+            "Realistic Testing",
+            "Proof Receipt"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Final Revision",
+          "desc": "Optional review loop — clients may add, revise, or edit after testing. Rinse and re-test before going live.",
+          "chips": [
+            "Client Review",
+            "Re-test"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Live",
+          "desc": "Publish once the client confirms and testing is clean.",
+          "chips": [
+            "Publish",
+            "Client Sign-off"
+          ],
+          "proof": [],
+          "skipProof": true
+        },
+        {
+          "title": "Optimize",
+          "desc": "The role doesn't stop at go-live — this is the retainer. Weekly check-ins, open/click rates, A/B copy tests, and conditional-logic fixes.",
+          "chips": [
+            "Weekly Review",
+            "Stats & Insight",
+            "A/B Copy"
+          ],
+          "proof": [],
+          "skipProof": true
+        }
+      ]
+    }
+  ]
+}

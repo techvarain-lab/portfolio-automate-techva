@@ -1,4 +1,6 @@
 import type { Image, WorkChapter } from './schema'
+import conceptBuilds from './concept-builds.json'
+import automationBuilds from './automation-builds.json'
 
 /**
  * Home page copy. The hero pairs a thin line with a bold one. The bold line is sized in `cqi` in
@@ -7,9 +9,9 @@ import type { Image, WorkChapter } from './schema'
  */
 export const homeHero = {
   headlineThin: 'Rainier',
-  headlineBold: 'Dimasacat Jr',
+  headlineBold: 'Dimasacat',
   subhead: 'GHL SPECIALIST / FUNNEL BUILDER',
-  lede: 'I build GoHighLevel systems that turn inquiries into booked conversations. Funnels, automations, routing, and follow-up for businesses that are tired of losing leads between \'contact us\' and \'booked\'.',
+  lede: 'I build funnels and automations that keep leads moving—from the first inquiry to the booked appointment.',
   cta: { label: 'Hire me', to: '/#contact' },
 }
 
@@ -18,8 +20,8 @@ export const homeHero = {
 /** The Work section header. */
 export const workSection = {
   eyebrow: 'Selected work',
-  titleThin: 'Builds you can',
-  titleBold: 'open right now.',
+  titleThin: 'Concepts built',
+  titleBold: 'to work.',
   all: { label: 'See all 6 builds', to: '/work' },
 }
 
@@ -228,13 +230,13 @@ const chapters: WorkChapter[] = [
 ]
 
 /** Derive each chapter's count from its items and lead — never a typed literal. */
-export const workChapters: WorkChapter[] = chapters.map((ch) => ({
-  ...ch,
-  count: ch.items.length + (ch.lead ? 1 : 0),
+const selectedAutomationIds = ['automation-08-2', 'automation-07-1', 'automation-25-5', 'automation-05-1', 'automation-05-3', 'automation-22-1']
+export const workChapters: WorkChapter[] = [...automationBuilds, ...conceptBuilds.filter(ch => ch.category === 'funnel')].map(ch => ({
+  ...ch, category: ch.category as 'automation' | 'funnel', count: ch.gallery.length,
 }))
+export const featuredAutomations = selectedAutomationIds.flatMap(id => workChapters.filter(build => build.id === id))
 
 /** Total builds across all chapters. Derived from items.length + gallery lengths. */
-export const workCount =
-  workChapters.reduce((total, ch) => total + (ch.gallery ? ch.gallery.length : 0) + ch.items.length, 0)
+export const workCount = workChapters.length
 
-export const findChapter = (id: string | undefined) => workChapters.find((chapter) => chapter.id === id)
+export const findChapter = (id: string | undefined) => workChapters.find((chapter) => chapter.id === id) ?? (automationBuilds as WorkChapter[]).find(chapter => chapter.id === id) ?? (conceptBuilds as WorkChapter[]).find(chapter => chapter.id === id) ?? chapters.find(chapter => chapter.id === id)

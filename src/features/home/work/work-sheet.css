@@ -133,6 +133,15 @@
 }
 
 /* Shared picture frame. */
+.sh__columns { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.sh__details, .sh__visuals { min-width: 0; }
+.sh__details > .wb__disclosure { margin: 0 0 16px; font-size: 11px; }
+.sh__details .sh__intro { line-height: 1.8; }
+.sh__visuals .sh__gallery { grid-template-columns: minmax(0, 1fr); }
+.sh__visuals .sh__shot { aspect-ratio: auto; }
+.sh__visuals .sh__shot img { height: auto; object-fit: contain; }
+@media (max-width: 800px) { .sh__columns { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
+
 .sh__shot {
   display: block;
   aspect-ratio: 16 / 10;

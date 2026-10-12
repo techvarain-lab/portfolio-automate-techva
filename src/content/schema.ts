@@ -28,6 +28,13 @@ export type SocialLink = LinkRef & {
 
 /** One chapter of the Home Work section: a group of builds with its covers. */
 export type WorkChapter = {
+  category?: 'automation' | 'funnel'
+  concept?: boolean
+  business?: string
+  need?: string
+  problem?: string
+  solution?: string
+  intendedOutcome?: string
   id: string
   title: string
   /** One quiet line under the title. */

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, ScrollRestoration } from 'react-router'
 import { Sidebar } from '@/components/sidebar/Sidebar'
 import { MobileNav } from '@/components/drawer/MobileNav'
+import { RoutedSignals } from '@/components/background/RoutedSignals'
 import { DESKTOP_QUERY, useMediaQuery } from '@/hooks/use-media-query'
 import { useSmoothScroll } from '@/hooks/use-smooth-scroll'
 import { ShellProvider, useShell } from './shell-context'
@@ -32,6 +33,7 @@ function Shell() {
 
   return (
     <div className="app" data-sidebar={isDesktop && collapsed ? 'collapsed' : 'expanded'}>
+      <RoutedSignals />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

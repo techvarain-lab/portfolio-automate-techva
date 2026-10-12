@@ -9,3 +9,4 @@ scripts/out/
 
 # TypeScript incremental build state
 *.tsbuildinfo
+.vite-live.*.log

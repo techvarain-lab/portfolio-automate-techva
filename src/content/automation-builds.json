@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "automation-04-1",
+    "title": "Emergency Escalation Automation",
+    "business": "Haven Animal Clinic",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "When a pet owner messages about something urgent — bleeding, a seizure, poisoning, getting hit by a car — the AI recognizes it's an emergency and skips the normal chat flow entirely.",
+    "description": "When a pet owner messages about something urgent — bleeding, a seizure, poisoning, getting hit by a car — the AI recognizes it's an emergency and skips the normal chat flow entirely. It checks the clinic's hours and routes the message to either the on-duty vet or the after-hours backup, then instantly alerts the on-call staff by text and flags the conversation so nothing gets missed.",
+    "problem": "Almost everything a vet clinic receives looks routine, so a message that actually describes an emergency can sit in the queue looking ordinary. And outside business hours there is nobody in the building to notice it at all.",
+    "solution": "A hard-gated detection layer reads every inbound message for emergency intent — bleeding, seizures, poisoning, hit by a car — and when it matches, the normal chat flow is skipped entirely. The response then branches on the time of day: during hours it goes straight to the on-duty vet, after hours to the backup clinic, with on-call staff texted immediately and the conversation flagged.",
+    "intendedOutcome": "An emergency is never mistaken for a routine question, and never waits for someone to notice it. The right person is told the moment a message arrives, so the owner doesn't have to call twice.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-04-2",
+    "title": "Lead Qualification & Data Capture",
+    "business": "Haven Animal Clinic",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "Before anything else happens, the AI has a quick conversation to find out who's reaching out — is this a new patient or an existing one, what kind of pet, and what they need help with.",
+    "description": "Before anything else happens, the AI has a quick conversation to find out who's reaching out — is this a new patient or an existing one, what kind of pet, and what they need help with. That information gets saved automatically, so every step afterward — routing, follow-ups, reminders — already knows exactly who they're dealing with and doesn't have to ask twice.",
+    "problem": "Front-desk staff spend the first few minutes of every conversation asking the same questions — new patient or returning one, what kind of pet, what's wrong. That's time taken away from actual care, and the same information tends to get asked again further down the line.",
+    "solution": "The AI runs a short qualification conversation before anything else happens, capturing whether this is a new or existing patient, which pet it's about, and the reason for the visit, then saves it onto the contact record. Every later step — routing, booking, follow-up, reminders — reads that record instead of asking again.",
+    "intendedOutcome": "The clinic knows who it's talking to before anyone picks up, and nobody has to repeat themselves. Staff spend the conversation on the animal rather than on data entry.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-04-3",
+    "title": "Booking Automation",
+    "business": "Haven Animal Clinic",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Once a routine (non-emergency) request is qualified, the system books it automatically — no staff member has to manually approve or schedule it.",
+    "description": "Once a routine (non-emergency) request is qualified, the system books it automatically — no staff member has to manually approve or schedule it. The appointment goes straight onto the clinic's calendar, and the front desk gets notified so they're in the loop without lifting a finger.",
+    "problem": "Even once a routine request is understood, it still has to be written down and turned into an appointment. That handoff is where bookings quietly get lost, and it always lands on whoever happens to be free at the front desk.",
+    "solution": "Once a non-emergency request is qualified, the system books it straight onto the clinic's calendar without waiting for anyone to approve it, then notifies the front desk so they know it's already handled.",
+    "intendedOutcome": "Routine bookings complete without a human scheduling them by hand, and the front desk stays informed without chasing. The only requests that reach a person are the ones that genuinely need one.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-22-1",
+    "title": "Win-Back — 60-Day Dormant",
+    "business": "TorqueWorks Auto Care",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "If a customer hasn't booked a visit in 60 days, they automatically enter the first re-engagement stage — a friendly nudge with a lighter incentive to bring them back.",
+    "description": "If a customer hasn't booked a visit in 60 days, they automatically enter the first re-engagement stage — a friendly nudge with a lighter incentive to bring them back. The moment they book or reply, they're pulled out of the sequence right away, so no one gets a 'come back!' message after they've already come back.",
+    "problem": "After a service, most customers go quiet for a while and that's completely normal. But nobody at the shop can tell who has genuinely drifted and who has simply been busy, so good customers fall out of sight without anyone noticing.",
+    "solution": "A Smart List watches for customers with no booked visit in 60 days and drops them into the first re-engagement stage automatically — one friendly nudge carrying a lighter incentive. The moment they book or reply, the sequence stops, checked in real time rather than on a fixed delay.",
+    "intendedOutcome": "The shop reaches out while people are most likely to still be listening, and nobody is ever sent a 'come back' message after they have already come back.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/torqueworks-1.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/torqueworks-1.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/torqueworks-1.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-22-2",
+    "title": "Win-Back — 90-Day Dormant",
+    "business": "TorqueWorks Auto Care",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "For customers who've gone quiet even longer, the message gets smarter, not just louder.",
+    "description": "For customers who've gone quiet even longer, the message gets smarter, not just louder. If we know why they drifted — price concerns, they moved away, or a bad experience — the follow-up is tailored to that specific reason instead of sending the same generic 'we miss you' message to everyone.",
+    "problem": "A customer who has been away three months is in a different situation from one who has been away two, and sending both the same message is how a win-back effort ends up sounding like a robot to the people who were still genuinely interested.",
+    "solution": "A second stage catches customers with no visit in 90 days and holds anything further back until they reply or book, so anyone already in touch is answered first instead of being messaged over. Only the ones still silent get pushed further, and the whole stage is suppressed the moment they return.",
+    "intendedOutcome": "Longer-silent customers get a considered follow-up rather than the same reminder again, and the customers who came back are never sent it at all.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/torqueworks-2.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/torqueworks-2.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/torqueworks-2.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-22-3",
+    "title": "Win-Back — Dormant-Lost",
+    "business": "TorqueWorks Auto Care",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "For long-dormant customers, the win-back message isn't one-size-fits-all.",
+    "description": "For long-dormant customers, the win-back message isn't one-size-fits-all. If we know why they left — pricing, they moved, or a bad experience — the outreach is tailored to that specific reason instead of sending everyone the same generic 'we miss you' text.",
+    "problem": "Some customers are effectively gone — they moved away, went to another shop, or were disappointed. Treating them the same as someone who simply missed a month of reminders is how a win-back campaign ends up convincing the wrong people.",
+    "solution": "A final tier targets the longest-dormant contacts and branches the outreach on the reason recorded for them leaving, so the message matches what actually happened rather than being a generic 'we miss you'. Anyone who does come back is tagged as reactivated and moved into the active pipeline instead of drifting back into the retention list.",
+    "intendedOutcome": "The last message a dormant customer receives is relevant to why they left, and anyone who returns is tracked as active again rather than quietly cycling through the win-back list.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/torqueworks-3.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/torqueworks-3.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/torqueworks-3.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-05-1",
+    "title": "New Client Onboarding",
+    "business": "FitCoach Ecosystem",
+    "need": "Operations",
+    "category": "automation",
+    "concept": true,
+    "line": "The moment a customer pays, everything updates automatically — no manual data entry.",
+    "description": "The moment a customer pays, everything updates automatically — no manual data entry. Their info is created (or updated) in the CRM, they're marked as an active client, moved into the right pipeline stage, added to the team's client roster spreadsheet, and the team gets notified on Slack — all within seconds of the payment going through.",
+    "problem": "Every time someone paid for the program, the coach had to manually copy their info into the CRM, update a spreadsheet, and remember to tell the team a new client joined. Easy to forget, easy to fall behind when sales pick up.",
+    "solution": "The moment someone pays, everything updates itself — the client shows up in the CRM already tagged and moved to \"Active,\" their info lands in the roster sheet, and the team gets a Slack ping. No copy-pasting, no forgetting.",
+    "intendedOutcome": "New clients are onboarded instantly and consistently, even if the coach is busy, asleep, or scaling to dozens of sales a day.",
+    "count": 2,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/fitcoach-auto01.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/fitcoach-auto01.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/fitcoach-auto01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-onboarding.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-05-2",
+    "title": "Abandoned Checkout Recovery",
+    "business": "FitCoach Ecosystem",
+    "need": "Payments",
+    "category": "automation",
+    "concept": true,
+    "line": "If someone starts checking out but doesn't finish, the system notices and automatically follows up — first with a text, then an email — to bring them back and complete the purchase.",
+    "description": "If someone starts checking out but doesn't finish, the system notices and automatically follows up — first with a text, then an email — to bring them back and complete the purchase. If they still don't convert after that, they're tagged so the business knows to stop chasing and can revisit them later with a different approach (like the win-back sequence).",
+    "problem": "Not everyone who starts checking out actually finishes — maybe they got distracted, had second thoughts, or their card didn't save. Without any way to catch that, those almost-buyers just disappear with no follow-up.",
+    "solution": "If someone starts checkout but doesn't complete it, the system automatically reaches out with a text reminder, then a follow-up email a day later — nudging them back to finish signing up, without the coach lifting a finger.",
+    "intendedOutcome": "Recovers sales that would otherwise be lost for good — people who just needed a gentle nudge to come back and complete their purchase.",
+    "count": 3,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/fitcoach-auto02.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/fitcoach-auto02.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/fitcoach-auto02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-abandoned.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-05-3",
+    "title": "Payment Failed Alert",
+    "business": "FitCoach Ecosystem",
+    "need": "Payments",
+    "category": "automation",
+    "concept": true,
+    "line": "If a customer's card gets declined, the system reaches out automatically — email and text — asking them to update their payment info, so the coach doesn't have to chase it down manually.",
+    "description": "If a customer's card gets declined, the system reaches out automatically — email and text — asking them to update their payment info, so the coach doesn't have to chase it down manually. And if a customer's contact info is somehow missing entirely, the coach gets a direct alert instead, so no failed payment slips through unnoticed.",
+    "problem": "Sometimes a payment fails — an expired card, a bank decline — and if nobody notices, that client just quietly falls through the cracks and the coach loses a paying customer without even knowing why.",
+    "solution": "The moment a payment fails, the client automatically gets a friendly email (and a text if they don't respond) with a link to update their card, and the coach gets alerted right away too — even in the rare case where there's no way to reach the client automatically, the coach still gets a heads-up to follow up personally.",
+    "intendedOutcome": "Failed payments get caught and fixed fast instead of silently costing the coach a client — nothing slips through unnoticed.",
+    "count": 3,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/fitcoach-auto04.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/fitcoach-auto04.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/fitcoach-auto04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-paymentfailed.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-1",
+    "title": "Lead Capture & Follow-Up Enrollment",
+    "business": "Legal Practice",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "The moment an inquiry form is submitted, the lead is automatically enrolled in follow-up — but only if they haven't already booked.",
+    "description": "The moment an inquiry form is submitted, the lead is automatically enrolled in follow-up — but only if they haven't already booked.",
+    "problem": "Not everyone who fills out an inquiry form books a consultation on the spot. Without a system in place, these ‘warm but hesitant’ leads just get forgotten.",
+    "solution": "The moment someone submits their info, they are automatically enrolled in a follow-up sequence — but only if they haven't already booked.",
+    "intendedOutcome": "No lead falls through the cracks just because they needed a little more time to decide.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-capture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-capture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-capture.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-2",
+    "title": "14-Day Consultation Follow-Up Sequence",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "A 4-touch email sequence over two weeks.",
+    "description": "A 4-touch email sequence over two weeks. Every touch checks whether they've booked first, and stops instantly if they have.",
+    "problem": "Following up manually with every lead isn't realistic for a solo attorney, but sending emails to someone who already booked feels tone-deaf and unprofessional.",
+    "solution": "A 4-touch email sequence over two weeks — each one checks first whether the person has booked, and stops instantly if they have.",
+    "intendedOutcome": "Consistent, professional follow-up that never accidentally spams someone who's already taken action.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-nurture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-nurture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-nurture.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-3",
+    "title": "Second-Chance Re-Engagement Sequence",
+    "business": "Legal Practice",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "Leads who missed or cancelled get a shorter, more relevant recovery sequence instead of restarting from scratch as a cold lead.",
+    "description": "Leads who missed or cancelled get a shorter, more relevant recovery sequence instead of restarting from scratch as a cold lead.",
+    "problem": "Someone who missed their appointment or cancelled shouldn't get treated like a brand-new cold lead — that feels impersonal and can come across as if the business wasn't paying attention.",
+    "solution": "These leads get a shorter, more relevant re-engagement sequence instead of restarting from scratch.",
+    "intendedOutcome": "A more thoughtful recovery experience for people who already showed real interest once.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-reengage.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-reengage.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-reengage.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-4",
+    "title": "Booking Confirmation & Handoff",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "The instant someone books, they're pulled out of the follow-up sequence and switched into the confirmation flow — never both at once.",
+    "description": "The instant someone books, they're pulled out of the follow-up sequence and switched into the confirmation flow — never both at once.",
+    "problem": "Without clear handoffs, a client could get both a ‘don't forget to book!’ email and a booking confirmation at the same time — confusing and unprofessional.",
+    "solution": "The instant someone books, they are automatically pulled out of the follow-up sequence and switched into the confirmation flow.",
+    "intendedOutcome": "Every client only ever gets messaging that actually matches where they are — never mixed signals.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-confirm.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-confirm.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-confirm.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-5",
+    "title": "Appointment Reminder System",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Automatic reminders go out the day before and an hour before each consultation — no manual reminder calls needed.",
+    "description": "Automatic reminders go out the day before and an hour before each consultation — no manual reminder calls needed.",
+    "problem": "Missed appointments waste valuable time for a busy attorney and hurt the practice's schedule.",
+    "solution": "Automatic reminders go out the day before and an hour before each consultation — no manual reminder calls needed.",
+    "intendedOutcome": "The system, not the staff, is what sends the reminder — so nothing is missed because someone forgot. Fewer no-shows is the intended target, not a measured result.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-reminder.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-reminder.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-reminder.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-6",
+    "title": "Consultation Completion Tracker",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Once a consultation is marked complete, the client is automatically moved into a ‘completed’ stage.",
+    "description": "Once a consultation is marked complete, the client is automatically moved into a ‘completed’ stage.",
+    "problem": "Without a clear system, it's hard to tell who's still waiting versus who's already had their consultation.",
+    "solution": "Once a consultation is marked complete, the client is automatically moved into a ‘completed’ stage.",
+    "intendedOutcome": "A clean, always-accurate view of where every client actually stands.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-complete.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-complete.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-complete.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-7",
+    "title": "Missed Appointment Recovery",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "No-shows are automatically flagged, re-entered into a gentle re-engagement sequence, and staff are notified right away.",
+    "description": "No-shows are automatically flagged, re-entered into a gentle re-engagement sequence, and staff are notified right away.",
+    "problem": "A missed appointment with no follow-up is essentially a lost client.",
+    "solution": "No-shows are automatically flagged and re-entered into a gentle re-engagement sequence, and staff get notified right away.",
+    "intendedOutcome": "Missed appointments turn into a recovery opportunity instead of a dead end.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-noshow.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-noshow.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-noshow.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-8",
+    "title": "Cancellation Recovery Flow",
+    "business": "Legal Practice",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Any cancelled appointment re-enters the client into a re-engagement sequence — and skips it automatically if they've already rebooked.",
+    "description": "Any cancelled appointment re-enters the client into a re-engagement sequence — and skips it automatically if they've already rebooked.",
+    "problem": "Every scheduling system deals with cancellations, and it's important they don't just disappear without any follow-up.",
+    "solution": "Any cancelled appointment automatically re-enters the client into a re-engagement sequence — if they already rebooked, the system recognizes that and skips the extra messaging automatically.",
+    "intendedOutcome": "No cancelled appointment goes unnoticed, and clients never receive conflicting or repetitive messages.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-cancel.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-cancel.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-cancel.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-25-9",
+    "title": "Final Follow-Up (Cold Lead Recovery)",
+    "business": "Legal Practice",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "After 30 days of no activity, one final low-pressure re-engagement message is sent automatically.",
+    "description": "After 30 days of no activity, one final low-pressure re-engagement message is sent automatically.",
+    "problem": "Some leads go through the entire follow-up sequence without ever booking — but that doesn't always mean they're truly not interested.",
+    "solution": "After 30 days of no activity, one final, low-pressure re-engagement message is sent automatically.",
+    "intendedOutcome": "A last genuine attempt to win back the client's business before considering the lead truly cold.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-coldwinback.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-coldwinback.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-coldwinback.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-07-1",
+    "title": "Buyer/Seller Lead Router",
+    "business": "Real Estate Lead Automation",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "The moment a lead is tagged buyer or seller, the system routes them to the right welcome message — buyers get the home-search intro, sellers get a free home-value estimate — then auto-creates a deal card so nothing has to be logged by hand.",
+    "description": "The moment a lead is tagged buyer or seller, the system routes them to the right welcome message — buyers get the home-search intro, sellers get a free home-value estimate — then auto-creates a deal card so nothing has to be logged by hand.",
+    "problem": "When a new lead comes in, agents have no quick way to tell if it's a buyer or a seller — so everyone gets the same generic 'thanks for reaching out' message, even though a buyer and a seller need completely different info right away. Plus agents manually create a deal card for every lead, which gets skipped when busy.",
+    "solution": "The moment a lead is tagged buyer or seller, the system routes them to the right welcome message (buyers the home-search intro, sellers a free home-value estimate) and auto-creates a deal card behind the scenes — no copy/paste.",
+    "intendedOutcome": "Every lead gets a relevant first message immediately — no one-size-fits-all replies. Agents save time on data entry and no lead starts a conversation without a deal card in the pipeline.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/realestate-router.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/realestate-router.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/realestate-router.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-07-2",
+    "title": "Hot Lead Instant Alert",
+    "business": "Real Estate Lead Automation",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "Leads flagged 'hot' trigger an instant text to the agent with who to call and why, plus a to-do task and a heads-up text to the lead — so hot leads get called in minutes, not hours.",
+    "description": "Leads flagged 'hot' trigger an instant text to the agent with who to call and why, plus a to-do task and a heads-up text to the lead — so hot leads get called in minutes, not hours.",
+    "problem": "In real estate, a lead that's ready to move fast can go cold in hours if they don't hear back quickly — but agents juggle calls, showings, and paperwork, so a hot lead can sit unnoticed in an inbox too long.",
+    "solution": "When a lead is flagged 'hot', the agent gets an instant text alert with who to call and why, a task is auto-added to their to-do list, and the lead gets a quick personal text letting them know someone's on it.",
+    "intendedOutcome": "Hot leads get a response in minutes instead of hours — often the difference between winning and losing the deal. No reliance on memory; the system catches them.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/realestate-hotalert.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/realestate-hotalert.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/realestate-hotalert.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-07-3",
+    "title": "Staggered Lead Re-engagement",
+    "business": "Real Estate Lead Automation",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "A lead that goes quiet for a few days gets an automatic check-in and a nudge to the agent; if they stay silent, they're tagged cold and moved to a separate list so the active pipeline stays focused on real opportunities.",
+    "description": "A lead that goes quiet for a few days gets an automatic check-in and a nudge to the agent; if they stay silent, they're tagged cold and moved to a separate list so the active pipeline stays focused on real opportunities.",
+    "problem": "Not every lead responds right away, and a promising conversation can just... stop. The lead doesn't reply, the agent gets busy, and eventually that lead is forgotten — even though they may still be interested.",
+    "solution": "If a lead goes quiet for a few days after first contact, the system auto-sends a friendly check-in and reminds the agent to follow up. Still no response? The lead is tagged cold and moved to a separate list, not deleted or forgotten.",
+    "intendedOutcome": "No lead falls through the cracks just because they went quiet. The active pipeline stays clean and focused, while cooled-off leads stay warm for a future re-approach.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/realestate-stalled.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/realestate-stalled.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/realestate-stalled.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-07-4",
+    "title": "Appointment Confirmation & Reminder",
+    "business": "Real Estate Lead Automation",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Every booked showing auto-sends a confirmation (email + text) and a reminder text one hour out, so clients don't forget and the agent never shows up to an empty slot.",
+    "description": "Every booked showing auto-sends a confirmation (email + text) and a reminder text one hour out, so clients don't forget and the agent never shows up to an empty slot.",
+    "problem": "No-shows for showings and consultations are common — a client books a time, forgets, and the agent shows up to an empty house or empty slot, wasting time that could've gone to another client.",
+    "solution": "As soon as an appointment is booked, the client auto-gets a confirmation by email and text. Then exactly one hour before, a friendly reminder text — fresh in their mind but not so early they forget again.",
+    "intendedOutcome": "Fewer no-shows, less wasted time, and a more professional, buttoned-up client experience — all without the agent sending a single reminder.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/realestate-appointment.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/realestate-appointment.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/realestate-appointment.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-08-1",
+    "title": "Intake & Triage",
+    "business": "FlowFix Plumbing",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "Reads what the customer picked and instantly tells a burst pipe from a routine quote — even catching emergencies mis-marked 'not urgent'.",
+    "description": "Reads what the customer picked and instantly tells a burst pipe from a routine quote — even catching emergencies mis-marked 'not urgent'.",
+    "problem": "Not every plumbing call is the same. A burst pipe flooding someone's kitchen needs help now — but the old system treated it the same as someone just asking for a quote. That's how you lose the emergency job to whichever plumber calls back first.",
+    "solution": "The system reads what the customer picked and automatically tells the difference between \"drop everything\" and \"get back to me whenever.\" It even catches mistakes — if someone describes a burst pipe but accidentally marks it \"not urgent,\" it still flags it as an emergency.",
+    "intendedOutcome": "Emergencies get an instant alert to the team and a fast reply to the customer. Everything else gets handled calmly and on schedule, no wasted urgency, no missed emergencies.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/flowfix-intake.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/flowfix-intake.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/flowfix-intake.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-08-2",
+    "title": "Missed-call text-back",
+    "business": "FlowFix Plumbing",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "The moment a call is missed, the customer gets a friendly text so they never have to wait or call back.",
+    "description": "The moment a call is missed, the customer gets a friendly text so they never have to wait or call back.",
+    "problem": "Missed calls are missed money — most people just hang up and call the next plumber instead of leaving a voicemail.",
+    "solution": "The moment a call is missed, the customer automatically gets a friendly text so they don't have to wait or call back.",
+    "intendedOutcome": "Fewer leads lost simply because nobody picked up in time, without spamming the same person twice if they call again right after.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/flowfix-missedcall.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/flowfix-missedcall.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/flowfix-missedcall.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-08-3",
+    "title": "Database Reactivation",
+    "business": "FlowFix Plumbing",
+    "need": "Retention",
+    "category": "automation",
+    "concept": true,
+    "line": "Quiet past customers get a gentle check-in sequence — a reminder, then a small offer — never bothering anyone already active.",
+    "description": "Quiet past customers get a gentle check-in sequence — a reminder, then a small offer — never bothering anyone already active.",
+    "problem": "Every plumbing business has hundreds of past customers who they've completely lost touch with — no birthday reminders, no \"hey, is your water heater still doing okay?\" Just silence, and silence doesn't bring in repeat business.",
+    "solution": "The system automatically finds customers who haven't had a job done in a while and gently reaches back out — a friendly check-in, then a helpful reminder, then a small discount offer — but it's smart enough to never bother someone who's still an active customer or already has a job scheduled.",
+    "intendedOutcome": "Old customers get a reason to come back instead of quietly forgetting the business exists, without annoying anyone who's already engaged.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/flowfix-reactivation.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/flowfix-reactivation.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/flowfix-reactivation.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-08-4",
+    "title": "Review & Referral Loop",
+    "business": "FlowFix Plumbing",
+    "need": "Reviews",
+    "category": "automation",
+    "concept": true,
+    "line": "After the job, happy clients are invited to leave a review and refer a friend — unhappy ones get flagged to the owner first.",
+    "description": "After the job, happy clients are invited to leave a review and refer a friend — unhappy ones get flagged to the owner first.",
+    "problem": "Happy customers rarely leave reviews unless asked, and unhappy customers sometimes go straight to a public review before the business even gets a chance to make it right.",
+    "solution": "After a job's done, the system asks how it went. Happy customers get invited to leave a public review and are later asked to refer a friend. Unhappy ones are quietly flagged directly to the owner instead of being pushed toward a public review.",
+    "intendedOutcome": "More 5-star reviews show up publicly, complaints get handled privately before they become a bad review, and happy customers naturally bring in new business through referrals.",
+    "count": 1,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/flowfix-review.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/flowfix-review.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/flowfix-review.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "automation-09-1",
+    "title": "Missed Call Text Back",
+    "business": "Med Spa Reputation Firewall",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "The second a call goes unanswered, the caller gets a friendly text with a link to book anyway — so a miss no longer means a lost client.",
+    "description": "The second a call goes unanswered, the caller gets a friendly text with a link to book anyway — so a miss no longer means a lost client.",
+    "problem": "You're mid-treatment, the phone rings, nobody can grab it. The caller doesn't leave a voicemail — they just hang up and call the next clinic instead. You never even know you lost them.",
+    "solution": "The second a call goes unanswered, that person automatically gets a friendly text back with a link to book anyway — so they don't have to wait for you to call them back, and they don't have to go looking elsewhere.",
+    "intendedOutcome": "A missed call no longer automatically means a lost client. Even if nobody could pick up, the lead still gets a chance to book.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-09-2",
+    "title": "Post-Visit Review Request",
+    "business": "Med Spa Reputation Firewall",
+    "need": "Reviews",
+    "category": "automation",
+    "concept": true,
+    "line": "A little while after each appointment, every client gets a quick text asking them to rate their visit from 1 to 5.",
+    "description": "A little while after each appointment, every client gets a quick text asking them to rate their visit from 1 to 5.",
+    "problem": "After a visit, you have no easy way to check in and find out how it actually went — you're just hoping it went well and moving on to the next client.",
+    "solution": "A little while after their appointment, every client gets a quick, simple text asking them to rate their visit from 1 to 5.",
+    "intendedOutcome": "You now get a read on how every visit actually went, without having to ask in person or chase anyone down for feedback.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-09-3",
+    "title": "Reputation Gate (the review filter)",
+    "business": "Med Spa Reputation Firewall",
+    "need": "Reviews",
+    "category": "automation",
+    "concept": true,
+    "line": "Survey results decide who sees the public review link — happy clients (4–5) get guided to Google, unhappy ones (1–3) never see it and get routed privately.",
+    "description": "Survey results decide who sees the public review link — happy clients (4–5) get guided to Google, unhappy ones (1–3) never see it and get routed privately.",
+    "problem": "Normally, every client gets the same \"please leave us a review!\" message — good visit or bad. That means an unhappy client could end up posting their frustration on Google before you even know something went wrong.",
+    "solution": "Based on how they rated their visit, happy clients (4-5 stars) get guided straight to leave a public Google review — but clients who weren't happy (1-3 stars) never see that review link at all. Instead, their feedback gets routed privately.",
+    "intendedOutcome": "Only your happiest clients are the ones being guided to post publicly, and unhappy experiences get caught quietly instead of ending up as a bad review online.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-09-4",
+    "title": "Owner Alert",
+    "business": "Med Spa Reputation Firewall",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "The moment an unhappy rating comes in, the owner gets an instant text with the client's name and score — so they can personally reach out and fix it.",
+    "description": "The moment an unhappy rating comes in, the owner gets an instant text with the client's name and score — so they can personally reach out and fix it.",
+    "problem": "Even if a client isn't happy, you might not find out until it's already too late — either they've left, or worse, they've already posted about it.",
+    "solution": "The moment an unhappy rating comes through, you (or your manager) get an instant text alert with the client's name and what they rated — so you can personally reach out and make it right.",
+    "intendedOutcome": "You get the chance to fix a bad experience directly with the client, before it ever has the chance to become a public complaint.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-09-5",
+    "title": "Review Follow-Up Nudge",
+    "business": "Med Spa Reputation Firewall",
+    "need": "Reviews",
+    "category": "automation",
+    "concept": true,
+    "line": "If a happy client got the review link but hasn't posted after a couple of days, they get one gentle reminder — never more.",
+    "description": "If a happy client got the review link but hasn't posted after a couple of days, they get one gentle reminder — never more.",
+    "problem": "Some happy clients mean to leave a review but simply forget — and without a reminder, that positive feedback never makes it online.",
+    "solution": "If a happy client got the review link but hasn't followed through after a couple of days, they get one gentle reminder text. Just one — never more, so it never feels pushy.",
+    "intendedOutcome": "More of your genuinely happy clients actually follow through and leave the review, without ever feeling nagged.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-10-1",
+    "title": "Event Booking — Routing + Conflict Check",
+    "business": "Studio Lumina",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Bookings route by event type and are checked against confirmed bookings in Sheets for date conflicts.",
+    "description": "Bookings route by event type and are checked against confirmed bookings in Sheets for date conflicts.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-10-2",
+    "title": "Stripe Deposit Date-Lock",
+    "business": "Studio Lumina",
+    "need": "Payments",
+    "category": "automation",
+    "concept": true,
+    "line": "The date is held only once the Stripe deposit clears — locks the slot against double-booking.",
+    "description": "The date is held only once the Stripe deposit clears — locks the slot against double-booking.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-10-3",
+    "title": "Confirmation + Reminders",
+    "business": "Studio Lumina",
+    "need": "Booking",
+    "category": "automation",
+    "concept": true,
+    "line": "Confirmed bookings get confirmation plus automatic reminders ahead of the shoot.",
+    "description": "Confirmed bookings get confirmation plus automatic reminders ahead of the shoot.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-12-1",
+    "title": "Auto Content Repurposing",
+    "business": "AI Content Repurposing",
+    "need": "Operations",
+    "category": "automation",
+    "concept": true,
+    "line": "New media in Drive is transcribed, AI-turned into a blog, then routed per channel and published to FB Pages + LinkedIn — no manual reformatting.",
+    "description": "New media in Drive is transcribed, AI-turned into a blog, then routed per channel and published to FB Pages + LinkedIn — no manual reformatting.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-13-1",
+    "title": "Leads Enrichment Pipeline",
+    "business": "Leads Enrichment Automation",
+    "need": "Lead response",
+    "category": "automation",
+    "concept": true,
+    "line": "Webhook leads filtered by company size, logged to Sheets, pinged to Slack, and given an AI-drafted outreach line.",
+    "description": "Webhook leads filtered by company size, logged to Sheets, pinged to Slack, and given an AI-drafted outreach line.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-14-1",
+    "title": "Xero → Asana Transaction Sync",
+    "business": "Xero → Asana Transaction Sync",
+    "need": "Operations",
+    "category": "automation",
+    "concept": true,
+    "line": "Xero transactions exported, iterated and routed, attached as CSV to Asana, with a Sheets audit trail.",
+    "description": "Xero transactions exported, iterated and routed, attached as CSV to Asana, with a Sheets audit trail.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "automation-16-1",
+    "title": "Auto-File Gmail Attachments to Drive",
+    "business": "Auto Sort Gmail Attachments on Drive",
+    "need": "Operations",
+    "category": "automation",
+    "concept": true,
+    "line": "Watches Gmail, classifies attachments with Gemini + OpenAI, files them into Drive folders, logs to Sheets and replies to Gmail.",
+    "description": "Watches Gmail, classifies attachments with Gemini + OpenAI, files them into Drive folders, logs to Sheets and replies to Gmail.",
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  }
+]

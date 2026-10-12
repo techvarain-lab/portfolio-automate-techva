@@ -28,13 +28,15 @@ export function useRailGeometry(panelRef: RefObject<HTMLDivElement | null>) {
     const head = panel?.querySelector<HTMLElement>('.sb-head')
     const mark = panel?.querySelector<HTMLElement>('.sb-logo__mark')
     const pic = panel?.querySelector<HTMLElement>('.sb-pic')
-    if (!panel || !head || !mark || !pic) return
+    if (!panel || !head || !pic) return
 
     const measure = () => {
-      const markBox = offsetWithin(mark, panel)
       const picBox = offsetWithin(pic, panel)
       const headBox = offsetWithin(head, panel)
-      panel.style.setProperty('--mark-x', `${RAIL_CENTER - (markBox.left + mark.offsetWidth / 2)}px`)
+      if (mark) {
+        const markBox = offsetWithin(mark, panel)
+        panel.style.setProperty('--mark-x', `${RAIL_CENTER - (markBox.left + mark.offsetWidth / 2)}px`)
+      }
       panel.style.setProperty('--pic-x', `${RAIL_CENTER - (picBox.left + pic.offsetWidth / 2)}px`)
       panel.style.setProperty('--pic-scale', String(RAIL_PIC / pic.offsetWidth))
       const railHeadBottom = picBox.top + RAIL_PIC + RAIL_PIC_GAP

@@ -1,8 +1,6 @@
 import { useRef, type PointerEvent, type ReactNode } from 'react'
-import { Link } from 'react-router'
 import { SealCheck } from '@phosphor-icons/react'
 import { site } from '@/content/site'
-import { BrandMark } from '@/components/brand/BrandMark'
 import { SocialLinks } from '@/components/brand/SocialLinks'
 import { useLocalTime } from '@/hooks/use-local-time'
 import { SidebarNav } from './SidebarNav'
@@ -39,13 +37,6 @@ export function SidebarPanel({ variant, collapsed = false, onNavigate, onHoverCh
         <p className="sb-clock sb-fade">
           <time dateTime={time.iso}>{time.label}</time> {site.timePlace}
         </p>
-        <Link to="/" className="sb-logo" onClick={onNavigate} aria-label={`${site.brand} home`}>
-          <BrandMark className="sb-logo__mark" />
-          <span className="sb-logo__name sb-fade" aria-hidden>
-            {site.brandParts[0]}
-            <span className="sb-logo__accent">{site.brandParts[1]}</span>
-          </span>
-        </Link>
 
         {/* Not a link: the profile block used to open /about, which the rebuild deletes. It stays a
             plain block so it does not look clickable and dead-end on the not-found route. */}

@@ -36,4 +36,4 @@ export const router = createBrowserRouter([
     element: <AppShell />,
     children: [...pages.map(routeFor), { path: '*', element: <RouteStage title={notFoundTitle} label="Page not found" /> }],
   },
-])
+], { basename: import.meta.env.BASE_URL })

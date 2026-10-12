@@ -4,6 +4,20 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 const src = fileURLToPath(new URL('./src', import.meta.url))
+const base = process.env.PAGES_BASE || '/'
+
+/** Content includes public asset URLs in TS and JSON; keep them under the deployment base. */
+function publicAssetBase(): Plugin {
+  return {
+    name: 'portfolio-public-asset-base',
+    enforce: 'pre',
+    transform(code, id) {
+      if (base === '/' || !id.replaceAll('\\', '/').includes('/src/') || !/\.(tsx?|json)$/.test(id)) return
+      const transformed = code.replace(/(["'])\/(images|media|fonts)\//g, `$1${base}$2/`)
+      if (transformed !== code) return { code: transformed, map: null }
+    },
+  }
+}
 
 /**
  * Inlines the entry stylesheet into index.html, so first paint waits on one request less (Lighthouse
@@ -17,7 +31,7 @@ function inlineEntryCss(): Plugin {
     transformIndexHtml: {
       order: 'post',
       handler(html, ctx) {
-        return html.replace(/<link rel="stylesheet"[^>]*href="\/(assets\/[^"]+\.css)"[^>]*>/g, (tag, file: string) => {
+        return html.replace(/<link rel="stylesheet"[^>]*href="[^"]*\/(assets\/[^"]+\.css)"[^>]*>/g, (tag, file: string) => {
           const asset = ctx.bundle?.[file]
           return asset?.type === 'asset' ? `<style>${String(asset.source)}</style>` : tag
         })
@@ -27,7 +41,8 @@ function inlineEntryCss(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), inlineEntryCss()],
+  base,
+  plugins: [publicAssetBase(), react(), tailwindcss(), inlineEntryCss()],
   resolve: {
     alias: { '@': src },
   },

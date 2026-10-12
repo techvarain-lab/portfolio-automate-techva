@@ -1,0 +1,23 @@
+.conveyor-background { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; mask-image: linear-gradient(90deg, #000 0%, #000 18%, rgb(0 0 0 / .12) 40%, rgb(0 0 0 / .12) 62%, #000 84%), linear-gradient(0deg, #000, rgb(0 0 0 / .65)); mask-composite: intersect; }
+.conveyor-background__yard { position: absolute; width: 1800px; height: 1600px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-32deg) skewX(12deg); display: flex; justify-content: space-around; gap: 90px; }
+.conveyor-lane { position: relative; width: 180px; flex-shrink: 0; height: 100%; border-inline: 1px solid var(--line-strong); background: color-mix(in srgb, var(--ink) 2%, transparent); }
+.conveyor-lane::before, .conveyor-lane::after { content: ''; position: absolute; inset-block: 0; width: 5px; border-inline: 1px solid var(--line); }
+.conveyor-lane::before { left: 9px; }
+.conveyor-lane::after { right: 9px; }
+.conveyor-lane__rollers { position: absolute; inset: 0 20px; background: repeating-linear-gradient(0deg, transparent 0 39px, var(--line-strong) 40px 41px, transparent 42px 48px); opacity: .75; }
+.conveyor-lane__cargo { display: flex; flex-direction: column; align-items: center; gap: 160px; position: absolute; inset: -480px 0 auto; animation: conveyor-transport 36s linear infinite; }
+.conveyor-lane:nth-child(even) .conveyor-lane__cargo { animation-direction: reverse; animation-duration: 44s; }
+.conveyor-lane:nth-child(3) .conveyor-lane__cargo { animation-delay: -12s; }
+.conveyor-lane:nth-child(5) .conveyor-lane__cargo { animation-delay: -22s; }
+.conveyor-packet { display: flex; flex-direction: column; justify-content: center; gap: 7px; position: relative; width: 104px; height: 80px; padding: 18px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface-2); box-shadow: 0 8px 16px -8px var(--line-strong); }
+.conveyor-packet::before { content: ''; position: absolute; inset: 8px 8px auto auto; width: 5px; height: 5px; border-radius: 50%; background: var(--ink-3); opacity: .5; }
+.conveyor-packet i { display: block; height: 2px; background: var(--ink-3); opacity: .2; width: 70%; }
+.conveyor-packet i:nth-child(2) { width: 45%; }
+.conveyor-packet i:nth-child(3) { width: 60%; }
+.conveyor-packet:nth-child(3n + 1) { border-color: color-mix(in srgb, var(--equipment) 30%, var(--line)); background: color-mix(in srgb, var(--equipment) 10%, var(--surface)); }
+.conveyor-packet:nth-child(3n + 1)::before { background: var(--equipment); opacity: 1; }
+.conveyor-background { opacity: .35; }
+.app-main { position: relative; z-index: 1; }
+@keyframes conveyor-transport { to { transform: translateY(480px); } }
+@media (prefers-reduced-motion: reduce) { .conveyor-lane__cargo { animation: none; } }
+@media (max-width: 767px) { .conveyor-background { opacity: .2; mask-image: linear-gradient(90deg, #000, transparent 22%, transparent 78%, #000); } }

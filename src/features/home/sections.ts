@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react'
 import { HeroSection } from './hero/HeroSection'
 import { WorkSection } from './work/WorkSection'
+import { ServicesSection, CapabilitiesSection, ProcessSection, AboutSection, ContactSection } from './portfolio/PortfolioSections'
 
 /**
  * The Home page, in scroll order. Add a section = build it in its own folder (component + css +
@@ -12,4 +13,9 @@ export type HomeSection = { id: string; Component: ComponentType }
 export const homeSectionList: HomeSection[] = [
   { id: 'hero', Component: HeroSection },
   { id: 'work', Component: WorkSection },
+  { id: 'services', Component: ServicesSection },
+  { id: 'ghl', Component: CapabilitiesSection },
+  { id: 'process', Component: ProcessSection },
+  { id: 'about', Component: AboutSection },
+  { id: 'contact', Component: ContactSection },
 ]

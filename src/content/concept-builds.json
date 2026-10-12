@@ -1,0 +1,943 @@
+[
+  {
+    "id": "concept-01",
+    "title": "Rubio Roofing and Trusses — Industrial Construction Funnel",
+    "line": "A high-converting funnel that turns Facebook inquiries into roofing estimates — real photos of real builds, a clear path to a free estimate, and every lead captured and organized automatically.",
+    "description": "A high-converting funnel that turns Facebook inquiries into roofing estimates — real photos of real builds, a clear path to a free estimate, and every lead captured and organized automatically.",
+    "category": "funnel",
+    "concept": true,
+    "count": 6,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/rubio/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/rubio/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/rubio/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/rubio/sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/rubio/sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/rubio/sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/rubio/sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/rubio/sec06.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-rubio_roofing/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-02",
+    "title": "Mountain Hiking — Adventure Funnel",
+    "line": "A simple booking funnel that takes trail-goers from interested to booked — itinerary, real photos, clear pricing, and automatic lead capture.",
+    "description": "A simple booking funnel that takes trail-goers from interested to booked — itinerary, real photos, clear pricing, and automatic lead capture.",
+    "category": "funnel",
+    "concept": true,
+    "count": 1,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/mountain-hiking/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/mountain-hiking/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/mountain-hiking/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-mountainhiking/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-03",
+    "title": "ClearView Pressure Washing — Lead Generation Funnel",
+    "line": "A page built to do one thing: turn visitors into quote requests. Before-and-after proof, an easy way to ask for pricing, and every inquiry captured automatically so nothing slips through.",
+    "description": "A page built to do one thing: turn visitors into quote requests. Before-and-after proof, an easy way to ask for pricing, and every inquiry captured automatically so nothing slips through.",
+    "category": "funnel",
+    "concept": true,
+    "count": 5,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/clearview/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/clearview/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/clearview/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/clearview/sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/clearview/sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/clearview/sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/clearview/sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-clearview/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-04",
+    "title": "Haven Animal Clinic — AI-Qualified Booking",
+    "line": "One system that watches a busy vet clinic's messages 24/7 — tells a real emergency from a routine question, routes urgent cases to the right vet, and books appointments automatically.",
+    "description": "One system that watches a busy vet clinic's messages 24/7 — tells a real emergency from a routine question, routes urgent cases to the right vet, and books appointments automatically.",
+    "category": "automation",
+    "concept": true,
+    "count": 2,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/haven-emergency.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/haven-emergency.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/haven-emergency.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/haven-cai-config.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-haven_animal_clinic/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-22",
+    "title": "TorqueWorks Auto Care — Dormant Lead Win-Back",
+    "line": "A friendly win-back system that gently re-engages auto-repair customers who haven't come back in a while — so past customers don't just quietly go silent.",
+    "description": "A friendly win-back system that gently re-engages auto-repair customers who haven't come back in a while — so past customers don't just quietly go silent.",
+    "category": "automation",
+    "concept": true,
+    "count": 3,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/torqueworks-1.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/torqueworks-1.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/torqueworks-1.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/torqueworks-2.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/torqueworks-3.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "concept-05",
+    "title": "FitCoach Ecosystem — Stripe Payment to GHL",
+    "line": "When someone pays for the 12-week program, everything updates automatically — no manual list-keeping, no double enrollments, and the team is alerted the moment a new client signs up.",
+    "description": "When someone pays for the 12-week program, everything updates automatically — no manual list-keeping, no double enrollments, and the team is alerted the moment a new client signs up.",
+    "category": "automation",
+    "concept": true,
+    "count": 8,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/fitcoach-auto01.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/fitcoach-auto01.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/fitcoach-auto01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-auto05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-onboarding.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-abandoned.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/fitcoach-make-paymentfailed.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "concept-06",
+    "title": "Legal Consultation Intake & Nurture System — Immigration & Family Law",
+    "line": "Keeps potential clients engaged after they inquire — well-timed follow-ups that never nag, and booked consultations that get rebooked instead of lost to no-shows.",
+    "description": "Keeps potential clients engaged after they inquire — well-timed follow-ups that never nag, and booked consultations that get rebooked instead of lost to no-shows.",
+    "category": "funnel",
+    "concept": true,
+    "count": 5,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/legal/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/legal/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/legal/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/legal/sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/legal/sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/legal/sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/legal/sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-legal_intake/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-25",
+    "title": "Legal Practice — Consultation Nurture & Recovery Automations",
+    "line": "A follow-up system for a solo immigration and family law practice — every hesitant lead gets nurtured, everyone who books or no-shows gets the right message next, and no potential client quietly falls through the cracks.",
+    "description": "A follow-up system for a solo immigration and family law practice — every hesitant lead gets nurtured, everyone who books or no-shows gets the right message next, and no potential client quietly falls through the cracks.",
+    "category": "automation",
+    "concept": true,
+    "count": 9,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/legal-capture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/legal-capture.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/legal-capture.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-nurture.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-reengage.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-confirm.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-reminder.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-complete.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-noshow.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-cancel.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/legal-coldwinback.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "concept-07",
+    "title": "Real Estate Lead Automation — Buyer/Seller Routing",
+    "line": "Sorts every inquiry — buyer or seller — the moment it arrives, so the right person follows up right away and appointments actually get remembered.",
+    "description": "Sorts every inquiry — buyer or seller — the moment it arrives, so the right person follows up right away and appointments actually get remembered.",
+    "category": "automation",
+    "concept": true,
+    "count": 4,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/realestate-router.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/realestate-router.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/realestate-router.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/realestate-hotalert.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/realestate-stalled.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/realestate-appointment.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "concept-08",
+    "title": "FlowFix Plumbing — Emergency Triage & Reactivation",
+    "line": "For a plumbing business where every call might be urgent — spots true emergencies, texts back missed calls within minutes, and brings past customers back for repeat work.",
+    "description": "For a plumbing business where every call might be urgent — spots true emergencies, texts back missed calls within minutes, and brings past customers back for repeat work.",
+    "category": "automation",
+    "concept": true,
+    "count": 4,
+    "unit": "workflow views",
+    "tile": {
+      "src": "/images/concepts/work/flowfix-intake.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/work/flowfix-intake.png",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/work/flowfix-intake.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/flowfix-missedcall.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/flowfix-reactivation.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/work/flowfix-review.png",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": []
+  },
+  {
+    "id": "concept-09",
+    "title": "Med Spa Reputation Firewall",
+    "line": "Protects a med spa's reputation while still fixing unhappy experiences — happy clients are guided to leave a review, unhappy ones go quietly to the owner to make it right.",
+    "description": "Protects a med spa's reputation while still fixing unhappy experiences — happy clients are guided to leave a review, unhappy ones go quietly to the owner to make it right.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-10",
+    "title": "Studio Lumina — Booking & Conflict-Check Automation",
+    "line": "A booking system for a photography studio that checks for double-booking, holds the slot once a deposit clears, and sends friendly reminders so nobody misses their shoot.",
+    "description": "A booking system for a photography studio that checks for double-booking, holds the slot once a deposit clears, and sends friendly reminders so nobody misses their shoot.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-12",
+    "title": "AI Content Repurposing",
+    "line": "Takes one piece of content and turns it into blog posts and social updates automatically — so the business shares more without doing more manual work.",
+    "description": "Takes one piece of content and turns it into blog posts and social updates automatically — so the business shares more without doing more manual work.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-13",
+    "title": "Leads Enrichment Automation",
+    "line": "Sorts incoming leads as they arrive, keeps a clean record, and drafts a personalized first message — so the team only spends time on leads worth it.",
+    "description": "Sorts incoming leads as they arrive, keeps a clean record, and drafts a personalized first message — so the team only spends time on leads worth it.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-14",
+    "title": "Xero → Asana Transaction Sync",
+    "line": "Keeps finance and project management in step automatically — transactions flow from Xero to Asana with no copy-pasting, plus a clean audit trail.",
+    "description": "Keeps finance and project management in step automatically — transactions flow from Xero to Asana with no copy-pasting, plus a clean audit trail.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-16",
+    "title": "Auto Sort Gmail Attachments on Drive",
+    "line": "Sorts email attachments into the right folders on its own — the inbox stays clean and nothing gets lost in Downloads.",
+    "description": "Sorts email attachments into the right folders on its own — the inbox stays clean and nothing gets lost in Downloads.",
+    "category": "automation",
+    "concept": true,
+    "count": 0,
+    "unit": "workflow views",
+    "gallery": [],
+    "items": []
+  },
+  {
+    "id": "concept-23",
+    "title": "FitCoach - 12-Week Program Checkout Funnel",
+    "line": "A single-page checkout for a 12-week fitness program — clear offer, a four-pillar program, proof, $297 pricing, and a one-tap handoff to Stripe.",
+    "description": "A single-page checkout for a 12-week fitness program — clear offer, a four-pillar program, proof, $297 pricing, and a one-tap handoff to Stripe.",
+    "category": "funnel",
+    "concept": true,
+    "count": 6,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/fitcoach/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/fitcoach/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/fitcoach/sec06.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-fitcoach/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-24",
+    "title": "Haven Animal Clinic — New Patient Checkup Funnel",
+    "line": "A friendly new-patient funnel that makes a ₱1,999 checkup easy to book — real trust signals, same-day or next-day slots, and a chat assistant ready to help.",
+    "description": "A friendly new-patient funnel that makes a ₱1,999 checkup easy to book — real trust signals, same-day or next-day slots, and a chat assistant ready to help.",
+    "category": "funnel",
+    "concept": true,
+    "count": 1,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/haven/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/haven/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/haven/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-haven_animal_clinic/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-26",
+    "title": "Bright Minds Learning Center — Saturday Assessment Booking Funnel",
+    "line": "A booking funnel that turns Facebook inquiries into booked free Saturday assessments — live slot availability, instant SMS confirmation, and reminders, so no parent goes quiet between the ad and the visit.",
+    "description": "A booking funnel that turns Facebook inquiries into booked free Saturday assessments — live slot availability, instant SMS confirmation, and reminders, so no parent goes quiet between the ad and the visit.",
+    "category": "funnel",
+    "concept": true,
+    "count": 8,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/bright-minds/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/bright-minds/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec06.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec07.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/bright-minds/sec08.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-brightminds/",
+      "external": true
+    }
+  },
+  {
+    "id": "concept-27",
+    "title": "Executive Coaching — Strategy Call Application Funnel · 4 Directions",
+    "line": "One high-ticket strategy-call funnel built four ways — three brand treatments of a firm, plus one personal-brand recast with its own copy — each pairing a for-you / not-for-you criteria matrix with an 8-field qualifying application.",
+    "description": "One high-ticket strategy-call funnel built four ways — three brand treatments of a firm, plus one personal-brand recast with its own copy — each pairing a for-you / not-for-you criteria matrix with an 8-field qualifying application.",
+    "category": "funnel",
+    "concept": true,
+    "count": 17,
+    "unit": "page views",
+    "tile": {
+      "src": "/images/concepts/funnel/northstar/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "lead": {
+      "src": "/images/concepts/funnel/northstar/thumb.webp",
+      "alt": "Concept build screenshot",
+      "width": 1600,
+      "height": 900
+    },
+    "gallery": [
+      {
+        "src": "/images/concepts/funnel/northstar/advisory-sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/advisory-sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/advisory-sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/advisory-sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/editorial-sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/editorial-sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/editorial-sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/editorial-sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/editorial-sec05.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/obsidian-sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/obsidian-sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/obsidian-sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/obsidian-sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/vermilion-sec01.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/vermilion-sec02.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/vermilion-sec03.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/images/concepts/funnel/northstar/vermilion-sec04.webp",
+        "alt": "Concept build screenshot",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "items": [],
+    "link": {
+      "label": "Open concept demo",
+      "href": "https://techvarain-lab.github.io/funnelbuild-northstar-v2/",
+      "external": true
+    }
+  }
+]
