@@ -31,7 +31,7 @@ jobs:
       - run: npm run lint
       - run: npm run build
         env:
-          PAGES_BASE: /portfolio-automate-techva/
+          PAGES_BASE: /
       - name: Preserve deep links and license notice
         run: |
           cp dist/index.html dist/404.html

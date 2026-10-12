@@ -1,16 +1,17 @@
 # GitHub Pages
 
-Portfolio URL: https://techvarain-lab.github.io/portfolio-automate-techva/
+Portfolio URL: https://rainautomates.cc.cd/
 
 In the repository's Settings → Pages, choose **GitHub Actions** as the source.
 Pushing to `main` runs `.github/workflows/pages.yml`, builds the site, and deploys it.
-No custom domain is configured; the existing portfolio domain is unchanged.
+The Pages custom domain is `rainautomates.cc.cd`. Its DNS uses GitHub Pages' four
+A records. The previous `techvarain.cc.cd` domain is unchanged.
 
 Local development: `npm ci`, then `npm run dev`.
 Production check in PowerShell:
 
 ```powershell
-$env:PAGES_BASE = '/portfolio-automate-techva/'
+$env:PAGES_BASE = '/'
 npm run build
 Remove-Item Env:PAGES_BASE
 ```
