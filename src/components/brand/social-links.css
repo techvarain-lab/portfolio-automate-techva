@@ -30,6 +30,9 @@
 .social-key[data-icon='facebook'] {
   --brand: var(--brand-facebook);
 }
+.social-key[data-icon='youtube'] {
+  --brand: #ff3333;
+}
 .social-key[data-icon='linkedin'] {
   --brand: var(--brand-linkedin);
 }

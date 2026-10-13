@@ -33,6 +33,8 @@ export const site = {
 /** Up to five fit the sidebar header. `icon` picks the glyph in components/brand/SocialIcon.tsx. */
 export const socials: SocialLink[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rainier-dimasacat-a740a6176', external: true, icon: 'linkedin' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61595141199654', external: true, icon: 'facebook' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@rainautomates', external: true, icon: 'youtube' },
 ]
 
 export function mailtoHref(): string {

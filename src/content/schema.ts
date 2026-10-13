@@ -21,7 +21,7 @@ export type LinkRef = {
 
 /** A profile link shown as a logo button. `icon` picks the glyph in SocialIcon. */
 export type SocialLink = LinkRef & {
-  icon: 'facebook' | 'linkedin' | 'discord' | 'github' | 'x'
+  icon: 'facebook' | 'linkedin' | 'discord' | 'github' | 'x' | 'youtube'
   /** Someone else's page (a partner, a community), not your own profile: kept out of the Person JSON-LD sameAs. */
   partner?: true
 }
