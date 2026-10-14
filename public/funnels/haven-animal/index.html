@@ -1,0 +1,959 @@
+<!-- Paste-ready for GHL: document frame removed, body styles live on .haven-page -->
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Newsreader (Editorial Serif) & Plus Jakarta Sans (Clean UI) -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            haven: {
+              cream: '#FAF8F5',
+              card: '#FFFFFF',
+              surface: '#F4EFEB',
+              border: '#E8E3DA',
+              spruce: '#163832',
+              forest: '#0E2722',
+              sage: '#8BA89B',
+              sageligh: '#EBF2EE',
+              amber: '#D97736',
+              amberlight: '#FBF2EB',
+              muted: '#5A6863',
+              dark: '#1C2623'
+            }
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(22, 56, 50, 0.05), 0 2px 6px -1px rgba(22, 56, 50, 0.03)',
+            'elevated': '0 20px 40px -15px rgba(22, 56, 50, 0.09), 0 0 0 1px rgba(232, 227, 218, 0.7)',
+            'card': '0 10px 30px -10px rgba(22, 56, 50, 0.06), 0 0 0 1px rgba(232, 227, 218, 0.6)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    .font-italic-serif {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+    }
+  </style>
+<style data-purpose="interactive-styles">
+    .tab-active {
+      background-color: #163832 !important;
+      color: #ffffff !important;
+      border-color: #163832 !important;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    html, body {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+    .haven-page {
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 0;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      box-sizing: border-box;
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+    .haven-page img {
+      max-width: 100%;
+      height: auto;
+    }
+    .haven-page svg {
+      max-width: 100%;
+    }
+  </style>
+<div class="haven-page bg-haven-cream text-haven-dark font-sans antialiased selection:bg-haven-sage/30 selection:text-haven-forest min-h-screen flex flex-col scroll-smooth">
+<!-- BEGIN: TopAnnouncementBar -->
+<div class="bg-haven-spruce text-amber-100 text-xs sm:text-sm py-2 px-4 border-b border-haven-forest/40" data-purpose="announcement-banner">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 text-center font-medium tracking-wide">
+<span class="inline-flex items-center gap-1.5 font-semibold text-white">
+<span class="w-2 h-2 rounded-full bg-haven-amber animate-pulse"></span>
+        New Patient Special
+      </span>
+<span class="text-white/40 hidden sm:inline">•</span>
+<span class="text-white/90">₱1,999 Overall Checkup — complete nose-to-tail exam + written care plan</span>
+<span class="text-white/40 hidden sm:inline">•</span>
+<a class="text-haven-amber hover:text-white font-semibold underline underline-offset-4 transition-colors" href="#booking-calendar">
+        Claim yours →
+      </a>
+</div>
+</div>
+<!-- END: TopAnnouncementBar -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-haven-border/80 transition-all duration-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 min-h-[5rem] flex items-center justify-between">
+<!-- Brand Logo -->
+<a aria-label="Haven Animal Clinic Home" class="flex items-center gap-3 transition-opacity hover:opacity-90 py-1" href="#"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-full bg-[#163832] flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FDFBF7"></path><ellipse cx="9" cy="8.5" rx="1.2" ry="1.5" fill="#E28448"></ellipse><ellipse cx="15" cy="8.5" rx="1.2" ry="1.5" fill="#E28448"></ellipse><ellipse cx="6.8" cy="11.5" rx="1" ry="1.3" fill="#E28448"></ellipse><ellipse cx="17.2" cy="11.5" rx="1" ry="1.3" fill="#E28448"></ellipse></svg></div><div class="flex flex-col text-left"><div class="flex items-baseline gap-1.5 leading-none"><span class="font-serif text-2xl font-bold text-[#163832] tracking-tight">Haven</span><span class="font-sans text-lg font-medium text-stone-600 tracking-normal">Animal Clinic</span></div><span class="font-sans text-[9px] font-bold text-[#E28448] tracking-[0.14em] uppercase mt-1">FEAR-FREE • FAMILY-FIRST CARE</span></div></div></a>
+<!-- Desktop Navigation Navigation -->
+<nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-8 font-medium text-haven-muted text-sm">
+<a class="hover:text-haven-spruce transition-colors" href="#services">Services</a>
+<a class="hover:text-haven-spruce transition-colors" href="#how-it-works">How it works</a>
+<a class="hover:text-haven-spruce transition-colors" href="#reviews">Reviews</a>
+<a class="hover:text-haven-spruce transition-colors" href="#faq">FAQ</a>
+</nav>
+<!-- Contact Phone & Book CTA -->
+<div class="flex items-center gap-4 sm:gap-6">
+<a class="hidden lg:flex items-center gap-2 text-xs font-semibold tracking-wide text-haven-spruce bg-haven-sageligh/60 hover:bg-haven-sageligh px-3.5 py-2 rounded-full transition-colors" href="tel:0280000000">
+<svg class="w-3.5 h-3.5 text-haven-spruce" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2a9 9 0 0 0-9-9v2a7 7 0 0 1 7 7z"></path>
+</svg>
+<span class="">(02) 8XXX-XXXX</span>
+</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-haven-spruce hover:bg-haven-forest shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-haven-spruce focus:ring-offset-2" href="#booking-calendar">
+          Book ₱1999 Exam
+        </a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main class="flex-grow">
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden" data-purpose="hero-section">
+<!-- Background Ambient Glow -->
+<div class="absolute top-0 right-1/4 w-96 h-96 bg-haven-sageligh/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-10 left-10 w-80 h-80 bg-haven-amberlight/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Hero Left Column: Copy & Offer -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-6">
+<!-- Category Tag -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-haven-border shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-xs uppercase tracking-wider font-bold text-haven-muted">HAVEN ANIMAL CLINIC • FEAR-FREE, FAMILY-FIRST CARE</span>
+</div>
+<!-- Headline -->
+<h1 class="text-4xl sm:text-5xl lg:text-6xl tracking-tight text-haven-forest font-serif leading-[1.15]">
+              Your pet's <span class="font-italic-serif text-haven-amber font-medium">haven</span> for a healthier, happier life.
+            </h1>
+<!-- Subtitle -->
+<p class="text-base sm:text-lg text-haven-muted font-normal leading-relaxed max-w-xl">
+              First visit? Get a complete <strong class="text-haven-forest font-semibold">Overall Checkup — ₱1999</strong> for new patients. No rush, no surprises. Just warm, thorough care and a clear plan you can trust.
+            </p>
+<!-- Anchor Offer Card -->
+<div class="w-full max-w-xl bg-white rounded-2xl p-5 border border-haven-border shadow-soft relative group hover:border-haven-sage/60 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-haven-border/60 pb-4">
+<div class="flex items-baseline gap-2.5">
+<span class="text-3xl font-extrabold text-haven-spruce tracking-tight">₱1,999</span>
+<span class="text-sm font-medium text-haven-muted line-through">₱3,500</span>
+<span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-haven-amberlight text-haven-amber border border-haven-amber/30">
+                    New Patient
+                  </span>
+</div>
+<span class="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                  Saves ₱1,501 today
+                </span>
+</div>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed">
+<span class="font-semibold text-haven-forest">Overall Checkup includes:</span> Physical nose-to-tail exam • Vitals &amp; weight • Dental &amp; skin check • Nutrition &amp; vaccine plan • Dedicated 20-min unhurried vet time
+              </p>
+</div>
+<!-- Primary CTAs -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto pt-1">
+<a class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white bg-haven-spruce hover:bg-haven-forest shadow-md hover:shadow-lg transition-all duration-200 group" href="#booking-calendar">
+<span class="">Claim Your ₱1999 Exam — Book in 60s</span>
+<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-haven-spruce bg-white hover:bg-haven-sageligh/40 border border-haven-border shadow-sm transition-all duration-200" href="#faq">
+<svg class="w-4 h-4 mr-2 text-haven-amber" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-5 0h-2v2h2V9z" fill-rule="evenodd"></path>
+</svg>
+                Chat with our care team
+              </a>
+</div>
+<!-- Trust Meta Bullets -->
+<div class="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-haven-muted">
+<div class="flex items-center gap-1.5">
+<div class="flex -space-x-1.5 overflow-hidden">
+<span class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-haven-amber/80 text-[9px] font-bold text-white flex items-center justify-center">M</span>
+<span class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-haven-spruce/80 text-[9px] font-bold text-white flex items-center justify-center">L</span>
+<span class="inline-block h-6 w-6 rounded-full ring-2 ring-white bg-haven-sage text-[9px] font-bold text-white flex items-center justify-center">R</span>
+</div>
+<span class="font-medium text-haven-forest">Loved by 1,200+ Haven families</span>
+</div>
+<span class="text-haven-border hidden sm:inline">•</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-haven-amber" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" fill-rule="evenodd"></path>
+</svg>
+<span class="">60-sec booking</span>
+</div>
+<span class="text-haven-border hidden sm:inline">•</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="">No hidden fees</span>
+</div>
+</div>
+</div>
+<!-- Hero Right Column: Image with floating badges -->
+<div class="lg:col-span-5 relative">
+<div class="relative mx-auto max-w-md lg:max-w-none">
+<!-- Frame border with warm shadow -->
+<div class="relative rounded-3xl overflow-hidden shadow-elevated border-4 border-white aspect-[4/3] sm:aspect-[4/3] lg:aspect-auto">
+<img alt="Compassionate veterinarian comforting a calm golden retriever in a bright clinic" class="w-full h-full object-cover object-center max-h-[460px] lg:max-h-[500px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_gRDjYJNKNZAw59SuIq86DxvNVI0ZyHgnzl4AJDLt9867t0E6sUqVh34wfcqYIC5Dubal94IuGCLBldcspZ54SSJFSyRUy4hTMPS5fGMm8kb3ykHvUN1sC6U7GWCDMS9SgCJIIqf5NpSrtZ_Xho1Cr_8FlipSWYapw9EpnppZ-0EdVwGlNOv4mmJfsI6-mtACr0RVvjlN9V-dcuwINPhPLZDaRwMMk_O43XYZK92mxBQHH30MZPG">
+<div class="absolute inset-0 bg-gradient-to-t from-haven-forest/30 via-transparent to-transparent"></div>
+</div>
+<!-- Top Left Floating Badge: Fear-Free Certified -->
+<div class="absolute -top-4 -left-4 sm:left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-card border border-haven-border flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-haven-amberlight flex items-center justify-center text-haven-amber">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs font-bold text-haven-forest tracking-tight leading-none">Fear-Free Certified</h4>
+<p class="text-[11px] text-haven-muted mt-0.5">Gentle handling, every visit</p>
+</div>
+</div>
+<!-- Bottom Right Floating Badge: Unhurried Exam -->
+<div class="absolute -bottom-5 -right-3 sm:right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-card border border-haven-border flex items-center gap-3 max-w-[240px]">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex-shrink-0 flex items-center justify-center text-emerald-700">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="text-left">
+<span class="text-xs font-bold text-haven-forest block">20-min unhurried exam</span>
+<span class="text-[10px] text-haven-muted block">We listen first. No rush.</span>
+</div>
+</div>
+<!-- Real-time Availability Pill -->
+<div class="absolute bottom-4 left-6 bg-haven-forest/90 backdrop-blur-sm text-white text-[11px] font-medium py-1.5 px-3.5 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="">Next available: <strong>Today &amp; Tomorrow</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: TrustRibbon -->
+<section class="border-y border-haven-border bg-white py-6" data-purpose="credential-ribbon">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-haven-sageligh flex-shrink-0 flex items-center justify-center text-haven-spruce">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs sm:text-sm font-bold text-haven-forest leading-snug">Licensed Vets</p>
+<p class="text-[11px] text-haven-muted">PRC-registered, fear-free trained</p>
+</div>
+</div>
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-haven-amberlight flex-shrink-0 flex items-center justify-center text-haven-amber">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs sm:text-sm font-bold text-haven-forest leading-snug">12+ Years in Haven</p>
+<p class="text-[11px] text-haven-muted">Neighborhood clinic, not a chain</p>
+</div>
+</div>
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-amber-50 flex-shrink-0 flex items-center justify-center text-amber-500">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs sm:text-sm font-bold text-haven-forest leading-snug">4.9 on Google</p>
+<p class="text-[11px] text-haven-muted">150+ verified patient reviews</p>
+</div>
+</div>
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-haven-sageligh flex-shrink-0 flex items-center justify-center text-haven-spruce">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-xs sm:text-sm font-bold text-haven-forest leading-snug">For Dogs &amp; Cats</p>
+<p class="text-[11px] text-haven-muted">All breeds, all life stages</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TrustRibbon -->
+<!-- BEGIN: WhyHavenSection -->
+<section class="py-16 sm:py-24" data-purpose="why-haven-comparison">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">WHY HAVEN</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            Worry shows up <span class="font-italic-serif text-haven-spruce">quietly</span> — we catch it early.
+          </h2>
+<p class="mt-4 text-sm sm:text-base text-haven-muted leading-relaxed">
+            Pets hide discomfort naturally. Our ₱1999 checkup is built to find the small things before they become painful emergencies or massive unexpected bills.
+          </p>
+</div>
+<!-- Comparison Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Alert State Card -->
+<div class="rounded-3xl bg-haven-forest text-white p-8 sm:p-10 shadow-card relative flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+<div>
+<div class="inline-flex items-center px-3 py-1 rounded-md bg-white/10 text-white/90 text-xs font-semibold tracking-wider uppercase mb-5">
+                WHAT WE PREVENT
+              </div>
+<h3 class="text-2xl font-serif font-medium text-white mb-3">
+                Without a thorough check...
+              </h3>
+<p class="text-sm text-white/70 mb-8 leading-relaxed">
+                Subtle signs get missed. A small limp becomes chronic surgery. Plaque turns into painful teeth extraction. Weight creeps up unnoticed.
+              </p>
+<ul class="space-y-4 text-sm text-white/85">
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 flex items-center justify-center font-bold text-xs mt-0.5">×</span>
+<span class=""><strong>Dental disease in 80% of pets</strong> by age 3 (hidden pain)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 flex items-center justify-center font-bold text-xs mt-0.5">×</span>
+<span class=""><strong>Vaccine gaps</strong> that leave pets open to preventable illness</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 flex items-center justify-center font-bold text-xs mt-0.5">×</span>
+<span class=""><strong>Nutrition guesswork</strong> triggering chronic tummy and ear flares</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/15 text-xs text-white/60 italic">
+              Routine exams prevent 70% of sudden emergency room admissions.
+            </div>
+</div>
+<!-- Reassuring Solution Card -->
+<div class="rounded-3xl bg-white text-haven-forest p-8 sm:p-10 shadow-soft border-2 border-haven-sage/30 flex flex-col justify-between relative">
+<div>
+<div class="inline-flex items-center px-3 py-1 rounded-md bg-haven-sageligh text-haven-spruce text-xs font-semibold tracking-wider uppercase mb-5">
+                THE HAVEN WAY
+              </div>
+<h3 class="text-2xl font-serif font-medium text-haven-forest mb-3">
+                With Haven's Overall Checkup
+              </h3>
+<p class="text-sm text-haven-muted mb-8 leading-relaxed">
+                A calm, nose-to-tail exam with a clear, take-home written plan. You leave knowing exactly what's ok, what to watch, and what's next.
+              </p>
+<ul class="space-y-4 text-sm text-haven-forest">
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+<span class=""><strong>Full vitals, weight tracking &amp; body condition score</strong></span>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+<span class=""><strong>Teeth, ears, skin, joints &amp; heart</strong> — explained in plain words</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+<span class=""><strong>Vaccine &amp; deworming schedule</strong> personalized to lifestyle</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+<span class=""><strong>Written care plan</strong> you can share with family</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-haven-border">
+<a class="text-sm font-bold text-haven-spruce hover:text-haven-amber flex items-center gap-1.5 transition-colors" href="#booking-calendar">
+<span class="">Book this ₱1999 checkup now</span>
+<span aria-hidden="true" class="">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WhyHavenSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-16 sm:py-20 bg-haven-surface/50 border-t border-haven-border" data-purpose="services-grid" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-xl mx-auto mb-14">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">CARE AT HAVEN</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            Warm care, <span class="font-italic-serif text-haven-spruce">real medicine.</span>
+</h2>
+<p class="mt-3 text-sm sm:text-base text-haven-muted">
+            From routine wellness to urgent needs — one familiar team that knows your pet by name.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between hover:shadow-card hover:border-haven-sage/50 transition-all group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-haven-sageligh text-haven-spruce flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Wellness &amp; Prevention</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed">
+                Annual exams, vaccines, deworming, weight &amp; nutrition coaching. Keep them thriving, not just treating.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-haven-border/60">
+<span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-1 rounded inline-block">Included in ₱1999 →</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between hover:shadow-card hover:border-haven-sage/50 transition-all group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-haven-amberlight text-haven-amber flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Dental Care</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed">
+                Gentle oral exams, cleaning, and honest guidance. No upsell — just what's needed for a pain-free mouth.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-haven-border/60">
+<a class="text-xs font-semibold text-haven-spruce hover:underline" href="#booking-calendar">Ask at checkup →</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between hover:shadow-card hover:border-haven-sage/50 transition-all group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Skin, Ears &amp; Coat</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed">
+                Itch, odor, or shedding? We check ears, skin, and allergies with calm handling and clear next steps.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-haven-border/60">
+<a class="text-xs font-semibold text-haven-spruce hover:underline" href="#booking-calendar">Add to exam →</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between hover:shadow-card hover:border-haven-sage/50 transition-all group">
+<div>
+<div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Urgent &amp; Surgery</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed">
+                When it can't wait — same-day slots and surgical consults. We triage quickly, explain kindly.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-haven-border/60">
+<a class="text-xs font-semibold text-rose-700 hover:underline" href="tel:0280000000">Check availability →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: HowItWorksSection -->
+<section class="py-16 sm:py-24" data-purpose="how-it-works-timeline" id="how-it-works">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">HOW IT WORKS</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            Book in 60 seconds. <span class="font-italic-serif text-haven-spruce">We handle the rest.</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Step 1 -->
+<div class="bg-white rounded-3xl p-8 border border-haven-border shadow-soft text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-haven-spruce text-white font-bold text-lg flex items-center justify-center mb-5 shadow-sm">
+              1
+            </div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Pick your time</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed mb-4">
+              Choose Today or Tomorrow. Chat or book — whichever you prefer.
+            </p>
+<span class="inline-flex items-center text-[11px] font-semibold text-haven-spruce bg-haven-sageligh px-3 py-1 rounded-full">
+              ⚡ 30 sec
+            </span>
+</div>
+<!-- Step 2 -->
+<div class="bg-white rounded-3xl p-8 border border-haven-border shadow-soft text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-haven-amber text-white font-bold text-lg flex items-center justify-center mb-5 shadow-sm">
+              2
+            </div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Come as you are</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed mb-4">
+              Unhurried 20-min exam. Treats, calm voices, floor-level if your pet prefers.
+            </p>
+<span class="inline-flex items-center text-[11px] font-semibold text-haven-amber bg-haven-amberlight px-3 py-1 rounded-full">
+              ❤️ Fear-free
+            </span>
+</div>
+<!-- Step 3 -->
+<div class="bg-white rounded-3xl p-8 border border-haven-border shadow-soft text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-haven-forest text-white font-bold text-lg flex items-center justify-center mb-5 shadow-sm">
+              3
+            </div>
+<h3 class="text-lg font-bold text-haven-forest mb-2">Leave with a plan</h3>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed mb-4">
+              Written care sheet + next steps. No jargon, no pressure, full clarity.
+            </p>
+<span class="inline-flex items-center text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+              📋 Take-home
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HowItWorksSection -->
+<!-- BEGIN: CareTeamSection -->
+<section class="py-16 sm:py-20 bg-haven-surface/50 border-t border-haven-border" data-purpose="team-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-xl mx-auto mb-14">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">MEET HAVEN</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            The team your pet <span class="font-italic-serif text-haven-spruce">will love to see.</span>
+</h2>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted">
+            Warm, credentialed, and local veterinary professionals who treat pets like family.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+<!-- Vet 1 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft text-center flex flex-col items-center hover:border-haven-sage transition-all">
+<div class="w-20 h-20 rounded-full bg-haven-sageligh/80 border-2 border-white shadow-sm flex items-center justify-center text-haven-spruce font-bold text-xl mb-4 font-serif">
+              DR
+            </div>
+<h3 class="text-base font-bold text-haven-forest">Dr. Rivera</h3>
+<span class="text-[11px] font-bold text-haven-amber uppercase tracking-wider mb-2">LEAD VETERINARIAN • DVM</span>
+<p class="text-xs text-haven-muted leading-relaxed mb-4">
+              Gentle with nervous pups, obsessed with dental health. 10 years in small-animal practice.
+            </p>
+<div class="flex gap-2">
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Fear-Free</span>
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Surgery</span>
+</div>
+</div>
+<!-- Vet 2 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft text-center flex flex-col items-center hover:border-haven-sage transition-all">
+<div class="w-20 h-20 rounded-full bg-haven-amberlight/80 border-2 border-white shadow-sm flex items-center justify-center text-haven-amber font-bold text-xl mb-4 font-serif">
+              MS
+            </div>
+<h3 class="text-base font-bold text-haven-forest">Mara Santos</h3>
+<span class="text-[11px] font-bold text-haven-amber uppercase tracking-wider mb-2">VET NURSE • CARE LEAD</span>
+<p class="text-xs text-haven-muted leading-relaxed mb-4">
+              Your check-in best buddy. Keeps the clinic calm and the high-value treats flowing.
+            </p>
+<div class="flex gap-2">
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Nursing</span>
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Nutrition</span>
+</div>
+</div>
+<!-- Vet 3 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft text-center flex flex-col items-center hover:border-haven-sage transition-all">
+<div class="w-20 h-20 rounded-full bg-emerald-50 border-2 border-white shadow-sm flex items-center justify-center text-emerald-800 font-bold text-xl mb-4 font-serif">
+              JC
+            </div>
+<h3 class="text-base font-bold text-haven-forest">Dr. Cruz</h3>
+<span class="text-[11px] font-bold text-haven-amber uppercase tracking-wider mb-2">VETERINARIAN • WELLNESS</span>
+<p class="text-xs text-haven-muted leading-relaxed mb-4">
+              Prevention-first advocate. Loves explaining complex lab results in warm, plain Taglish.
+            </p>
+<div class="flex gap-2">
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Wellness</span>
+<span class="text-[10px] bg-haven-cream px-2 py-0.5 rounded border border-haven-border text-haven-forest">Dermatology</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CareTeamSection -->
+<!-- BEGIN: ReviewsSection -->
+<section class="py-16 sm:py-24" data-purpose="testimonials" id="reviews">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-xl mx-auto mb-14">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">FAMILIES SAY</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            Neighbors who <span class="font-italic-serif text-haven-spruce">trust Haven.</span>
+</h2>
+<p class="mt-2 text-xs sm:text-sm text-haven-muted">
+            Verified patient stories from our community in Haven.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span>
+</div>
+<p class="text-xs sm:text-sm text-haven-forest leading-relaxed mb-6 italic">
+                "Milo is usually terrified at vets. At Haven he actually napped on the rug. The ₱1999 checkup felt so thorough — they explained everything with photos."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-haven-border/60">
+<div class="w-9 h-9 rounded-full bg-haven-amberlight text-haven-amber font-bold text-xs flex items-center justify-center">A</div>
+<div>
+<p class="text-xs font-bold text-haven-forest">Andrea, Milo's mom</p>
+<p class="text-[10px] text-haven-muted">Checked in 2 weeks ago • Verified</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span>
+</div>
+<p class="text-xs sm:text-sm text-haven-forest leading-relaxed mb-6 italic">
+                "No hard selling. They showed me Luna's teeth chart and gave me 3 options. We chose what fit our budget. Honest care that is rare to find."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-haven-border/60">
+<div class="w-9 h-9 rounded-full bg-haven-sageligh text-haven-spruce font-bold text-xs flex items-center justify-center">J</div>
+<div>
+<p class="text-xs font-bold text-haven-forest">James &amp; Luna</p>
+<p class="text-[10px] text-haven-muted">New patient • Verified</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white rounded-2xl p-6 border border-haven-border shadow-soft flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span>
+</div>
+<p class="text-xs sm:text-sm text-haven-forest leading-relaxed mb-6 italic">
+                "Booked via chat in a minute. Clinic smells like home, not chemicals. My senior cat finally got a nutrition plan that actually works."
+              </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-haven-border/60">
+<div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center">R</div>
+<div>
+<p class="text-xs font-bold text-haven-forest">Rica, 2 cats</p>
+<p class="text-[10px] text-haven-muted">Wellness plan • Verified</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ReviewsSection -->
+<!-- BEGIN: BookingCalendarSection -->
+<section class="py-16 sm:py-24 bg-white border-t border-haven-border" data-purpose="interactive-booking-section" id="booking-calendar">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+<!-- Inclusions Left -->
+<div class="lg:col-span-6">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">YOUR ₱1999 VISIT INCLUDES</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight mb-4">
+              Everything for a true <span class="font-italic-serif text-haven-amber font-medium">overall checkup</span>
+</h2>
+<p class="text-xs sm:text-sm text-haven-muted leading-relaxed mb-8">
+              For new patients only. One pet per booking. If we find something needing follow-up, we'll explain options first — you always decide.
+            </p>
+<div class="bg-haven-cream/60 rounded-2xl p-6 border border-haven-border space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Nose-to-tail physical exam &amp; vitals</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Weight, body condition &amp; nutrition review</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Dental, ears, skin &amp; coat check</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Heart &amp; lung auscultation</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Vaccine &amp; deworming plan (if due)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+<span class="text-xs sm:text-sm font-medium text-haven-forest">Written take-home care plan</span>
+</div>
+</div>
+<!-- Price Summary -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-haven-sageligh/50 border border-haven-sage/30">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-haven-spruce">Total for First Visit</div>
+<div class="text-2xl font-extrabold text-haven-forest">₱1,999 <span class="text-sm font-normal text-haven-muted line-through">₱3,500</span></div>
+</div>
+<span class="text-xs font-bold text-emerald-800 bg-white px-3 py-1.5 rounded-lg border border-emerald-200">
+                You save ₱1,501
+              </span>
+</div>
+</div>
+<!-- Interactive Time Slots Selector Right -->
+<div class="lg:col-span-6 bg-haven-cream rounded-3xl p-6 sm:p-8 border border-haven-border shadow-elevated" data-purpose="time-picker">
+<h3 class="text-lg font-bold text-haven-forest mb-1">Choose a time — or just chat</h3>
+<p class="text-xs text-haven-muted mb-6">Select a convenient arrival window below for fastest check-in.</p>
+<!-- Day Selector Tabs -->
+<div class="grid grid-cols-2 gap-2 p-1 bg-white rounded-xl border border-haven-border mb-6">
+<button class="py-2 text-xs font-bold rounded-lg transition-all tab-active text-center" id="tab-today" onclick="switchDay('today')" type="button">
+                Today (Available)
+              </button>
+<button class="py-2 text-xs font-bold text-haven-muted hover:text-haven-forest rounded-lg transition-all text-center" id="tab-tomorrow" onclick="switchDay('tomorrow')" type="button">
+                Tomorrow
+              </button>
+</div>
+<!-- Slots Grid: Today -->
+<div class="space-y-3" id="slots-today">
+<label class="slot-option block relative cursor-pointer">
+<input checked="" class="peer sr-only" name="selected_slot" type="radio" value="Today 10:30 AM">
+<div class="p-4 rounded-xl bg-white border border-haven-border peer-checked:border-haven-spruce peer-checked:bg-haven-sageligh/30 peer-checked:ring-1 peer-checked:ring-haven-spruce transition-all flex items-center justify-between">
+<div>
+<span class="text-xs uppercase font-bold text-haven-muted block">Morning Slot</span>
+<span class="text-sm font-bold text-haven-forest">10:30 AM</span>
+</div>
+<span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">2 left</span>
+</div>
+</label>
+<label class="slot-option block relative cursor-pointer">
+<input class="peer sr-only" name="selected_slot" type="radio" value="Today 02:00 PM">
+<div class="p-4 rounded-xl bg-white border border-haven-border peer-checked:border-haven-spruce peer-checked:bg-haven-sageligh/30 peer-checked:ring-1 peer-checked:ring-haven-spruce transition-all flex items-center justify-between">
+<div>
+<span class="text-xs uppercase font-bold text-haven-muted block">Afternoon Slot</span>
+<span class="text-sm font-bold text-haven-forest">02:00 PM</span>
+</div>
+<span class="text-[11px] font-semibold text-haven-muted">Available</span>
+</div>
+</label>
+</div>
+<!-- Slots Grid: Tomorrow (Hidden by default) -->
+<div class="space-y-3 hidden" id="slots-tomorrow">
+<label class="slot-option block relative cursor-pointer">
+<input class="peer sr-only" name="selected_slot" type="radio" value="Tomorrow 09:00 AM">
+<div class="p-4 rounded-xl bg-white border border-haven-border peer-checked:border-haven-spruce peer-checked:bg-haven-sageligh/30 peer-checked:ring-1 peer-checked:ring-haven-spruce transition-all flex items-center justify-between">
+<div>
+<span class="text-xs uppercase font-bold text-haven-muted block">Early Slot</span>
+<span class="text-sm font-bold text-haven-forest">09:00 AM</span>
+</div>
+<span class="text-[11px] font-semibold text-haven-muted">Available</span>
+</div>
+</label>
+<label class="slot-option block relative cursor-pointer">
+<input class="peer sr-only" name="selected_slot" type="radio" value="Tomorrow 04:30 PM">
+<div class="p-4 rounded-xl bg-white border border-haven-border peer-checked:border-haven-spruce peer-checked:bg-haven-sageligh/30 peer-checked:ring-1 peer-checked:ring-haven-spruce transition-all flex items-center justify-between">
+<div>
+<span class="text-xs uppercase font-bold text-haven-muted block">Evening Slot</span>
+<span class="text-sm font-bold text-haven-forest">04:30 PM</span>
+</div>
+<span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">3 left</span>
+</div>
+</label>
+</div>
+<!-- Primary Confirm Button -->
+<div class="mt-6">
+<button class="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-haven-spruce hover:bg-haven-forest shadow-md transition-all text-center" onclick="havenBookNow()" type="button">
+                Continue with Selected Time →
+              </button>
+</div>
+<div class="mt-4 text-center">
+<a class="text-xs font-semibold text-haven-muted hover:text-haven-forest transition-colors" href="#faq">
+                Prefer to chat? Open Conversation Assistant →
+              </a>
+</div>
+<div class="mt-6 pt-5 border-t border-haven-border/80 flex items-start gap-3 text-xs text-haven-muted">
+<svg class="w-4 h-4 text-haven-amber flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class=""><strong>Haven Animal Clinic</strong> — 123 Haven St, Quezon City. Open 9AM–7PM daily.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: BookingCalendarSection -->
+<!-- BEGIN: FAQSection -->
+<section class="py-16 sm:py-24 bg-haven-surface/30 border-t border-haven-border" data-purpose="faq-accordion" id="faq">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<span class="text-xs font-bold uppercase tracking-widest text-haven-amber block mb-2">GOOD QUESTIONS</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-haven-forest tracking-tight">
+            We answer <span class="font-italic-serif text-haven-spruce">before you ask.</span>
+</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white rounded-2xl border border-haven-border p-5 transition-all open:shadow-soft">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-haven-forest list-none select-none">
+<span class="">Is the ₱1999 for any pet?</span>
+<span class="w-6 h-6 rounded-full bg-haven-cream flex items-center justify-center text-haven-spruce text-xs transition-transform group-open:rotate-180">▼</span>
+</summary>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed pt-2 border-t border-haven-border/60">
+              Yes — dogs and cats of any breed or age. One pet per booking at this introductory rate. Multi-pet families can book back-to-back slots.
+            </p>
+</details>
+<details class="group bg-white rounded-2xl border border-haven-border p-5 transition-all open:shadow-soft">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-haven-forest list-none select-none">
+<span class="">What if my pet needs vaccines or laboratory tests?</span>
+<span class="w-6 h-6 rounded-full bg-haven-cream flex items-center justify-center text-haven-spruce text-xs transition-transform group-open:rotate-180">▼</span>
+</summary>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed pt-2 border-t border-haven-border/60">
+              We discuss recommendations during the exam with transparent pricing. Nothing is performed without your explicit verbal and written consent.
+            </p>
+</details>
+<details class="group bg-white rounded-2xl border border-haven-border p-5 transition-all open:shadow-soft">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-haven-forest list-none select-none">
+<span class="">How does the chat booking work?</span>
+<span class="w-6 h-6 rounded-full bg-haven-cream flex items-center justify-center text-haven-spruce text-xs transition-transform group-open:rotate-180">▼</span>
+</summary>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed pt-2 border-t border-haven-border/60">
+              Our automated care assistant can immediately reserve your appointment, answer routine questions about preparation, or route you to a live veterinary receptionist.
+            </p>
+</details>
+<details class="group bg-white rounded-2xl border border-haven-border p-5 transition-all open:shadow-soft">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-haven-forest list-none select-none">
+<span class="">Can I bring previous veterinary records?</span>
+<span class="w-6 h-6 rounded-full bg-haven-cream flex items-center justify-center text-haven-spruce text-xs transition-transform group-open:rotate-180">▼</span>
+</summary>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed pt-2 border-t border-haven-border/60">
+              Absolutely! You can bring physical booklet copies or email them to hello@havenanimal.example before arrival. We will integrate their complete medical timeline.
+            </p>
+</details>
+<details class="group bg-white rounded-2xl border border-haven-border p-5 transition-all open:shadow-soft">
+<summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-haven-forest list-none select-none">
+<span class="">Do you accept emergency walk-ins?</span>
+<span class="w-6 h-6 rounded-full bg-haven-cream flex items-center justify-center text-haven-spruce text-xs transition-transform group-open:rotate-180">▼</span>
+</summary>
+<p class="mt-3 text-xs sm:text-sm text-haven-muted leading-relaxed pt-2 border-t border-haven-border/60">
+              Yes, we prioritize critical triage cases during operating hours (9 AM – 7 PM). We kindly ask you to call our hotline ahead so we can prep the treatment room.
+            </p>
+</details>
+</div>
+</div>
+</section>
+<!-- END: FAQSection -->
+<!-- BEGIN: FinalCTABanner -->
+<section class="py-16 sm:py-20" data-purpose="conversion-cta">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-haven-spruce rounded-3xl p-8 sm:p-14 text-white shadow-elevated relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-haven-forest/80 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7">
+<h2 class="text-3xl sm:text-5xl font-serif tracking-tight leading-tight">
+                Give them a <span class="font-italic-serif text-haven-amber font-normal">haven</span> they can feel.
+              </h2>
+<p class="mt-4 text-sm sm:text-base text-white/80 max-w-lg leading-relaxed">
+                One calm, complete checkup today can prevent months of worry. Tap to book your ₱1999 Overall Checkup — or chat if you prefer to talk first.
+              </p>
+<div class="mt-8 flex flex-wrap gap-4">
+<a class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-haven-spruce bg-white hover:bg-haven-cream shadow-md transition-all" href="#booking-calendar">
+                  Book My ₱1999 Exam →
+                </a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all" href="tel:0280000000">
+                  Call Clinic Directly
+                </a>
+</div>
+</div>
+<div class="lg:col-span-5 bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+<h4 class="text-xs uppercase font-bold tracking-wider text-amber-200 mb-4">WHAT YOU'LL GET</h4>
+<ul class="space-y-3 text-xs sm:text-sm text-white/90">
+<li class="flex items-center gap-2.5">
+<span class="text-emerald-400 font-bold">✓</span>
+<span class="">20-min unhurried vet time</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="text-emerald-400 font-bold">✓</span>
+<span class="">Written plan to take home</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="text-emerald-400 font-bold">✓</span>
+<span class="">Fear-free, treats-first handling</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="text-emerald-400 font-bold">✓</span>
+<span class="">Support via chat anytime</span>
+</li>
+</ul>
+<p class="mt-5 text-[11px] text-white/60 border-t border-white/10 pt-3">
+                No upfront payment taken until clinic check-in.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FinalCTABanner -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-haven-cream border-t border-haven-border py-10" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex flex-col items-center md:items-start">
+<div class="flex items-center gap-3 mb-3"><div class="w-11 h-11 rounded-full bg-[#163832] flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FDFBF7"></path><ellipse cx="9" cy="8.5" rx="1.2" ry="1.5" fill="#E28448"></ellipse><ellipse cx="15" cy="8.5" rx="1.2" ry="1.5" fill="#E28448"></ellipse><ellipse cx="6.8" cy="11.5" rx="1" ry="1.3" fill="#E28448"></ellipse><ellipse cx="17.2" cy="11.5" rx="1" ry="1.3" fill="#E28448"></ellipse></svg></div><div class="flex flex-col text-left"><div class="flex items-baseline gap-1.5 leading-none"><span class="font-serif text-2xl font-bold text-[#163832] tracking-tight">Haven</span><span class="font-sans text-lg font-medium text-stone-600 tracking-normal">Animal Clinic</span></div><span class="font-sans text-[9px] font-bold text-[#E28448] tracking-[0.14em] uppercase mt-1">FEAR-FREE • FAMILY-FIRST CARE</span></div></div>
+<p class="text-xs text-haven-muted mt-0.5">Care that feels like home.</p>
+<p class="text-xs text-haven-muted mt-1">123 Haven St, Quezon City • (02) 8XXX-XXXX • hello@havenanimal.example</p>
+</div>
+<div class="flex flex-col items-center md:items-end text-xs text-haven-muted">
+<p class="font-medium">Open Daily: 9:00 AM – 7:00 PM</p>
+<p class="text-amber-700 font-semibold mt-0.5">Emergency Hotline: (02) 8XXX-XXXX</p>
+<p class="mt-2 text-[11px] text-haven-muted/70">© 2026 Haven Animal Clinic. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: TabToggleScript -->
+<script data-purpose="interactive-day-toggle">
+    function switchDay(day) {
+      const todayTab = document.getElementById('tab-today');
+      const tomorrowTab = document.getElementById('tab-tomorrow');
+      const slotsToday = document.getElementById('slots-today');
+      const slotsTomorrow = document.getElementById('slots-tomorrow');
+
+      if (day === 'today') {
+        todayTab.classList.add('tab-active');
+        todayTab.classList.remove('text-haven-muted');
+        tomorrowTab.classList.remove('tab-active');
+        tomorrowTab.classList.add('text-haven-muted');
+
+        slotsToday.classList.remove('hidden');
+        slotsTomorrow.classList.add('hidden');
+      } else {
+        tomorrowTab.classList.add('tab-active');
+        tomorrowTab.classList.remove('text-haven-muted');
+        todayTab.classList.remove('tab-active');
+        todayTab.classList.add('text-haven-muted');
+
+        slotsTomorrow.classList.remove('hidden');
+        slotsToday.classList.add('hidden');
+      }
+    }
+  </script>
+<!-- END: TabToggleScript -->
+<script data-purpose="ghl-booking-hook">
+    function havenBookNow() {
+      // GHL CALENDAR EMBED GOES HERE
+      // Paste your GoHighLevel Calendar embed / widget call below.
+      alert('Booking confirmation: GHL Calendar embed not configured yet.');
+    }
+  </script>
+
+
+
+
+</div>

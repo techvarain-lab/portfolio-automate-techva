@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Received - Mt. Ulap</title>
+<meta name="description" content="Your Mt. Ulap daytour booking has been received. Send half DP to GCash to confirm your slot.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Clash Display', 'sans-serif'],
+          serif: ['Instrument Serif', 'serif'],
+          sans: ['Plus Jakarta Sans', 'sans-serif'],
+          mono: ['Geist Mono', 'monospace']
+        },
+        colors: {
+          forest: '#0C1A13',
+          pine: '#1A3A24',
+          stone: '#3D3530',
+          cloud: '#E8E4DE',
+          mist: '#F2F0EB',
+          sunrise: '#D4943A',
+          trail: '#6B8F71',
+          dawn: '#C4703F'
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  * { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  html { scroll-behavior: smooth; }
+  body { background: #0C1A13; }
+  ::selection { background: rgba(212, 148, 58, 0.28); color: #E8E4DE; }
+  .font-display { font-feature-settings: "ss01", "ss02"; }
+  .ph { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .grain { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.045; mix-blend-mode: overlay; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+</style>
+</head>
+
+<body class="bg-forest text-cloud font-sans overflow-x-hidden">
+
+<div class="grain"></div>
+
+<div class="min-h-screen grid place-items-center p-4 py-12 relative">
+  <div class="w-full max-w-[760px] relative">
+
+    <!-- ============== CONFIRMATION HEADER ============== -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 bg-pine border border-cloud/10 rounded-full px-4 py-1.5 text-[11px] font-mono tracking-[0.16em] uppercase text-cloud/60">
+        <svg class="ph w-3 h-3 text-sunrise" viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>
+        Booking received
+      </div>
+    </div>
+
+    <div class="bg-pine border border-cloud/10 rounded-sm p-8 md:p-10 text-center">
+      <div class="w-14 h-14 bg-sunrise rounded-sm grid place-items-center mx-auto text-forest">
+        <svg class="ph w-7 h-7" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+      </div>
+      <h1 class="font-display font-bold text-3xl md:text-4xl text-cloud mt-5 leading-[0.95] tracking-[-0.02em]">You're almost at<br>the <span class="font-serif italic font-normal text-sunrise">summit</span>.</h1>
+      <p class="font-sans text-sm text-cloud/55 mt-3 leading-relaxed max-w-[440px] mx-auto">Send your half DP to GCash and we'll confirm your slot within 2 hours.</p>
+      <div id="summary" class="mt-6 bg-forest border border-cloud/10 rounded-sm p-5 text-left"></div>
+    </div>
+
+    <!-- ============== TWO-COLUMN: GCASH + CHECKLIST ============== -->
+    <div class="grid md:grid-cols-2 gap-px mt-px bg-cloud/5 mt-4">
+
+      <!-- GCASH -->
+      <div class="bg-pine p-7">
+        <div class="flex items-center gap-2 text-cloud font-semibold text-sm">
+          <span class="w-7 h-7 bg-[#007dfe] rounded-sm grid place-items-center text-white text-[10px] font-bold tracking-wide">GC</span>
+          Send half DP to GCash
+        </div>
+
+        <div class="mt-4 bg-forest border border-cloud/10 rounded-sm p-4 flex items-center justify-between">
+          <div>
+            <div class="font-mono text-[10px] text-cloud/40 tracking-[0.12em] uppercase">GCash number</div>
+            <div class="font-mono text-sm text-cloud font-medium tracking-wide mt-1">09XX XXX XXXX</div>
+            <div class="font-sans text-[11px] text-cloud/35 mt-0.5">Mt. Ulap Tours</div>
+          </div>
+          <button id="copyBtn" class="bg-pine border border-cloud/15 rounded-sm px-4 py-2 text-[11px] font-mono text-cloud/60 hover:text-sunrise hover:border-sunrise/40 transition flex items-center gap-1.5">
+            <svg class="ph w-3.5 h-3.5" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="mt-3 text-[12px] leading-relaxed bg-sunrise/10 border border-sunrise/25 rounded-sm p-3.5 text-cloud/75">
+          Amount to send: <span id="gcashAmt" class="font-mono text-sunrise font-semibold">P1,000</span> (half of total) &middot; Add note: <span class="font-mono text-[11px] text-cloud/55">ULAP + your name</span>
+        </div>
+
+        <p class="font-sans text-[12px] text-cloud/45 mt-3 leading-relaxed">After sending, screenshot the receipt and send it via Messenger. We'll reply with GC invite + itinerary within 2 hours.</p>
+
+        <div class="mt-5 flex gap-2">
+          <a href="#" class="flex-1 bg-[#0084ff] text-white text-center py-3 rounded-full font-bold text-sm hover:opacity-90 transition flex items-center justify-center gap-2">
+            <svg class="ph w-4 h-4" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3.6-7.2L21 3"/><path d="M21 3v5h-5"/></svg>
+            Messenger
+          </a>
+          <a href="index.html" class="flex-1 bg-forest border border-cloud/15 text-cloud text-center py-3 rounded-full font-bold text-sm hover:bg-pine transition">Back to home</a>
+        </div>
+      </div>
+
+      <!-- CHECKLIST -->
+      <div class="bg-pine p-7">
+        <div class="flex items-center gap-2 text-cloud font-semibold text-sm">
+          <svg class="ph w-4 h-4 text-sunrise" viewBox="0 0 24 24"><path d="M9 11l3 3 7-7"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          What to bring
+        </div>
+
+        <ul class="mt-4 space-y-2.5 text-[13px] leading-relaxed">
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Water 1.5L + trail snacks</span></li>
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Headlamp or flashlight, cap, rain jacket</span></li>
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Hiking shoes or sturdy sneakers</span></li>
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Extra shirt in ziplock, small towel</span></li>
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Powerbank, pocket money for meals and wash-up</span></li>
+          <li class="flex gap-2.5 items-start"><svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="text-cloud/70">Personal meds, valid ID</span></li>
+        </ul>
+
+        <div class="mt-5 bg-forest border border-cloud/10 rounded-sm p-3.5 text-[12px] leading-relaxed text-cloud/55 flex gap-2.5">
+          <svg class="ph w-4 h-4 text-sunrise mt-0.5 flex-shrink-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.5" fill="currentColor"/></svg>
+          <div><span class="font-semibold text-sunrise">Reminder:</span> Van departs night before. Exact pick-up time sent in GC after DP confirmed. Travel light.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== FOOTER ============== -->
+    <div class="text-center font-mono text-[10px] text-cloud/20 mt-8 tracking-[0.15em]">16.2904&deg;N 120.6312&deg;E &nbsp; / &nbsp; 1,846 MASL &nbsp; / &nbsp; LEAVE NO TRACE</div>
+  </div>
+</div>
+
+<script>
+  const p = new URLSearchParams(location.search);
+  const date = p.get('date') || '-';
+  const pax = p.get('pax') || '1';
+  const pickup = p.get('pickup') || '-';
+  const name = p.get('name') || '-';
+  const total = 1999 * parseInt(pax, 10);
+  const dp = Math.ceil(total / 2);
+  const bal = total - dp;
+
+  document.getElementById('summary').innerHTML = `
+    <div class="grid grid-cols-2 gap-4 text-sm">
+      <div>
+        <div class="font-mono text-[10px] text-cloud/30 tracking-[0.12em] uppercase">Name</div>
+        <div class="font-sans text-cloud font-medium mt-1">${name}</div>
+      </div>
+      <div>
+        <div class="font-mono text-[10px] text-cloud/30 tracking-[0.12em] uppercase">Date</div>
+        <div class="font-sans text-cloud font-medium mt-1">${date}</div>
+      </div>
+      <div>
+        <div class="font-mono text-[10px] text-cloud/30 tracking-[0.12em] uppercase">Pax</div>
+        <div class="font-sans text-cloud font-medium mt-1">${pax} &times; P1,999 = P${total.toLocaleString()}</div>
+      </div>
+      <div>
+        <div class="font-mono text-[10px] text-cloud/30 tracking-[0.12em] uppercase">Pick-up</div>
+        <div class="font-sans text-cloud font-medium mt-1 text-xs leading-tight">${pickup}</div>
+      </div>
+    </div>
+    <div class="mt-4 pt-4 border-t border-cloud/10 flex justify-between items-center text-sm">
+      <span class="font-sans text-cloud/50">Half DP to send now</span>
+      <span class="font-mono text-sunrise font-semibold text-lg">P${dp.toLocaleString()}</span>
+    </div>
+    <div class="flex justify-between text-xs text-cloud/35 mt-1">
+      <span class="font-sans">Balance on trip</span>
+      <span class="font-mono">P${bal.toLocaleString()}</span>
+    </div>
+  `;
+
+  document.getElementById('gcashAmt').textContent = 'P' + dp.toLocaleString();
+
+  // Copy GCash number
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    navigator.clipboard.writeText('09XX XXX XXXX').then(() => {
+      const btn = this;
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg class="ph w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Copied';
+      setTimeout(() => { btn.innerHTML = orig; }, 1600);
+    });
+  });
+</script>
+</body>
+</html>

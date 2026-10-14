@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FitCoach — 12-Week Transformation Program</title>
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ——— FitCoach Design System ——— */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #F6F7F8;
+    color: #1E2328;
+    font-family: "Instrument Sans", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  .fitcoach {
+    --ground: #F6F7F8;
+    --surface: #FFFFFF;
+    --surface-2: #EEF0F3;
+    --ink: #1E2328;
+    --muted: #6E7681;
+    --line: #E6E8EB;
+    --line-dark: #2A3036;
+    --lime: #FF4D00;
+    --lime-deep: #E84500;
+    --radius-card: 16px;
+    --radius-pill: 999px;
+    --shadow-1: 0 1px 2px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+    --shadow-2: 0 12px 32px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+    --shadow-3: 0 20px 48px rgba(0,0,0,.14);
+    --ease: cubic-bezier(.16,1,.3,1);
+    --content: min(1120px, calc(100vw - 32px));
+    --content-narrow: min(760px, calc(100vw - 32px));
+    background: var(--ground);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  @media (min-width: 768px) {
+    .fitcoach { --content: min(1120px, calc(100vw - 48px)); --content-narrow: min(760px, calc(100vw - 48px)); }
+  }
+
+  /* Utilities */
+  .fitcoach a { color: inherit; }
+  .fitcoach img { display: block; max-width: 100%; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .kicker::before {
+    content: ""; width: 18px; height: 2px; background: var(--lime); border-radius: 999px;
+  }
+  .kicker--dark { color: #8A95A3; }
+  .kicker--dark::before { background: var(--lime); }
+
+  /* Buttons — no black: primary is orange, secondary is white */
+  .cta-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--lime); color: #fff; text-decoration: none;
+    font-weight: 700; font-size: 16px; letter-spacing: -.01em;
+    padding: 16px 28px; border-radius: var(--radius-pill);
+    border: 1px solid var(--lime);
+    box-shadow: 0 10px 20px rgba(255,77,0,.22);
+    transition: transform .22s var(--ease), background .22s var(--ease), box-shadow .22s var(--ease), color .22s var(--ease);
+    position: relative; overflow: hidden;
+    white-space: nowrap;
+  }
+  .cta-button:hover { transform: translateY(-2px); background: var(--lime-deep); box-shadow: 0 16px 32px rgba(255,77,0,.32); }
+  .cta-button:active { transform: translateY(0px); }
+  .cta-button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cta-button .arr {
+    width: 28px; height: 28px; border-radius: 999px; background: #fff; color: var(--lime);
+    display: grid; place-items: center; font-size: 14px; line-height: 1; flex-shrink: 0;
+    transition: transform .22s var(--ease);
+  }
+  .cta-button:hover .arr { transform: translateX(2px); }
+  .cta-button--large { font-size: 17px; padding: 18px 32px; width: 100%; max-width: 420px; }
+  @media (min-width: 640px) { .cta-button--large { width: auto; } }
+  .cta-button--lime {
+    background: var(--lime); color: #fff; border-color: var(--lime); box-shadow: 0 12px 24px rgba(255,77,0,.35);
+  }
+  .cta-button--lime:hover { background: var(--lime-deep); }
+  .cta-button--lime .arr { background: #fff; color: var(--lime); }
+  /* Exact-spec CTA overrides — hero + pricing must stay exactly class="cta-button" per brief, styled via parent context + pseudo arrow */
+  .fc-hero__actions .cta-button { background: var(--lime); color: #fff; border-color: var(--lime); box-shadow: 0 12px 24px rgba(255,77,0,.35); }
+  .fc-hero__actions .cta-button:hover { background: var(--lime-deep); }
+  .fc-hero__actions .cta-button::after { content: "→"; width: 28px; height: 28px; border-radius: 999px; background: #fff; color: var(--lime); display: inline-grid; place-items: center; font-size: 14px; margin-left: 8px; flex-shrink: 0; }
+  .fc-price-card__main .cta-button { font-size: 17px; padding: 18px 32px; width: 100%; max-width: 420px; }
+  @media (min-width: 640px) { .fc-price-card__main .cta-button { width: auto; } }
+  .fc-price-card__main .cta-button::after { content: "→"; width: 28px; height: 28px; border-radius: 999px; background: var(--lime); color: #fff; display: inline-grid; place-items: center; font-size: 14px; margin-left: 8px; flex-shrink: 0; }
+  .cta-button--ghost {
+    background: transparent; color: var(--ink); border-color: var(--line); box-shadow: none;
+  }
+  .cta-button--ghost:hover { background: var(--surface); border-color: var(--ink); }
+
+  /* Header */
+  .fc-header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(246,247,248,.85);
+    backdrop-filter: blur(12px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+  }
+  .fc-header__inner {
+    width: var(--content); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 0; gap: 16px;
+  }
+  .fc-logo {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .fc-logo__mark {
+    width: 32px; height: 32px; border-radius: 8px; background: var(--lime); color: #fff;
+    display: grid; place-items: center; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 14px; letter-spacing: -.04em;
+  }
+  .fc-logo__word { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -.04em; }
+  .fc-logo__word span { font-weight: 500; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-left: 6px; }
+  .fc-nav { display: none; gap: 20px; font-size: 13px; font-weight: 600; letter-spacing: -.01em; }
+  .fc-nav a { text-decoration: none; opacity: .7; transition: opacity .2s; }
+  .fc-nav a:hover { opacity: 1; }
+  .fc-header__cta { display: none; }
+  @media (min-width: 768px) {
+    .fc-nav { display: flex; }
+    .fc-header__cta { display: inline-flex; font-size: 13px; padding: 10px 18px; box-shadow: none; }
+  }
+
+  /* Hero */
+  .fc-hero { width: var(--content); margin: 0 auto; padding: 28px 0 24px; }
+  @media (min-width: 900px) { .fc-hero { padding: 36px 0 32px; } }
+  .fc-hero__grid { display: grid; gap: 28px; }
+  @media (min-width: 900px) { .fc-hero__grid { grid-template-columns: 1.08fr .92fr; gap: 32px; align-items: center; } }
+  .fc-hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700; line-height: .88; letter-spacing: -.05em;
+    font-size: clamp(2.6rem, 8vw, 4.85rem);
+    margin: 14px 0 16px;
+    text-wrap: pretty;
+  }
+  .fc-hero h1 .break { display: block; }
+  .fc-hero h1 .hl {
+    position: relative; display: inline-block;
+  }
+  .fc-hero h1 .hl::after {
+    content: ""; position: absolute; left: -4px; right: -6px; bottom: 6px; height: 14px;
+    background: var(--lime); z-index: -1; border-radius: 2px;
+  }
+  @media (min-width: 900px) { .fc-hero h1 .hl::after { height: 18px; bottom: 10px; } }
+  .fc-hero__sub {
+    font-size: 17px; line-height: 1.6; color: #2B2B2B; max-width: 48ch; margin: 0 0 22px;
+    text-wrap: pretty;
+  }
+  .fc-hero__sub strong { font-weight: 700; }
+  .fc-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
+  .fc-trust {
+    display: flex; flex-wrap: wrap; gap: 8px; font-size: 12.5px; color: var(--muted);
+  }
+  .fc-trust span { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; }
+  .fc-trust i { width: 16px; height: 16px; border-radius: 999px; background: var(--lime); display: grid; place-items: center; font-style: normal; font-size: 10px; color: #fff; }
+
+  /* Coach photo card — light, no black */
+  .fc-photo {
+    position: relative; border-radius: 20px; overflow: hidden; background: var(--surface-2);
+    aspect-ratio: 4 / 5; min-height: 420px;
+    box-shadow: var(--shadow-2);
+    border: 1px solid var(--line);
+  }
+  @media (min-width: 900px) { .fc-photo { min-height: 540px; } }
+  .fc-photo__img {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 400px at 70% 20%, rgba(255,77,0,.18), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.45)),
+      url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop') center/cover;
+    filter: saturate(1.05) contrast(1.02);
+  }
+  .fc-photo__placeholder-label {
+    position: absolute; top: 14px; right: 14px;
+    font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    background: rgba(255,255,255,.92); color: #111; padding: 6px 8px; border-radius: 999px; border: 1px solid rgba(0,0,0,.08);
+  }
+  .fc-photo__bottom {
+    position: absolute; left: 14px; right: 14px; bottom: 14px;
+    display: flex; gap: 10px; align-items: end; justify-content: space-between;
+  }
+  .fc-photo__coach {
+    background: rgba(255,255,255,.96); border: 1px solid rgba(0,0,0,.06);
+    border-radius: 14px; padding: 12px 14px; display: flex; gap: 10px; align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.16);
+    max-width: 64%;
+  }
+  .fc-photo__coach img { width: 36px; height: 36px; border-radius: 999px; object-fit: cover; background: #ddd; }
+  .fc-photo__coach b { font-size: 13px; line-height: 1.1; display: block; letter-spacing: -.02em; }
+  .fc-photo__coach small { font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; font-family: "JetBrains Mono", monospace; }
+  .fc-photo__stat {
+    background: var(--lime); color: #fff; border-radius: 14px; padding: 10px 12px;
+    text-align: center; min-width: 96px; border: 1px solid rgba(0,0,0,.06);
+  }
+  .fc-photo__stat strong { display: block; font-family: "Space Grotesk", sans-serif; font-size: 22px; line-height: 1; letter-spacing: -.04em; }
+  .fc-photo__stat span { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; opacity: .7; }
+  .fc-social-proof-mini {
+    display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 13px; color: var(--muted);
+  }
+  .fc-avatars { display: flex; }
+  .fc-avatars span {
+    width: 28px; height: 28px; border-radius: 999px; border: 2px solid var(--ground);
+    display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; margin-left: -6px;
+  }
+  .fc-avatars span:first-child { margin-left: 0; }
+  .fc-stars { color: #1E2328; letter-spacing: .04em; }
+
+  /* Problem section — light (no black) */
+  .fc-problem {
+    background: var(--surface-2); color: var(--ink); margin-top: 18px; position: relative; overflow: hidden;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .fc-problem::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(900px 500px at 20% 0%, rgba(255,77,0,.06), transparent 60%),
+                radial-gradient(700px 400px at 90% 100%, rgba(255,77,0,.04), transparent 60%);
+    pointer-events: none;
+  }
+  .fc-problem__inner { width: var(--content); margin: 0 auto; padding: 48px 0 44px; position: relative; }
+  .fc-problem h2 {
+    font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -.04em; line-height: .95;
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem); margin: 12px 0 10px; text-wrap: pretty;
+  }
+  .fc-problem__lead { color: var(--muted); max-width: 56ch; margin: 0 0 28px; font-size: 15px; line-height: 1.6; }
+  .fc-pains { display: grid; gap: 14px; }
+  @media (min-width: 800px) { .fc-pains { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+  .fc-pain {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 18px 16px; box-shadow: var(--shadow-1);
+    transition: background .22s var(--ease), transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
+  }
+  .fc-pain:hover { background: var(--surface); transform: translateY(-3px); border-color: #D8DCE0; box-shadow: var(--shadow-2); }
+  .fc-pain__icon {
+    width: 36px; height: 36px; border-radius: 10px; background: rgba(255,77,0,.10); border: 1px solid rgba(255,77,0,.16);
+    display: grid; place-items: center; color: var(--lime); margin-bottom: 14px;
+  }
+  .fc-pain h3 { font-size: 15px; font-weight: 700; letter-spacing: -.02em; margin: 0 0 6px; }
+  .fc-pain p { font-size: 13.5px; line-height: 1.6; color: var(--muted); margin: 0; }
+  .fc-problem__bar {
+    margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    border-top: 1px solid var(--line); padding-top: 18px;
+    font-size: 13px; color: var(--muted);
+  }
+  .fc-problem__bar strong { color: var(--ink); }
+
+  /* Section shells */
+  .fc-section { width: var(--content); margin: 0 auto; padding: 52px 0 0; }
+  .fc-section__head { max-width: 680px; margin-bottom: 24px; }
+  .fc-section__head h2 {
+    font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -.045em; line-height: .95;
+    font-size: clamp(1.7rem, 4vw, 2.5rem); margin: 10px 0 10px; text-wrap: pretty;
+  }
+  .fc-section__head p { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; max-width: 58ch; }
+
+  /* Program breakdown */
+  .fc-program-grid { display: grid; gap: 14px; }
+  @media (min-width: 800px) { .fc-program-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  .fc-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card);
+    padding: 20px 20px 18px; box-shadow: var(--shadow-1);
+    transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+    position: relative; overflow: hidden;
+  }
+  .fc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: #D8D5CF; }
+  .fc-card::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--lime); opacity: 0; transition: opacity .22s;
+  }
+  .fc-card:hover::after { opacity: 1; }
+  .fc-card__top { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+  .fc-card__icon {
+    width: 40px; height: 40px; border-radius: 12px; background: rgba(255,77,0,.10); color: var(--lime); border: 1px solid rgba(255,77,0,.16);
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .fc-card__meta {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); background: var(--surface-2); border: 1px solid var(--line);
+    padding: 6px 8px; border-radius: 999px;
+  }
+  .fc-card h3 { font-size: 16px; font-weight: 700; letter-spacing: -.02em; margin: 0 0 8px; }
+  .fc-card__desc { font-size: 13.5px; line-height: 1.6; color: #3A3A3A; margin: 0 0 14px; }
+  .fc-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .fc-card li { display: flex; gap: 8px; font-size: 13px; line-height: 1.5; color: #2B2B2B; }
+  .fc-card li::before {
+    content: "✓"; width: 18px; height: 18px; border-radius: 999px; background: var(--lime);
+    color: #fff; display: grid; place-items: center; font-size: 10px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+  }
+  .fc-editable-note {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+    color: #8A95A3; border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 10px;
+  }
+
+  /* Social proof */
+  .fc-proof { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 52px; }
+  .fc-proof__inner { width: var(--content); margin: 0 auto; padding: 48px 0; }
+  .fc-testimonials { display: grid; gap: 14px; margin-top: 22px; }
+  @media (min-width: 860px) { .fc-testimonials { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+  .fc-quote {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px;
+    box-shadow: var(--shadow-1); display: flex; flex-direction: column; gap: 14px;
+  }
+  .fc-quote__head { display: flex; gap: 10px; align-items: center; }
+  .fc-avatar {
+    width: 40px; height: 40px; border-radius: 999px; background: var(--surface-2); color: var(--ink); border: 1px solid var(--line);
+    display: grid; place-items: center; font-weight: 700; font-size: 13px; letter-spacing: -.02em; flex-shrink: 0;
+  }
+  .fc-quote__head b { font-size: 13.5px; line-height: 1.1; display: block; }
+  .fc-quote__head small { font-size: 12px; color: var(--muted); }
+  .fc-quote__stars { font-size: 12px; letter-spacing: .08em; }
+  .fc-quote blockquote { margin: 0; font-size: 14px; line-height: 1.6; color: #1A1A1A; text-wrap: pretty; }
+  .fc-quote blockquote::before { content: "“"; font-family: "Space Grotesk", sans-serif; font-size: 22px; color: var(--lime); line-height: 0; margin-right: 2px; }
+  .fc-quote__foot { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #8A95A3; border-top: 1px solid var(--line); padding-top: 10px; margin-top: auto; }
+
+  /* Pricing */
+  .fc-pricing { width: var(--content); margin: 0 auto; padding: 52px 0 0; }
+  .fc-price-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-2); display: grid;
+  }
+  @media (min-width: 900px) { .fc-price-card { grid-template-columns: 1.15fr .85fr; } }
+  .fc-price-card__main { padding: 26px 22px; }
+  @media (min-width: 640px) { .fc-price-card__main { padding: 32px; } }
+  .fc-price-card__eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px;
+  }
+  .fc-price-card__eyebrow i { width: 6px; height: 6px; border-radius: 999px; background: var(--lime); display: inline-block; }
+  .fc-price { display: flex; align-items: baseline; gap: 10px; margin: 16px 0 6px; flex-wrap: wrap; }
+  .fc-price strong { font-family: "Space Grotesk", sans-serif; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.05em; line-height: 1; }
+  .fc-price s { color: var(--muted); font-size: 16px; }
+  .fc-price__badge { background: rgba(255,77,0,.11); color: var(--lime); border: 1px solid rgba(255,77,0,.18); font-weight: 800; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 999px; }
+  .fc-price__note { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+  .fc-value-stack { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; }
+  .fc-value-stack li {
+    display: flex; gap: 10px; align-items: start; font-size: 14px; line-height: 1.5;
+    background: var(--ground); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px;
+  }
+  .fc-value-stack li b { font-weight: 700; }
+  .fc-value-stack li small { display: block; color: var(--muted); font-size: 12.5px; }
+  .fc-check {
+    width: 22px; height: 22px; border-radius: 999px; background: var(--lime); color: #fff;
+    display: grid; place-items: center; font-size: 11px; flex-shrink: 0; margin-top: 1px;
+  }
+  .fc-guarantee {
+    display: flex; gap: 10px; align-items: center; background: #FFF1E8; border: 1px solid #FFC9AD;
+    border-radius: 12px; padding: 12px; font-size: 12.5px; line-height: 1.5; color: #7C2D12;
+  }
+  .fc-guarantee b { color: #9A3412; }
+  .fc-price-card__side {
+    background: var(--surface-2); color: var(--ink); padding: 26px 22px; display: flex; flex-direction: column; gap: 16px;
+    position: relative; overflow: hidden; border-left: 1px solid var(--line);
+  }
+  @media (min-width: 640px) { .fc-price-card__side { padding: 32px; } }
+  @media (max-width: 899px) { .fc-price-card__side { border-left: 0; border-top: 1px solid var(--line); } }
+  .fc-price-card__side::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(500px 300px at 80% 0%, rgba(255,77,0,.06), transparent 60%);
+    pointer-events: none;
+  }
+  .fc-price-card__side > * { position: relative; }
+  .fc-side-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .fc-side-list li { display: flex; gap: 10px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+  .fc-side-list li::before { content: "—"; color: var(--lime); font-weight: 700; }
+  .fc-includes-label { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .fc-timer {
+    display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 10px 12px; font-size: 12.5px; color: var(--muted);
+  }
+  .fc-timer strong { color: var(--ink); }
+  .fc-secure-row { display: flex; flex-wrap: wrap; gap: 8px; font-size: 11px; color: var(--muted); align-items: center; }
+  .fc-secure-row span { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); padding: 6px 8px; border-radius: 999px; background: var(--surface); }
+
+  /* FAQ */
+  .fc-faq { width: var(--content-narrow); margin: 0 auto; padding: 52px 0 0; }
+  .fc-faq h2 {
+    font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -.04em; line-height: .95;
+    font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 10px 0 10px; text-align: center; text-wrap: pretty;
+  }
+  .fc-faq__sub { text-align: center; color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .fc-accordion { display: grid; gap: 10px; }
+  .fc-acc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    transition: border-color .22s var(--ease), box-shadow .22s var(--ease);
+  }
+  .fc-acc[open], .fc-acc.is-open { border-color: #D8D5CF; box-shadow: var(--shadow-1); }
+  .fc-acc__btn {
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: transparent; border: 0; padding: 16px 16px; text-align: left; cursor: pointer;
+    font: inherit; color: inherit;
+  }
+  .fc-acc__btn:focus-visible { outline: 2px solid var(--lime); outline-offset: -2px; }
+  .fc-acc__q { font-weight: 700; font-size: 15px; letter-spacing: -.02em; line-height: 1.3; }
+  .fc-acc__icon {
+    width: 30px; height: 30px; border-radius: 999px; border: 1px solid var(--line); background: var(--ground);
+    display: grid; place-items: center; flex-shrink: 0; transition: transform .24s var(--ease), background .22s, border-color .22s, color .22s;
+    font-size: 14px;
+  }
+  .fc-acc.is-open .fc-acc__icon { background: var(--lime); color: #fff; border-color: var(--lime); transform: rotate(45deg); }
+  .fc-acc__panel {
+    display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s var(--ease);
+  }
+  .fc-acc.is-open .fc-acc__panel { grid-template-rows: 1fr; }
+  .fc-acc__inner { overflow: hidden; }
+  .fc-acc__a { padding: 0 16px 16px; font-size: 14px; line-height: 1.6; color: #3A3A3A; }
+  .fc-acc__a p { margin: 0; }
+  .fc-acc__a .editable { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: #8A95A3; margin-top: 10px; display: block; }
+
+  /* Footer */
+  .fc-footer { border-top: 1px solid var(--line); margin-top: 52px; background: var(--surface); }
+  .fc-footer__inner { width: var(--content); margin: 0 auto; padding: 24px 0; }
+  .fc-footer__grid { display: grid; gap: 16px; }
+  @media (min-width: 700px) { .fc-footer__grid { grid-template-columns: 1.2fr .8fr; align-items: start; } }
+  .fc-footer__brand { display: flex; gap: 10px; align-items: center; }
+  .fc-footer__legal { font-size: 12px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+  .fc-footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
+  .fc-footer__links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; font-weight: 600; justify-content: start; }
+  @media (min-width: 700px) { .fc-footer__links { justify-content: end; } }
+  .fc-footer__links a { text-decoration: none; opacity: .7; }
+  .fc-footer__links a:hover { opacity: 1; }
+
+  /* Sticky mobile bar */
+  .fc-sticky {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: rgba(255,255,255,.96); backdrop-filter: blur(12px) saturate(1.2);
+    border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(0,0,0,.08);
+    transform: translateY(105%); transition: transform .32s var(--ease);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .fc-sticky.is-visible { transform: translateY(0); }
+  .fc-sticky__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 560px; margin: 0 auto; }
+  .fc-sticky__price { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -.03em; font-size: 18px; }
+  .fc-sticky__price small { font-family: "Instrument Sans", sans-serif; font-weight: 500; font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; display: block; }
+  .fc-sticky .cta-button { padding: 12px 18px; font-size: 14px; box-shadow: none; }
+  @media (min-width: 900px) { .fc-sticky { display: none; } }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+  .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Anchors offset for sticky header */
+  section[id] { scroll-margin-top: 72px; }
+</style>
+</head>
+<body>
+<div class="fitcoach" id="top">
+
+  <!-- Header -->
+  <header class="fc-header" role="banner">
+    <div class="fc-header__inner">
+      <a class="fc-logo" href="#top" aria-label="FitCoach home">
+        <!-- EDITABLE: replace wordmark with <img src="..."> logo if you have one -->
+        <span class="fc-logo__mark">FC</span>
+        <span class="fc-logo__word">FitCoach <span>12-Week Program</span></span>
+      </a>
+      <nav class="fc-nav" aria-label="Section navigation">
+        <a href="#program">Program</a>
+        <a href="#results">Results</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <!-- ⚠️ REPLACE ME: paste your live Stripe Payment Link URL below -->
+      <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="cta-button fc-header__cta">Join Now <span class="arr">→</span></a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fc-hero" aria-labelledby="hero-heading">
+    <div class="fc-hero__grid">
+      <div>
+        <div class="kicker">12-Week Transformation Program</div>
+        <h1 id="hero-heading">
+          <span class="break">Build the body</span>
+          <span class="break">that <span class="hl">keeps its</span></span>
+          <span class="break">promises.</span>
+        </h1>
+        <p class="fc-hero__sub">
+          <!-- EDITABLE: subheadline — replace with your positioning -->
+          A structured 12-week system for real life. No guesswork, no burnout — just progressive training, simple nutrition guidance, and a coach in your corner.
+          <strong>For busy beginners who are done starting over.</strong>
+        </p>
+        <div class="fc-hero__actions">
+          <!-- ⚠️ REPLACE ME: paste your live Stripe Payment Link URL below -->
+          <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="cta-button">Join Now</a>
+          <a href="#program" class="cta-button cta-button--ghost">See what’s inside</a>
+        </div>
+        <div class="fc-trust" aria-label="Trust points">
+          <span><i>✓</i> Beginner-friendly</span>
+          <span><i>✓</i> 30–45 min sessions</span>
+          <span><i>✓</i> Minimal equipment</span>
+        </div>
+        <div class="fc-social-proof-mini">
+          <span class="fc-avatars" aria-hidden="true">
+            <span style="background:#EEF0F3; color:#1E2328; border:1px solid #E6E8EB;">A</span>
+            <span style="background:#6B6B6B;">M</span>
+            <span style="background:#FF4D00; color:#fff;">J</span>
+          </span>
+          <span><strong>500+</strong> transformations &nbsp; <span class="fc-stars">★★★★★ 4.9/5</span></span>
+        </div>
+      </div>
+
+      <div class="fc-photo" role="img" aria-label="Coach photo placeholder — replace with real coach image">
+        <div class="fc-photo__img"></div>
+        <div class="fc-photo__placeholder-label">Coach photo — 4:5 placeholder</div>
+        <div class="fc-photo__bottom">
+          <div class="fc-photo__coach">
+            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&auto=format&fit=crop" alt="" width="36" height="36" />
+            <div>
+              <b>Coach — Name</b>
+              <small>Replace with your name &amp; creds</small>
+            </div>
+          </div>
+          <div class="fc-photo__stat">
+            <strong>12 WK</strong>
+            <span>Full system</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Agitation -->
+  <section class="fc-problem" aria-labelledby="problem-heading">
+    <div class="fc-problem__inner">
+      <div class="kicker kicker--dark">The real problem</div>
+      <h2 id="problem-heading">Random workouts give you<br>random results.</h2>
+      <p class="fc-problem__lead">You don’t need more motivation. You need a system that removes decisions and keeps you consistent when life gets busy.</p>
+      <div class="fc-pains">
+        <article class="fc-pain">
+          <div class="fc-pain__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <h3>Starting over every Monday</h3>
+          <p>Without progression, your body adapts and stalls. You work hard but the mirror doesn’t change.</p>
+        </article>
+        <article class="fc-pain">
+          <div class="fc-pain__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 9a3 3 0 1 0 6 0a3 3 0 0 0-6 0Z"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+          </div>
+          <h3>Doing it alone</h3>
+          <p>No feedback loop. No one to adjust the plan when you miss a day or hit a plateau.</p>
+        </article>
+        <article class="fc-pain">
+          <div class="fc-pain__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18"/><path d="M7 12a5 5 0 0 1 10 0a5 5 0 0 1-10 0Z"/></svg>
+          </div>
+          <h3>All-or-nothing nutrition</h3>
+          <p>Restrictive plans that collapse on week two. You need simple rules that survive real life.</p>
+        </article>
+      </div>
+      <div class="fc-problem__bar">
+        <span><strong>FitCoach fixes this</strong> with progressive overload + simple nutrition + weekly check-ins.</span>
+        <span style="margin-left:auto; display:inline-flex; gap:8px; align-items:center;"><span style="width:6px;height:6px;border-radius:999px;background:var(--lime);display:inline-block;"></span> System over willpower</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Breakdown -->
+  <section class="fc-section" id="program" aria-labelledby="program-heading">
+    <div class="fc-section__head reveal">
+      <div class="kicker">What’s inside</div>
+      <h2 id="program-heading">Everything you need.<br>Nothing you don’t.</h2>
+      <p>Four pillars. Each one editable — swap the bullets below with your exact deliverables.</p>
+    </div>
+    <div class="fc-program-grid">
+      <!-- EDITABLE: Card 1 — Workouts -->
+      <article class="fc-card reveal">
+        <div class="fc-card__top">
+          <div class="fc-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 6.5h11v11h-11z"/><path d="M3 10h3.5v4H3zM17.5 10H21v4h-3.5z"/></svg>
+          </div>
+          <span class="fc-card__meta">3× / week · 35–45 min</span>
+        </div>
+        <h3>Progressive Workouts</h3>
+        <p class="fc-card__desc">Done-for-you sessions that build week over week. Video demos, swaps for limited equipment, and auto-progression.</p>
+        <ul>
+          <li>Full 12-week calendar with deload &amp; test weeks</li>
+          <li>Beginner → intermediate progressions for every move</li>
+          <li>At-home or gym — same plan, different tools</li>
+        </ul>
+        <div class="fc-editable-note">Editable: replace bullets with your exact workout structure</div>
+      </article>
+
+      <!-- EDITABLE: Card 2 — Nutrition -->
+      <article class="fc-card reveal">
+        <div class="fc-card__top">
+          <div class="fc-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <span class="fc-card__meta">No weighing · No apps</span>
+        </div>
+        <h3>Simple Nutrition Guidance</h3>
+        <p class="fc-card__desc">Hand-size portions, sample days, and grocery lists. No macro spreadsheets unless you want them.</p>
+        <ul>
+          <li>Flexible meal templates + swap list</li>
+          <li>3 sample days (high / low / training)</li>
+          <li>Eating-out &amp; travel playbook</li>
+        </ul>
+        <div class="fc-editable-note">Editable: add macros / calories if you coach them</div>
+      </article>
+
+      <!-- EDITABLE: Card 3 — Check-ins -->
+      <article class="fc-card reveal">
+        <div class="fc-card__top">
+          <div class="fc-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.5 8.5 0 1 1-3-6.5"/><path d="M9 11l2 2 4-5"/></svg>
+          </div>
+          <span class="fc-card__meta">Weekly · Async + Live</span>
+        </div>
+        <h3>Weekly Check-Ins</h3>
+        <p class="fc-card__desc">You send wins, struggles, and data. I adjust the plan so you never stall alone.</p>
+        <ul>
+          <li>Weekly form + Loom/video feedback</li>
+          <li>Plan tweaks for sleep, stress, schedule</li>
+          <li>Monthly progress review &amp; next-step call</li>
+        </ul>
+        <div class="fc-editable-note">Editable: specify Slack / email / app for check-ins</div>
+      </article>
+
+      <!-- EDITABLE: Card 4 — Community -->
+      <article class="fc-card reveal">
+        <div class="fc-card__top">
+          <div class="fc-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="fc-card__meta">Private group</span>
+        </div>
+        <h3>Community &amp; Accountability</h3>
+        <p class="fc-card__desc">A small, moderated group that actually helps. No spam, no flexing — just consistency.</p>
+        <ul>
+          <li>Daily prompts + win threads</li>
+          <li>Form-check channel with coach eyes</li>
+          <li>Alumni access after graduation</li>
+        </ul>
+        <div class="fc-editable-note">Editable: replace with your platform (Discord / FB / Circle)</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="fc-proof" id="results" aria-labelledby="proof-heading">
+    <div class="fc-proof__inner">
+      <div class="kicker">Real people. Real consistency.</div>
+      <h2 id="proof-heading" style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-.04em; line-height:.95; font-size:clamp(1.6rem,4vw,2.3rem); margin:10px 0 8px; text-wrap:pretty;">Built for the second try that<br>finally sticks.</h2>
+      <p style="color:var(--muted); font-size:14px; margin:0;">Placeholder testimonials — replace with real names, photos, and exact quotes. Keep them specific.</p>
+
+      <div class="fc-testimonials">
+        <!-- EDITABLE: Testimonial 1 -->
+        <figure class="fc-quote reveal">
+          <div class="fc-quote__head">
+            <span class="fc-avatar" aria-hidden="true">SR</span>
+            <div>
+              <b>Sarah R.</b>
+              <small>32 · 12 weeks · −14 lb</small>
+            </div>
+            <span class="fc-quote__stars" aria-label="5 stars" style="margin-left:auto;">★★★★★</span>
+          </div>
+          <blockquote>“I’d quit three programs before. This is the first one I finished. The check-ins kept me honest and the workouts fit my lunch break.”</blockquote>
+          <figcaption class="fc-quote__foot">Replace with real photo · Keep quote under 28 words</figcaption>
+        </figure>
+        <!-- EDITABLE: Testimonial 2 -->
+        <figure class="fc-quote reveal">
+          <div class="fc-quote__head">
+            <span class="fc-avatar" aria-hidden="true" style="background:#FF4D00; color:#fff;">MJ</span>
+            <div>
+              <b>Marcus J.</b>
+              <small>29 · 12 weeks · −18 lb</small>
+            </div>
+            <span class="fc-quote__stars" aria-label="5 stars" style="margin-left:auto;">★★★★★</span>
+          </div>
+          <blockquote>“No gym intimidation. I did it with dumbbells in my garage. Down a belt notch and my energy is back.”</blockquote>
+          <figcaption class="fc-quote__foot">Replace with real photo · Add program week for credibility</figcaption>
+        </figure>
+        <!-- EDITABLE: Testimonial 3 -->
+        <figure class="fc-quote reveal">
+          <div class="fc-quote__head">
+            <span class="fc-avatar" aria-hidden="true" style="background:#6B6B6B;">AL</span>
+            <div>
+              <b>Ana L.</b>
+              <small>41 · 12 weeks · −11 lb</small>
+            </div>
+            <span class="fc-quote__stars" aria-label="5 stars" style="margin-left:auto;">★★★★★</span>
+          </div>
+          <blockquote>“The nutrition guidance finally made sense. I ate more than before and still lost weight. No more guessing.”</blockquote>
+          <figcaption class="fc-quote__foot">Replace with real photo · Keep outcomes honest &amp; verifiable</figcaption>
+        </figure>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap; font-size:11px; color:#8A95A3; font-family:'JetBrains Mono',monospace; letter-spacing:.06em; text-transform:uppercase;">
+        <span style="background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px;">Before/after placeholder — 16:9 image</span>
+        <span style="background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px;">Add disclaimer if required</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="fc-pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="fc-section__head reveal" style="max-width:none;">
+      <div class="kicker">One payment. Twelve weeks.</div>
+      <h2 id="pricing-heading" style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-.04em; line-height:.95; font-size:clamp(1.7rem,4vw,2.5rem); margin:10px 0 10px;">Invest once.<br>Keep the system forever.</h2>
+    </div>
+
+    <div class="fc-price-card reveal">
+      <div class="fc-price-card__main">
+        <div class="fc-price-card__eyebrow"><i></i> 12-Week Transformation Program</div>
+        <div class="fc-price">
+          <!-- EDITABLE: price — change the number below -->
+          <strong>$297</strong>
+          <s>$497</s>
+          <span class="fc-price__badge">Save $200 — Launch</span>
+        </div>
+        <p class="fc-price__note">One-time payment. Lifetime access to materials. No subscription.</p>
+
+        <ul class="fc-value-stack" aria-label="What’s included">
+          <li><span class="fc-check">✓</span><span><b>12 weeks of progressive workouts</b><small>3×/week · 35–45 min · video demos + swaps</small></span></li>
+          <li><span class="fc-check">✓</span><span><b>Simple nutrition system</b><small>Templates, grocery lists, eating-out guide</small></span></li>
+          <li><span class="fc-check">✓</span><span><b>Weekly 1:1 check-ins</b><small>Form + video feedback + plan adjustments</small></span></li>
+          <li><span class="fc-check">✓</span><span><b>Private community access</b><small>Daily accountability + form checks</small></span></li>
+          <li><span class="fc-check">✓</span><span><b>Lifetime alumni resources</b><small>Keep everything after week 12</small></span></li>
+        </ul>
+
+        <!-- ⚠️ REPLACE ME: paste your live Stripe Payment Link URL below -->
+        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="cta-button">Join Now</a>
+        <p style="font-size:11px; color:var(--muted); margin:10px 0 0; font-family:'JetBrains Mono',monospace; letter-spacing:.04em;">Secure checkout via Stripe · Takes 60 seconds</p>
+
+        <div class="fc-guarantee" style="margin-top:16px;">
+          <span style="width:32px;height:32px;border-radius:999px;background:#FEF3C7;border:1px solid #FDE68A;display:grid;place-items:center;flex-shrink:0;">✓</span>
+          <span><!-- EDITABLE: guarantee text --><b>14-day action guarantee.</b> Do the first two weeks. If it’s not for you, email us for a full refund — no hoops.</span>
+        </div>
+      </div>
+
+      <div class="fc-price-card__side">
+        <div class="fc-includes-label">Also included</div>
+        <ul class="fc-side-list">
+          <li>Mobile-friendly workout tracker (print or app)</li>
+          <li>Form-check priority — 24h video reply</li>
+          <li>Bonus: Travel + minimal-equipment swaps</li>
+          <li>Bonus: Recipe pack — 20 high-protein meals</li>
+        </ul>
+        <div class="fc-timer" role="status" aria-live="polite">
+          <span style="width:28px;height:28px;border-radius:999px;background:var(--lime);color:#fff;display:grid;place-items:center;font-size:14px;">◷</span>
+          <span><strong>Enroll today</strong> — start Monday with your Day 1 plan.</span>
+        </div>
+        <div class="fc-secure-row">
+          <span>🔒 SSL secure</span>
+          <span>↩ 14-day refund</span>
+          <span>✉ hello@fitcoach.example</span>
+        </div>
+        <p style="font-size:11px; color:#8A95A3; margin:0; font-family:'JetBrains Mono',monospace;">EDITABLE: swap bonuses &amp; support email</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fc-faq" id="faq" aria-labelledby="faq-heading">
+    <div class="kicker" style="justify-content:center; width:100%;">Questions, answered</div>
+    <h2 id="faq-heading">No surprises.<br>Just a clear plan.</h2>
+    <p class="fc-faq__sub">If you don’t see your question, email <a href="mailto:hello@fitcoach.example">hello@fitcoach.example</a></p>
+
+    <div class="fc-accordion" role="list">
+      <!-- EDITABLE: FAQ 1 -->
+      <div class="fc-acc is-open" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="true">
+          <span class="fc-acc__q">How fast will I see results?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>Most clients feel stronger in week 2 and see visible changes by weeks 4–6. Consistency beats intensity — the plan is built for 12 weeks, not 12 days.</p><span class="editable">Editable: replace with your typical timeline &amp; disclaimer</span></div></div></div>
+      </div>
+      <!-- EDITABLE: FAQ 2 -->
+      <div class="fc-acc" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="false">
+          <span class="fc-acc__q">What equipment do I need?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>Minimal. A pair of dumbbells and a bench or sturdy surface covers 90%. Every exercise has a bodyweight or band swap listed.</p><span class="editable">Editable: list your exact minimum</span></div></div></div>
+      </div>
+      <!-- EDITABLE: FAQ 3 -->
+      <div class="fc-acc" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="false">
+          <span class="fc-acc__q">What’s the time commitment?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>Three sessions a week, 35–45 minutes each, plus a 10-minute weekly check-in. No two-a-days, no fluff.</p><span class="editable">Editable: adjust if you program 4×/week</span></div></div></div>
+      </div>
+      <!-- EDITABLE: FAQ 4 -->
+      <div class="fc-acc" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="false">
+          <span class="fc-acc__q">Is this beginner-friendly?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>Yes. Every movement has Level 1 → Level 3 progressions, with video demos and form cues. You start where you are and progress from there.</p><span class="editable">Editable: add prerequisites if any</span></div></div></div>
+      </div>
+      <!-- EDITABLE: FAQ 5 -->
+      <div class="fc-acc" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="false">
+          <span class="fc-acc__q">What’s the refund policy?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>14-day action guarantee: do the first two weeks as written. If you’re not satisfied, email us for a full refund. Keep the materials.</p><span class="editable">Editable: replace with your legal policy</span></div></div></div>
+      </div>
+      <!-- EDITABLE: FAQ 6 -->
+      <div class="fc-acc" role="listitem">
+        <button class="fc-acc__btn" aria-expanded="false">
+          <span class="fc-acc__q">Do I need to follow a strict diet?</span>
+          <span class="fc-acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="fc-acc__panel"><div class="fc-acc__inner"><div class="fc-acc__a"><p>No. We use hand-size portions and flexible templates — not a meal plan you’ll quit. You’ll learn how to eat for progress without tracking every bite.</p><span class="editable">Editable: clarify if you provide macros</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fc-footer" role="contentinfo">
+    <div class="fc-footer__inner">
+      <div class="fc-footer__grid">
+        <div>
+          <div class="fc-footer__brand">
+            <span class="fc-logo__mark">FC</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-.04em;">FitCoach</span>
+            <span style="font-size:11px; color:var(--muted); font-family:'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;">© 2026 All rights reserved</span>
+          </div>
+          <p class="fc-footer__legal" style="margin:10px 0 0;">
+            <!-- EDITABLE: legal placeholder — replace with your actual legal / privacy / terms URLs and business info -->
+            Results vary based on effort, consistency, and individual circumstances. This program is for educational purposes and is not medical advice. Consult your physician before starting any exercise program. By purchasing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>. Questions? <a href="mailto:hello@fitcoach.example">hello@fitcoach.example</a>
+          </p>
+        </div>
+        <div class="fc-footer__links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
+          <a href="mailto:hello@fitcoach.example">hello@fitcoach.example</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="fc-sticky" id="stickyBar" aria-hidden="true">
+    <div class="fc-sticky__inner">
+      <div class="fc-sticky__price"> $297 <small>One-time · Lifetime access</small></div>
+      <!-- ⚠️ REPLACE ME: paste your live Stripe Payment Link URL below -->
+      <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="cta-button">Join Now <span class="arr">→</span></a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ——— FitCoach Vanilla JS — no deps, GHL-safe ———
+  (function () {
+    var SINGLE_OPEN = true; // FAQ: true = one open at a time
+
+    // FAQ accordion
+    var accs = document.querySelectorAll('.fc-acc');
+    accs.forEach(function (acc) {
+      var btn = acc.querySelector('.fc-acc__btn');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var isOpen = acc.classList.contains('is-open');
+        if (SINGLE_OPEN) {
+          accs.forEach(function (a) {
+            a.classList.remove('is-open');
+            var b = a.querySelector('.fc-acc__btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+        }
+        if (!isOpen) {
+          acc.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        } else if (!SINGLE_OPEN) {
+          acc.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      // keyboard: Enter/Space already handled by <button>
+    });
+
+    // Sticky bar: show after hero scrolled
+    var hero = document.querySelector('.fc-hero');
+    var bar = document.getElementById('stickyBar');
+    if (hero && bar && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        var e = entries[0];
+        if (!e.isIntersecting) {
+          bar.classList.add('is-visible');
+          bar.setAttribute('aria-hidden', 'false');
+        } else {
+          bar.classList.remove('is-visible');
+          bar.setAttribute('aria-hidden', 'true');
+        }
+      }, { threshold: 0, rootMargin: '-72px 0px 0px 0px' });
+      obs.observe(hero);
+    }
+
+    // Smooth anchor scroll with header offset (no scrollIntoView per GHL embed)
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 68;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        // update focus for a11y
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    });
+
+    // Reveal on scroll
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var rObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            rObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 60 + 'ms';
+        rObs.observe(el);
+      });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('is-in'); });
+    }
+
+    // Respect reduced motion: disable sticky transition already handled via CSS
+  })();
+</script>
+</body>
+</html>

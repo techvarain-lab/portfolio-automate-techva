@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FitCoach - 1:1 Coaching Session Pack</title>
+<meta name="description" content="Three private coaching calls. One training and nutrition plan written around your schedule, your history and your actual life." />
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ═══ FITCOACH · 1:1 COACHING ═══
+     Palette: deep forest + amber on cool bone. Amber is an accent only,
+     never a button fill. One CTA label: "Book Call 1".
+     Two type families, no mono. 3 eyebrows max (hero, what you get, pricing).
+  ═══ */
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --bone:        #EDEFEA;
+    --surface:     #FFFFFF;
+    --surface-2:   #F6F8F5;
+    --ink:         #101613;
+    --muted:       #55605A;
+    --line:        #DBE0D9;
+    --line-strong: #C3CBC2;
+    --forest:      #1C3A2E;
+    --forest-deep: #12271D;
+    --forest-ink:  #F2F4F0;
+    --forest-muted:#A9B7AE;
+    --amber:       #E0912F;   /* on dark backgrounds + fills only */
+    --amber-hi:    #F0AC5C;   /* hover on amber fills. Tracks the dark override */
+    --amber-text:  #8A5410;   /* on light backgrounds, AA with margin */
+    --on-amber:    #1A1204;
+
+    --shadow-1: 0 1px 2px rgba(16,22,19,.05), 0 6px 18px rgba(16,22,19,.05);
+    --shadow-2: 0 16px 40px rgba(16,22,19,.12), 0 2px 8px rgba(16,22,19,.06);
+
+    --ease: cubic-bezier(.16,1,.3,1);
+    --gutter: 24px;
+    --content: 1200px;
+    --section:  var(--section);
+    --radius-sm:  7px;    /* marks, chips, signs */
+    --radius-md:  10px;   /* controls, callouts */
+    --radius-lg:  14px;   /* cards, containers */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bone:        #0C1210;
+      --surface:     #141D18;
+      --surface-2:   #1A251F;
+      --ink:         #EEF1EC;
+      --muted:       #9BA79F;
+      --line:        #26332C;
+      --line-strong: #35443A;
+      --forest:      #24493A;
+      --forest-deep: #1A3628;
+      --forest-ink:  #EEF1EC;
+      --forest-muted:#AFC0B5;
+      --amber:       #E9A64A;
+      --amber-hi:    #F3B45E;
+      --amber-text:  #E9A64A;
+      --on-amber:    #171004;
+      --shadow-1: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.28);
+      --shadow-2: 0 16px 40px rgba(0,0,0,.44), 0 2px 8px rgba(0,0,0,.3);
+    }
+  }
+
+  @media (min-width: 720px) { :root { --gutter: 40px; } }
+
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  img { display: block; max-width: 100%; }
+
+  .wrap { width: min(var(--content), calc(100vw - var(--gutter) * 2)); margin-inline: auto; }
+  .wrap--narrow { width: min(820px, calc(100vw - var(--gutter) * 2)); margin-inline: auto; }
+
+  /* ─── Type ─── */
+  .display {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 800;
+    font-stretch: 88%;
+    letter-spacing: -.03em;
+    line-height: .94;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .display--xl { font-size: clamp(2.6rem, 6.2vw, 4.4rem); }
+  .display--lg { font-size: clamp(1.9rem, 4vw, 2.9rem); }
+  .display--md { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 750; }
+  .display--num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    letter-spacing: -.04em;
+  }
+  .lede { font-size: clamp(1.05rem, 1.7vw, 1.2rem); line-height: 1.55; color: var(--muted); max-width: 58ch; margin: 0; }
+  .body { color: var(--muted); margin: 0; max-width: 62ch; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 82%;
+    font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--amber-text);
+  }
+  .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--amber-text); }
+
+  /* ─── Buttons ─── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--forest); color: var(--forest-ink);
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 88%;
+    font-size: 1rem; letter-spacing: -.01em;
+    padding: 17px 30px; border-radius: var(--radius-md); border: 1px solid var(--forest);
+    text-decoration: none; cursor: pointer; white-space: nowrap;
+    transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+    box-shadow: 0 8px 18px rgba(28,58,46,.22);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(28,58,46,.3); }
+  .btn:active { transform: translateY(1px); box-shadow: 0 4px 10px rgba(28,58,46,.2); }
+  .btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+  .btn__arrow { transition: transform .2s var(--ease); }
+  .btn:hover .btn__arrow { transform: translateX(3px); }
+  .btn--ghost {
+    background: transparent; color: var(--ink); border-color: var(--line-strong);
+    box-shadow: none;
+  }
+  .btn--ghost:hover { border-color: var(--ink); box-shadow: none; }
+  .btn--onDark { background: var(--amber); border-color: var(--amber); color: var(--on-amber); box-shadow: none; }
+  .btn--onDark:hover { background: var(--amber-hi); }
+  .btn--block { width: 100%; }
+
+  /* ─── Header ─── */
+  .hd {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in srgb, var(--bone) 88%, transparent);
+    backdrop-filter: blur(14px) saturate(1.3);
+    border-bottom: 1px solid var(--line);
+  }
+  .hd__in {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; height: 68px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .brand__mark {
+    width: 30px; height: 30px; border-radius: var(--radius-sm); background: var(--forest); color: var(--forest-ink);
+    display: grid; place-items: center;
+    font-family: "Archivo", sans-serif; font-weight: 900; font-stretch: 88%; font-size: 13px; letter-spacing: -.04em;
+  }
+  .brand__name { font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 88%; font-size: 1.05rem; letter-spacing: -.03em; }
+  .hd__nav { display: none; gap: 26px; font-size: .875rem; font-weight: 600; }
+  .hd__nav a { text-decoration: none; color: var(--muted); }
+  .hd__nav a:hover { color: var(--ink); }
+  .hd__cta { display: none; padding: 11px 20px; font-size: .875rem; box-shadow: none; }
+  @media (min-width: 900px) {
+    .hd__nav { display: flex; }
+    .hd__cta { display: inline-flex; }
+  }
+
+  /* ─── 1. Hero (type left / bleed portrait right) ─── */
+  .hero { padding: clamp(40px, 6vw, 76px) 0 clamp(48px, 6vw, 80px); }
+  @media (min-width: 1024px) {
+    .hero {
+      display: grid; grid-template-columns: 1.02fr .98fr;
+      align-items: center; gap: 56px; max-width: none;
+      padding-left: max(var(--gutter), calc((100vw - var(--content)) / 2));
+      padding-right: 0;
+    }
+    .hero__media { height: min(86vh, 780px); }
+  }
+  .hero__copy { max-width: 34ch; }
+  .hero .display--xl { margin: 20px 0 22px; }
+  .hero__sub { color: var(--muted); margin: 0 0 30px; max-width: 40ch; font-size: 1.06rem; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero__media { position: relative; margin-top: 34px; }
+  @media (min-width: 1024px) { .hero__media { margin-top: 0; } }
+  .portrait { position: relative; height: 100%; min-height: 420px; background: var(--surface-2); overflow: hidden; }
+  @media (min-width: 720px) { .portrait { min-height: 540px; } }
+  @media (max-width: 1023px) { .portrait { aspect-ratio: 4 / 5; } }
+  @media (min-width: 1024px) { .portrait { border-radius: var(--radius-lg) 0 0 var(--radius-lg); } }
+  .portrait__img {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(18,39,29,.1) 0%, rgba(18,39,29,.62) 100%),
+      url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1100&auto=format&fit=crop') center/cover;
+    filter: saturate(.92) contrast(1.04);
+  }
+  .portrait__tag {
+    position: absolute; top: 14px; left: 14px;
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 82%;
+    font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+    background: rgba(255,255,255,.94); color: #101613;
+    padding: 7px 10px; border-radius: var(--radius-sm);
+  }
+  .portrait__cap {
+    position: absolute; left: 20px; right: 20px; bottom: 20px; color: #fff;
+  }
+  .portrait__cap b {
+    display: block; font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 88%;
+    font-size: 1.25rem; letter-spacing: -.03em; line-height: 1.1;
+  }
+  .portrait__cap span {
+    display: block; font-size: .84rem; color: rgba(255,255,255,.82); margin-top: 4px;
+  }
+  .portrait__stamp {
+    position: absolute; right: 14px; bottom: 14px;
+    background: var(--amber); color: var(--on-amber);
+    border-radius: var(--radius-md); padding: 9px 12px; text-align: center;
+  }
+  .portrait__stamp strong {
+    display: block; font-family: "Archivo", sans-serif; font-weight: 900; font-stretch: 85%;
+    font-size: 1.25rem; line-height: 1; letter-spacing: -.03em;
+  }
+  .portrait__stamp span { font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 82%; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+
+  /* ─── 2. Fact strip ─── */
+  .facts { border-block: 1px solid var(--line); background: var(--surface); }
+  .facts__in {
+    display: grid; gap: 0;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) { .facts__in { grid-template-columns: repeat(3, 1fr); } }
+  .fact { padding: 22px 4px; }
+  @media (min-width: 720px) {
+    .fact { padding: 26px 28px; }
+    .fact:first-child { padding-left: 0; }
+    .fact + .fact { border-left: 1px solid var(--line); }
+  }
+  @media (max-width: 719px) { .fact + .fact { border-top: 1px solid var(--line); } }
+  .fact strong {
+    display: block; font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 88%;
+    font-size: 1.15rem; letter-spacing: -.03em; line-height: 1.1;
+  }
+  .fact span { display: block; font-size: .875rem; color: var(--muted); margin-top: 3px; }
+
+  /* ─── 3. Statement (dark, near-empty, rhythm break) ─── */
+  .statement { background: var(--forest); color: var(--forest-ink); }
+  .statement__in { padding: clamp(72px, 12vw, 150px) 0; }
+  .statement .display--lg { max-width: 22ch; font-stretch: 84%; }
+  .statement .display--lg em { font-style: normal; color: var(--amber); }
+  .statement__foot {
+    margin-top: clamp(40px, 6vw, 72px); padding-top: 22px; border-top: 1px solid rgba(242,244,240,.16);
+    display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center;
+  }
+  .statement__foot span { font-size: .85rem; color: var(--forest-muted); }
+
+  /* ─── 4. The gap (divide-y rows, index numerals) ─── */
+  .gap { padding: var(--section) 0; }
+  .gap__head { max-width: 640px; margin-bottom: clamp(40px, 6vw, 72px); }
+  .gap__head .display--lg { margin: 14px 0 18px; }
+  .rows { border-top: 1px solid var(--line); }
+  .row {
+    display: grid; gap: 8px 40px; padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .row { grid-template-columns: 90px minmax(0, 1fr) minmax(0, 1.15fr); align-items: start; padding: 44px 0; }
+  }
+  .row__idx {
+    font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 80%;
+    font-size: 1.6rem; line-height: 1; letter-spacing: -.04em;
+    color: var(--amber-text);
+  }
+  .row__title {
+    font-family: "Archivo", sans-serif; font-weight: 750; font-stretch: 90%;
+    font-size: clamp(1.15rem, 2vw, 1.4rem); letter-spacing: -.025em; line-height: 1.2; margin: 0;
+  }
+  .row__body { color: var(--muted); margin: 0; max-width: 52ch; }
+
+  /* ─── 5. Coach (portrait left / copy right) ─── */
+  .coach { background: var(--surface-2); border-block: 1px solid var(--line); }
+  .coach__in {
+    padding: var(--section) 0;
+    display: grid; gap: clamp(32px, 5vw, 60px); align-items: start;
+  }
+  @media (min-width: 900px) { .coach__in { grid-template-columns: .8fr 1.2fr; } }
+  .coach__media { position: relative; }
+  .coach__media .portrait { aspect-ratio: 3 / 4; border-radius: var(--radius-lg); }
+  .coach__media .portrait__img {
+    background:
+      linear-gradient(180deg, rgba(18,39,29,.08) 0%, rgba(18,39,29,.55) 100%),
+      url('https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=900&auto=format&fit=crop') center/cover;
+  }
+  .coach__body .display--lg { margin: 14px 0 20px; max-width: 20ch; }
+  .coach__body p + p { margin-top: 16px; }
+  .creds { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .creds li {
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 84%;
+    font-size: .78rem; letter-spacing: .04em;
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+    padding: 9px 13px; color: var(--ink);
+  }
+  .template-note {
+    margin-top: 22px; padding: 14px 16px; border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--amber) 14%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--amber) 42%, transparent);
+    font-size: .82rem; line-height: 1.55; color: var(--ink);
+  }
+  .template-note b {
+    display: block; font-family: "Archivo", sans-serif; font-weight: 750; font-stretch: 84%;
+    font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber-text); margin-bottom: 4px;
+  }
+
+  /* ─── 6. What you get (asymmetric 1 large + 2 small) ─── */
+  .inside { padding: var(--section) 0; }
+  .inside__head { max-width: 620px; margin-bottom: clamp(36px, 5vw, 60px); }
+  .inside__head .display--lg { margin: 14px 0 16px; }
+  .inside__grid { display: grid; gap: 16px; }
+  @media (min-width: 900px) {
+    .inside__grid { grid-template-columns: 1.25fr .75fr; grid-template-rows: auto auto; }
+    .tile--feature { grid-row: span 2; }
+  }
+  .tile {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: 26px 24px; box-shadow: var(--shadow-1);
+    transition: transform .24s var(--ease), box-shadow .24s var(--ease);
+  }
+  .tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+  .tile--feature { background: var(--forest); color: var(--forest-ink); border-color: var(--forest); }
+  .tile__meta {
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 82%;
+    font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--amber-text);
+  }
+  .tile--feature .tile__meta { color: var(--amber); }
+  .tile h3 {
+    font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 90%;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem); letter-spacing: -.03em; line-height: 1.1;
+    margin: 12px 0 12px;
+  }
+  .tile p { color: var(--muted); margin: 0 0 20px; max-width: 46ch; }
+  .tile--feature p { color: var(--forest-muted); }
+  .tile ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+  .tile li { display: flex; gap: 10px; font-size: .92rem; line-height: 1.5; }
+  .tile li::before {
+    content: ""; width: 7px; height: 7px; border-radius: 2px; background: var(--amber);
+    flex-shrink: 0; margin-top: 8px;
+  }
+  .tile--feature li { color: var(--forest-ink); }
+
+  /* ─── 7. Call 1 walkthrough (timeline) ─── */
+  .walk { background: var(--surface); border-block: 1px solid var(--line); }
+  .walk__in { padding: var(--section) 0; }
+  .walk__head { max-width: 620px; margin-bottom: clamp(40px, 6vw, 68px); }
+  .walk__head .display--lg { margin: 0 0 16px; }
+  .tl { display: grid; gap: 0; }
+  .tl__item {
+    display: grid; gap: 6px 32px; padding: 30px 0;
+    border-top: 1px solid var(--line);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .tl__item { grid-template-columns: 168px minmax(0,1fr); align-items: baseline; padding: 36px 0; }
+  }
+  .tl__time {
+    font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 82%;
+    font-size: .82rem; letter-spacing: .06em; color: var(--amber-text);
+    font-variant-numeric: tabular-nums;
+  }
+  .tl__title {
+    font-family: "Archivo", sans-serif; font-weight: 750; font-stretch: 90%;
+    font-size: 1.1rem; letter-spacing: -.02em; line-height: 1.25; margin: 0 0 8px;
+  }
+  .tl__body { color: var(--muted); margin: 0; max-width: 58ch; }
+  .walk__note {
+    margin-top: 40px; padding: 22px 24px; border-left: 3px solid var(--amber);
+    background: var(--surface-2); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .walk__note p { margin: 0; color: var(--ink); font-weight: 500; max-width: 60ch; }
+
+  /* ─── 8. Proof (1 large + 2 small, bento) ─── */
+  .proof { padding: var(--section) 0; }
+  .proof__head { max-width: 620px; margin-bottom: clamp(36px, 5vw, 56px); }
+  .proof__head .display--lg { margin: 0 0 16px; }
+  .proof__grid { display: grid; gap: 16px; }
+  @media (min-width: 900px) {
+    .proof__grid { grid-template-columns: 1.3fr .7fr; }
+    .proof__big { grid-row: span 2; }
+  }
+  .slot {
+    border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
+    background: var(--surface-2);
+    padding: 30px 26px; display: flex; flex-direction: column; justify-content: center; gap: 10px;
+  }
+  .proof__big .slot { min-height: 300px; }
+  .slot__tag {
+    align-self: flex-start;
+    font-family: "Archivo", sans-serif; font-weight: 700; font-stretch: 82%;
+    font-size: .7rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted); background: var(--surface); border: 1px solid var(--line);
+    padding: 6px 10px; border-radius: var(--radius-sm);
+  }
+  .slot__hint { font-size: .9rem; color: var(--muted); margin: 0; max-width: 42ch; }
+  .slot__hint b { color: var(--ink); }
+
+  /* ─── 9. Pricing (dark full-bleed) ─── */
+  .price { background: var(--forest); color: var(--forest-ink); }
+  .price__in { padding: var(--section) 0; }
+  .price__head { max-width: 640px; margin-bottom: clamp(36px, 5vw, 60px); }
+  .price .eyebrow { color: var(--amber); }
+  .price .eyebrow::before { background: var(--amber); }
+  .price .display--lg { margin: 16px 0 0; }
+  .price__grid { display: grid; gap: 20px; }
+  @media (min-width: 900px) { .price__grid { grid-template-columns: 1.3fr .7fr; align-items: start; } }
+  .price__card {
+    background: var(--forest-deep); border: 1px solid rgba(242,244,240,.14);
+    border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 38px);
+  }
+  /* Single child by design: there is no anchor and no savings badge, because
+     no real standalone comparison value exists to anchor against. */
+  .price__amount { margin: 20px 0 8px; }
+  .price__amount strong {
+    font-family: "Archivo", sans-serif; font-weight: 900; font-stretch: 84%;
+    font-size: clamp(3rem, 8vw, 4.6rem); line-height: .9; letter-spacing: -.05em;
+  }
+  .price__note { color: var(--forest-muted); font-size: .9rem; margin: 0 0 28px; }
+  .stack { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 2px; }
+  .stack li {
+    display: flex; gap: 14px; align-items: start; padding: 15px 0;
+    border-top: 1px solid rgba(242,244,240,.12);
+  }
+  .stack li:last-child { border-bottom: 1px solid rgba(242,244,240,.12); }
+  .stack b { font-weight: 700; }
+  .stack small { display: block; color: var(--forest-muted); font-size: .84rem; margin-top: 2px; }
+  .stack__mark {
+    width: 24px; height: 24px; border-radius: var(--radius-sm); background: var(--amber); color: var(--on-amber);
+    display: grid; place-items: center; flex-shrink: 0;
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: .72rem; margin-top: 1px;
+  }
+  .price__fine { font-size: .8rem; color: var(--forest-muted); margin: 14px 0 0; }
+  .guarantee {
+    display: flex; gap: 12px; align-items: start; margin-top: 22px;
+    background: rgba(242,244,240,.07); border: 1px solid rgba(242,244,240,.14);
+    border-radius: var(--radius-md); padding: 16px;
+  }
+  .guarantee__badge {
+    width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--amber); color: var(--on-amber);
+    display: grid; place-items: center; flex-shrink: 0;
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: .9rem;
+  }
+  .guarantee p { margin: 0; font-size: .88rem; line-height: 1.55; color: var(--forest-muted); }
+  .guarantee b { color: var(--forest-ink); }
+
+  .price__side { display: grid; gap: 18px; }
+  .side-card {
+    background: rgba(242,244,240,.06); border: 1px solid rgba(242,244,240,.13);
+    border-radius: var(--radius-lg); padding: 24px 22px;
+  }
+  .side-card h3 {
+    font-family: "Archivo", sans-serif; font-weight: 750; font-stretch: 84%;
+    font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 16px;
+  }
+  .side-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .side-card li { font-size: .88rem; line-height: 1.5; color: var(--forest-muted); padding-left: 16px; position: relative; }
+  .side-card li b { color: var(--forest-ink); font-weight: 700; }
+  /* The confidentiality promise answers the buyer's real fear, so it gets the
+     same emphasis as the refund guarantee rather than a footnote in the
+     booking-logistics list. Same treatment as .walk__note. */
+  .confidential {
+    border-left: 3px solid var(--amber);
+    background: rgba(242,244,240,.06);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 20px 22px;
+  }
+  .confidential p { margin: 0; color: var(--ink); font-size: .95rem; line-height: 1.6; }
+  .confidential b { color: var(--ink); font-weight: 700; }
+  .side-card li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--amber); }
+
+  /* ─── 10. Upsell band ─── */
+  .upsell { background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .upsell__in {
+    padding: clamp(44px, 6vw, 72px) 0;
+    display: grid; gap: 24px; align-items: center;
+  }
+  @media (min-width: 900px) { .upsell__in { grid-template-columns: 1fr auto; gap: 48px; } }
+  .upsell h2 {
+    font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 88%;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem); letter-spacing: -.035em; line-height: 1.05; margin: 0 0 12px;
+  }
+  .upsell p { color: var(--muted); margin: 0; max-width: 62ch; }
+
+  /* ─── 11. FAQ (sticky heading + accordion) ─── */
+  .faq { padding: var(--section) 0; }
+  .faq__in { display: grid; gap: clamp(28px, 4vw, 56px); align-items: start; }
+  @media (min-width: 900px) { .faq__in { grid-template-columns: .78fr 1.22fr; } }
+  .faq__head { position: static; }
+  @media (min-width: 900px) { .faq__head { position: sticky; top: 100px; } }
+  .faq__head .display--lg { margin: 0 0 16px; }
+  .faq__head p { color: var(--muted); margin: 0; max-width: 38ch; }
+  .acc { border-top: 1px solid var(--line); }
+  .acc__item { border-bottom: 1px solid var(--line); }
+  .acc__btn {
+    width: 100%; display: flex; align-items: start; justify-content: space-between; gap: 20px;
+    background: transparent; border: 0; padding: 24px 0; text-align: left; cursor: pointer;
+    font: inherit; color: inherit;
+  }
+  .acc__btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .acc__q {
+    font-family: "Archivo", sans-serif; font-weight: 750; font-stretch: 90%;
+    font-size: 1.05rem; letter-spacing: -.02em; line-height: 1.3;
+  }
+  .acc__sign {
+    width: 26px; height: 26px; border-radius: var(--radius-sm); border: 1px solid var(--line-strong);
+    display: grid; place-items: center; flex-shrink: 0; margin-top: 2px;
+    color: var(--muted); font-size: 15px; line-height: 1;
+    transition: transform .26s var(--ease), background .2s, color .2s, border-color .2s;
+  }
+  .acc__item.is-open .acc__sign { transform: rotate(45deg); background: var(--forest); color: var(--forest-ink); border-color: var(--forest); }
+  .acc__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s var(--ease); }
+  .acc__item.is-open .acc__panel { grid-template-rows: 1fr; }
+  .acc__inner { overflow: hidden; visibility: hidden; }
+  /* Closed answers leave the a11y tree. No transition needed: the panel is
+     clipped to 0fr anyway, so the snap is never visible. */
+  .acc__item.is-open .acc__inner { visibility: visible; }
+  .acc__a { padding: 0 40px 24px 0; color: var(--muted); }
+  .acc__a p { margin: 0; }
+  .acc__a a { color: var(--ink); text-underline-offset: 3px; }
+
+  /* ─── Footer ─── */
+  .ft { background: var(--surface); border-top: 1px solid var(--line); }
+  .ft__in { padding: 34px 0; display: grid; gap: 20px; }
+  @media (min-width: 900px) { .ft__in { grid-template-columns: 1.3fr .7fr; align-items: start; } }
+  .ft__legal { font-size: .78rem; line-height: 1.65; color: var(--muted); max-width: 62ch; margin: 14px 0 0; }
+  .ft__legal a { text-underline-offset: 3px; }
+  .ft__links { display: flex; flex-wrap: wrap; gap: 16px; font-size: .84rem; font-weight: 600; }
+  @media (min-width: 900px) { .ft__links { justify-content: end; } }
+  .ft__links a { text-decoration: none; color: var(--muted); }
+  .ft__links a:hover { color: var(--ink); }
+
+  /* ─── Sticky mobile CTA ─── */
+  /* visibility is toggled with the transform so the dock leaves the tab order
+     and the a11y tree when hidden, with no JS coordination. */
+  .dock {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(14px) saturate(1.3);
+    border-top: 1px solid var(--line); box-shadow: 0 -8px 26px rgba(16,22,19,.1);
+    transform: translateY(110%); visibility: hidden;
+    transition: transform .3s var(--ease), visibility .3s;
+    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  }
+  .dock.is-visible { transform: translateY(0); visibility: visible; }
+  .dock__in { display: flex; align-items: center; justify-content: space-between; gap: 14px; max-width: 560px; margin-inline: auto; }
+  .dock__price { font-family: "Archivo", sans-serif; font-weight: 800; font-stretch: 88%; font-size: 1.1rem; letter-spacing: -.03em; line-height: 1.1; }
+  .dock__price small { display: block; font-family: "Manrope", sans-serif; font-weight: 500; font-size: .7rem; color: var(--muted); letter-spacing: .02em; }
+  .dock .btn { padding: 13px 20px; font-size: .9rem; box-shadow: none; }
+  /* Body clearance is derived from the dock's own box, so the two can never
+     disagree — including on notched phones where the safe-area inset is 34px.
+     72px = dock padding (10+10) + border 1 + tallest child (.btn 13+13+~24). */
+  @media (max-width: 1023px) { body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); } }
+  @media (min-width: 1024px) { .dock { display: none; } }
+
+  /* ─── Scroll-driven reveal (progressive enhancement, no JS) ─── */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .rise {
+        animation: rise linear both;
+        animation-timeline: view();
+        animation-range: entry 8% cover 26%;
+      }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: none; }
+      }
+    }
+  }
+
+  /* Anchor offset under sticky header */
+  section[id], div[id] { scroll-margin-top: 88px; }
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap hd__in">
+    <!-- EDITABLE: replace wordmark with <img src="..."> if you have a logo -->
+    <a class="brand" href="#top" aria-label="FitCoach home">
+      <span class="brand__mark" aria-hidden="true">FC</span>
+      <span class="brand__name">FitCoach</span>
+    </a>
+    <nav class="hd__nav" aria-label="Section navigation">
+      <a href="#why">Why plans break</a>
+      <a href="#coach">Your coach</a>
+      <a href="#call">The call</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <!-- ⚠️ REPLACE ME: your live $97 Stripe Payment Link -->
+    <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn hd__cta">Book Call 1</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="wrap hero__copy">
+      <span class="eyebrow">1:1 Coaching Session Pack</span>
+      <h1 class="display display--xl">A plan built with you, not for you.</h1>
+      <p class="hero__sub">Three private calls. One training and nutrition plan, written around your schedule and your history.</p>
+      <div class="hero__actions">
+        <!-- ⚠️ REPLACE ME: your live $97 Stripe Payment Link -->
+        <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn">Book Call 1 <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a href="#inside" class="btn btn--ghost">See what you get</a>
+      </div>
+    </div>
+
+    <div class="hero__media">
+      <div class="portrait">
+        <div class="portrait__img" role="img" aria-label="Placeholder for your portrait. Replace with a real photo of you."></div>
+        <!-- EDITABLE: the tag is a good spot for your certs or location -->
+        <span class="portrait__tag">PLACEHOLDER · YOUR PHOTO</span>
+        <div class="portrait__cap">
+          <!-- EDITABLE: your name -->
+          <b>Your Name Here</b>
+          <!-- EDITABLE: one line of credibility. Years, cert, or who you coach. -->
+          <span>Replace with your credentials and who you coach</span>
+        </div>
+        <div class="portrait__stamp">
+          <strong>3</strong>
+          <span>Calls</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FACT STRIP ═══ -->
+  <section class="facts">
+    <div class="wrap facts__in">
+      <div class="fact">
+        <strong>3 × 50-minute calls</strong>
+        <span>Booked on your own calendar</span>
+      </div>
+      <div class="fact">
+        <strong>Written plan, same day</strong>
+        <span>Delivered the day of your first call</span>
+      </div>
+      <div class="fact">
+        <strong>One payment</strong>
+        <span>No subscription, no auto-renew</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATEMENT ═══ -->
+  <section class="statement">
+    <div class="wrap statement__in">
+      <p class="display display--lg">Most people do not need more information. They need <em>someone to make the decisions for them.</em></p>
+      <div class="statement__foot">
+        <span>That is the whole offer. Three calls, and a plan that fits your week.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE GAP ═══ -->
+  <section class="gap" id="why">
+    <div class="wrap">
+      <div class="gap__head">
+        <h2 class="display display--lg">Why the plan always breaks</h2>
+        <p class="lede">Nothing here is about effort. It is about the three reasons a plan stops working in week three.</p>
+      </div>
+
+      <div class="rows">
+        <article class="row">
+          <div class="row__idx display--num">01</div>
+          <h3 class="row__title">Every template assumes a life you do not have</h3>
+          <p class="row__body">A plan written for someone with four spare hours a week does not survive a real calendar. This one is built around the hours you actually have, then adjusted when those hours change.</p>
+        </article>
+        <article class="row">
+          <div class="row__idx display--num">02</div>
+          <h3 class="row__title">Nobody adjusts it after week one</h3>
+          <p class="row__body">Something always changes. Work gets heavy, sleep breaks down, a shoulder hurts, a trip eats your training week. Calls two and three exist to fix exactly that, not to congratulate you.</p>
+        </article>
+        <article class="row">
+          <div class="row__idx display--num">03</div>
+          <h3 class="row__title">You restart every Monday and call it discipline</h3>
+          <p class="row__body">Restarting is expensive. It costs motivation, it costs the progress you already made, and it costs your belief that this time is different. A plan you can follow beats a perfect plan you abandon.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COACH ═══ -->
+  <section class="coach" id="coach">
+    <div class="wrap coach__in">
+      <div class="coach__media">
+        <div class="portrait">
+          <div class="portrait__img" role="img" aria-label="Placeholder for a second photo of you. A working shot reads better than a headshot here."></div>
+          <span class="portrait__tag">PLACEHOLDER · WORKING SHOT</span>
+        </div>
+      </div>
+
+      <div class="coach__body">
+        <h2 class="display display--lg">You are booking a call with a person.</h2>
+        <!-- EDITABLE BIO: replace every bracketed placeholder below. This section is
+             the trust anchor for the whole page. Do not ship it with placeholders. -->
+        <p class="body">I am <b>[Your Name]</b>. I have coached <b>[number]</b> people for <b>[number]</b> years, and most of them are beginners starting over rather than beginners chasing records.</p>
+        <p class="body">My job on that first call is to make the decisions you have been hesitating over. How many days a week you can honestly train. What you eat when you are tired rather than motivated. Which exercise you will still be doing in week eight, and which one you will quietly skip.</p>
+        <p class="body">You will not get a generic program. You will get the plan I would write for a friend, built while we talk.</p>
+
+        <ul class="creds">
+          <!-- EDITABLE: replace with your real credentials, delete the rest -->
+          <li>[CERTIFICATION]</li>
+          <li>[YEARS EXPERIENCE]</li>
+          <li>[SPECIALTY]</li>
+          <li>[CLIENT COUNT]</li>
+        </ul>
+
+        <div class="template-note">
+          <b>Template note</b>
+          Fill in the bracketed fields, drop in a real photo of you working, and delete this box. A coaching offer with a placeholder in the coach section reads as unfinished and costs more trust than any pricing mistake.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT YOU GET ═══ -->
+  <section class="inside" id="inside">
+    <div class="wrap">
+      <div class="inside__head">
+        <span class="eyebrow">What you get</span>
+        <h2 class="display display--lg">Three calls, written down.</h2>
+        <p class="lede">Each call has one job. Nothing is a sales call and nothing is a pep talk.</p>
+      </div>
+
+      <div class="inside__grid">
+        <article class="tile tile--feature">
+          <span class="tile__meta">Call 1 · 50 minutes</span>
+          <h3>Your plan, built live</h3>
+          <p>The long one, and the one that does the work. We go through your history and your schedule, then build the plan while you watch and ask questions.</p>
+          <ul>
+            <li>Training split matched to hours you actually have free</li>
+            <li>3 sets of 8, add 2.5kg when all three are clean. Written down, not implied.</li>
+            <li>Nutrition rules based on the food you already eat</li>
+            <li>Every exercise swapped for something you can or will actually do</li>
+            <li>The whole thing written out and sent within a few hours</li>
+          </ul>
+        </article>
+
+        <article class="tile">
+          <span class="tile__meta">Calls 2 &amp; 3 · 50 minutes</span>
+          <h3>Adjustments</h3>
+          <p>Two follow-ups to fix what reality broke. You decide when you need them.</p>
+          <ul>
+            <li>What worked, what did not, and why</li>
+            <li>Volume and schedule adjustments</li>
+            <li>Replacements when a movement or a food is not working</li>
+          </ul>
+        </article>
+
+        <article class="tile">
+          <span class="tile__meta">Between calls · 24h reply</span>
+          <h3>Async form checks</h3>
+          <p>No holding a question until the next call.</p>
+          <ul>
+            <li>One form check per call window, by Loom or video</li>
+            <li>Answers within 24 hours on weekdays</li>
+            <li>Use them whenever you need them</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CALL 1 WALKTHROUGH ═══ -->
+  <section class="walk" id="call">
+    <div class="wrap walk__in">
+      <div class="walk__head">
+        <h2 class="display display--lg">What actually happens on the call</h2>
+        <p class="lede">Fifty minutes, broken into four parts. No surprises, no discovery-call ambush.</p>
+      </div>
+
+      <div class="tl">
+        <div class="tl__item">
+          <div class="tl__time">00:00 – 05:00</div>
+          <div>
+            <h3 class="tl__title">I have already read your intake</h3>
+            <p class="tl__body">Your history, schedule, limitations and goal are in front of me before we connect. We do not spend the first ten minutes on facts you could have emailed.</p>
+          </div>
+        </div>
+        <div class="tl__item">
+          <div class="tl__time">05:00 – 15:00</div>
+          <div>
+            <h3 class="tl__title">The part everyone skips</h3>
+            <p class="tl__body">What you have tried before, why it stopped, and what is genuinely available in your week right now. This is where the plan stops being a template.</p>
+          </div>
+        </div>
+        <div class="tl__item">
+          <div class="tl__time">15:00 – 35:00</div>
+          <div>
+            <h3 class="tl__title">We build it together</h3>
+            <p class="tl__body">Sessions, sets, progression, food rules, decided out loud. You interrupt me with questions while I type. This is the part clients say they remember.</p>
+          </div>
+        </div>
+        <div class="tl__item">
+          <div class="tl__time">35:00 – 50:00</div>
+          <div>
+            <h3 class="tl__title">Your questions</h3>
+            <p class="tl__body">Old injury, a wedding, a food you hate, a gym you do not want to enter. Fifteen minutes reserved so nothing gets squeezed out at the end.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="walk__note">
+        <p>You get the whole thing written out within a few hours of the call, not next week. It is yours to keep even if we never speak again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROOF ═══
+       Intentionally empty. Do NOT invent testimonials. Collect two or three real
+       ones, or ship this section honestly as-is. Replace the dashed slots below. -->
+  <section class="proof" id="results">
+    <div class="wrap">
+      <div class="proof__head">
+        <h2 class="display display--lg">Results, in their words</h2>
+        <p class="lede">This section is empty on purpose. I will not put invented quotes next to my name.</p>
+      </div>
+
+      <div class="proof__grid">
+        <div class="slot proof__big">
+          <span class="slot__tag">Lead result</span>
+          <p class="slot__hint"><b>Your strongest result goes here.</b> Name, age, weeks, what changed. Include the numbers you can prove and a quote under 28 words. Add a before and after photo beside it.</p>
+        </div>
+        <div class="slot">
+          <span class="slot__tag">Result 2</span>
+          <p class="slot__hint">A client who started exactly where your buyer is starting.</p>
+        </div>
+        <div class="slot">
+          <span class="slot__tag">Result 3</span>
+          <p class="slot__hint">Somewhere to answer the objection this one covers. Keep it specific.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="price" id="pricing">
+    <div class="wrap price__in">
+      <div class="price__head">
+        <span class="eyebrow">One payment. Three calls.</span>
+        <h2 class="display display--lg">Stop waiting for Monday to fix itself.</h2>
+      </div>
+
+      <div class="price__grid">
+        <div class="price__card">
+          <!-- $97 is the price. No struck-through anchor and no savings badge:
+               there is no real standalone comparison value to anchor against.
+               If you ever have a genuine one, reintroduce it here deliberately. -->
+          <div class="price__amount">
+            <strong>$97</strong>
+          </div>
+          <p class="price__note">One-time. No subscription, no auto-renew, no upsell on the checkout page.</p>
+
+          <ul class="stack">
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>3 × 50-minute private calls</b><small>Booked on your calendar straight after checkout</small></span>
+            </li>
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>Personalized training plan</b><small>Built live on call one, written and delivered</small></span>
+            </li>
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>Nutrition rules that fit your food</b><small>Portion approach. No weighing, no meal prep, no app</small></span>
+            </li>
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>Two rounds of adjustments</b><small>Calls two and three, scheduled when you need them</small></span>
+            </li>
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>Async form checks between calls</b><small>One per call window, answered within 24 hours</small></span>
+            </li>
+            <li>
+              <span class="stack__mark" aria-hidden="true">✓</span>
+              <span><b>The written plan, kept forever</b><small>Yours to use even if we stop working together</small></span>
+            </li>
+          </ul>
+
+          <!-- ⚠️ REPLACE ME: your live $97 Stripe Payment Link -->
+          <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn btn--onDark btn--block">Book Call 1 <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <p class="price__fine">Secure Stripe checkout. About 60 seconds. Booking link arrives by email instantly.</p>
+
+          <div class="guarantee">
+            <span class="guarantee__badge" aria-hidden="true">✓</span>
+            <p><b>Fourteen days, and the clock starts at the first call.</b> Book it, take the call, and if it did not land, email me for a full refund. You keep the written plan either way.</p>
+          </div>
+        </div>
+
+        <aside class="price__side">
+          <div class="side-card">
+            <h3>How booking works</h3>
+            <ul>
+              <li>Pay now, calendar link arrives by email instantly</li>
+              <li>The questionnaire follows in the same email, due before call one</li>
+              <li>Any slot, including evenings and weekends</li>
+              <li>Free rescheduling up to 24 hours before any call</li>
+            </ul>
+          </div>
+
+          <div class="confidential">
+            <p><b>What you write in the questionnaire stays between us.</b> Your history, injuries and limitations are read by me to write your plan, never shared with anyone, and deleted on request.</p>
+          </div>
+          <!-- EDITABLE support email -->
+          <p class="price__fine">Questions before you buy: <a href="mailto:hello@fitcoach.example" style="color:inherit;text-underline-offset:3px;">hello@fitcoach.example</a></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ UPSELL ═══ -->
+  <section class="upsell">
+    <div class="wrap upsell__in">
+      <div>
+        <h2>Want more than a plan?</h2>
+        <p>Then take the <b>12-Week Transformation Program, $297</b>. Twelve weeks of weekly check-ins, video form feedback, and a private group. Most people who finish this pack move into it, and you can start there instead.</p>
+      </div>
+      <!-- Link only. index.html is deliberately left unmodified. -->
+      <a href="index.html" class="btn">See the 12-Week Program <span class="btn__arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq" id="faq">
+    <div class="wrap faq__in">
+      <div class="faq__head">
+        <h2 class="display display--lg">Questions, answered</h2>
+        <p>Six things people want to know before paying for a call with a stranger.</p>
+      </div>
+
+      <div class="acc">
+        <div class="acc__item is-open">
+          <button class="acc__btn" aria-expanded="true" aria-controls="faq-panel-1">
+            <span class="acc__q" id="faq-panel-1-q">What happens after I pay?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-1" role="region" aria-labelledby="faq-panel-1-q"><div class="acc__inner"><div class="acc__a"><p>Two emails: your intake questionnaire, and a link to my calendar. Fill in the questionnaire, book call one for whatever slot suits you, and we go from there. Most people start their plan within a week of paying.</p></div></div></div>
+        </div>
+
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false" aria-controls="faq-panel-2">
+            <span class="acc__q" id="faq-panel-2-q">Do I actually get a written plan?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-2" role="region" aria-labelledby="faq-panel-2-q"><div class="acc__inner"><div class="acc__a"><p>Yes, that is the entire point of the offer. Call one produces the plan and you get it written out the same day: sessions, sets, progression, food rules and swaps. Calls two and three revise it in writing too. It stays yours permanently.</p></div></div></div>
+        </div>
+
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false" aria-controls="faq-panel-3">
+            <span class="acc__q" id="faq-panel-3-q">When do I have to use my calls?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-3" role="region" aria-labelledby="faq-panel-3-q"><div class="acc__inner"><div class="acc__a"><p>Call one within 30 days of buying. Calls two and three within 90 days, whenever you actually need them rather than on a fixed schedule. Rescheduling is free up to 24 hours ahead.</p></div></div></div>
+        </div>
+
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false" aria-controls="faq-panel-4">
+            <span class="acc__q" id="faq-panel-4-q">Is this beginner-friendly?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-4" role="region" aria-labelledby="faq-panel-4-q"><div class="acc__inner"><div class="acc__a"><p>Yes, and it is built for people starting over. Nothing assumes gym experience, and every movement gets a simpler option. If you have an injury or a medical condition, put it in the questionnaire before we plan anything.</p></div></div></div>
+        </div>
+
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false" aria-controls="faq-panel-5">
+            <span class="acc__q" id="faq-panel-5-q">What if I want the full program instead?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-5" role="region" aria-labelledby="faq-panel-5-q"><div class="acc__inner"><div class="acc__a"><p>Take the <a href="index.html">12-Week Transformation Program</a> instead, at $297. It covers the twelve weeks of weekly check-ins, video form feedback and the private group that this pack leaves out. Already bought the pack and want to upgrade? Email me and I will credit the $97 against it.</p></div></div></div>
+        </div>
+
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false" aria-controls="faq-panel-6">
+            <span class="acc__q" id="faq-panel-6-q">What is the refund policy?</span>
+            <span class="acc__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="acc__panel" id="faq-panel-6" role="region" aria-labelledby="faq-panel-6-q"><div class="acc__inner"><div class="acc__a"><p>Fourteen days, and the clock starts at the first call. Book it, take the call, and if it did not land, email me for a full refund. You keep the written plan either way. After day fourteen there are no refunds, which is why the questionnaire matters: send it before we speak and I can write you a real plan on call one.</p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap ft__in">
+    <div>
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true">FC</span>
+        <span class="brand__name">FitCoach</span>
+      </a>
+      <!-- EDITABLE: replace with your real legal entity, terms and privacy URLs -->
+      <p class="ft__legal">Results vary with effort, consistency and individual circumstances. Coaching here is educational and is not medical advice. Speak to your doctor before starting any exercise programme. By purchasing you accept our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>. Questions: <a href="mailto:hello@fitcoach.example">hello@fitcoach.example</a></p>
+    </div>
+    <div class="ft__links">
+      <a href="index.html">12-Week Program</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="mailto:hello@fitcoach.example">Email</a>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <div class="dock__in">
+    <div class="dock__price">$97<small>3 calls · one-time</small></div>
+    <!-- ⚠️ REPLACE ME: your live $97 Stripe Payment Link -->
+    <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn">Book Call 1</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    "use strict";
+
+    // Accordion, one open at a time
+    var items = Array.prototype.slice.call(document.querySelectorAll(".acc__item"));
+    items.forEach(function (item) {
+      var btn = item.querySelector(".acc__btn");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var open = item.classList.contains("is-open");
+        items.forEach(function (other) {
+          other.classList.remove("is-open");
+          var b = other.querySelector(".acc__btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+        if (!open) {
+          item.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // Sticky dock appears once the hero is out of view.
+    // Visibility is CSS-driven; JS only toggles the class.
+    var hero = document.querySelector(".hero");
+    var dock = document.getElementById("dock");
+    if (hero && dock && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        dock.classList.toggle("is-visible", !entries[0].isIntersecting);
+      }, { threshold: 0, rootMargin: "-70px 0px 0px 0px" }).observe(hero);
+    }
+
+    // Anchor scrolling with offset for the sticky header
+    Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var id = a.getAttribute("href");
+        if (!id || id === "#") return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 86;
+        window.scrollTo({ top: top, behavior: "smooth" });
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

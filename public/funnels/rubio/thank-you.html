@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Rubio Roofing and Trusses</title>
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<!-- Meta Pixel / GHL — paste your tracking scripts below -->
+<!-- Example: GoHighLevel tracking / FB Pixel
+<script>!function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init','YOUR_PIXEL_ID'); fbq('track','Lead');</script>
+-->
+</head>
+<body class="bg-[#F6F6F3] text-[#0F1115] font-[Plus_Jakarta_Sans] antialiased">
+<div class="bg-[#FFD400] h-2"></div>
+<nav class="bg-[#0F1115] text-white"><div class="max-w-[760px] mx-auto px-4 sm:px-6 flex items-center justify-between h-[64px]"><a href="./index.html" class="flex items-center gap-3"><span class="w-9 h-9 rounded bg-white p-1 grid place-items-center"><img src="./assets/logo.jpg" alt="Rubio" class="w-full h-full object-contain" width="36" height="36"></span><span class="font-[Barlow] font-extrabold text-sm tracking-wide">RUBIO ROOFING AND TRUSSES</span></a><span class="text-xs text-white/60 hidden sm:inline">ALAPAN, IMUS • 1 YR WARRANTY ON LABOR</span></div></nav>
+
+<main class="max-w-[760px] mx-auto px-4 sm:px-6 pt-10 pb-12">
+  <div class="text-center">
+    <span class="w-14 h-14 mx-auto rounded-full bg-[#0F1115] text-[#FFD400] grid place-items-center text-xl">✓</span>
+    <h1 class="font-[Barlow] font-extrabold text-[32px] leading-[0.95] mt-4">Thank you! We'll call you within hours.</h1>
+    <p class="mt-3 text-sm text-[#475569] leading-6">We've received your details, <b id="nameEcho"></b> <span id="cityEcho"></span> Our team replies quickly — 9AM to 6PM, Mon–Sat. Keep your phone handy.</p>
+  </div>
+
+  <!-- Next steps timeline -->
+  <div class="mt-8 bg-white border border-[#E2E8F0] rounded-xl p-5">
+    <p class="font-bold text-sm">What happens next:</p>
+    <ol class="mt-3 grid gap-3 text-sm">
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#FFD400] text-[#0F1115] grid place-items-center font-extrabold text-xs shrink-0">1</span><div><b>Confirmation call/text</b><p class="text-[#475569] text-xs leading-5">We confirm your city and roof issue and schedule the free 21-point inspection.</p></div></li>
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#0F1115] text-white grid place-items-center font-extrabold text-xs shrink-0">2</span><div><b>Free site visit &amp; measurement</b><p class="text-[#475569] text-xs leading-5">We measure everything on site — no guesswork. Cavite &amp; Metro Manila.</p></div></li>
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-[#0F1115] text-white grid place-items-center font-extrabold text-xs shrink-0">3</span><div><b>Written estimate in 24 hours</b><p class="text-[#475569] text-xs leading-5">Line-item pricing, spec (e.g., 0.50mm/0.60mm, foam, stainless 304) and timeline. You approve before we start.</p></div></li>
+    </ol>
+  </div>
+
+  <!-- CTAs -->
+  <div class="mt-6 grid sm:grid-cols-2 gap-3">
+    <a href="tel:+639954846174" class="inline-flex items-center justify-center gap-2 bg-[#0F1115] text-white px-6 py-3.5 rounded-xl font-extrabold text-sm hover:bg-black transition-colors">CALL NOW — 0995 484 6174</a>
+    <a href="https://www.facebook.com/profile.php?id=100063654831985" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-[#FFD400] text-[#0F1115] px-6 py-3.5 rounded-xl font-extrabold text-sm hover:bg-[#FFC400] transition-colors">MESSAGE ON FACEBOOK</a>
+  </div>
+  <p class="mt-2 text-center text-xs text-[#64748B]">Based in Alapan, Imus City, Cavite — serving nearby cities &amp; Metro Manila • 1 Year Warranty on Labor</p>
+
+  <div class="mt-6 rounded-xl overflow-hidden bg-white border border-[#E2E8F0]"><img src="./assets/790147113_1708564854608659_66640623861928410_n.jpg" alt="Actual build — Vivid Blue 0.50mm — Eucalyptus St., Cavite" class="w-full aspect-[1.9] object-cover" loading="lazy" width="760" height="400"><p class="px-4 py-3 text-xs text-[#64748B] text-left">Actual build — Vivid Blue 0.50mm — Eucalyptus St., Cavite • 50+ projects completed</p></div>
+
+  <div class="mt-6 flex flex-wrap justify-center gap-3">
+    <a href="./index.html" class="bg-white border border-[#E2E8F0] px-6 py-3 rounded font-bold text-sm hover:bg-gray-50">Back to home</a>
+    <a href="./index.html#gallery" class="bg-white border border-[#E2E8F0] px-6 py-3 rounded font-bold text-sm hover:bg-gray-50">View projects</a>
+  </div>
+
+  <p class="mt-8 text-center text-[11px] text-[#94A3B8]">Tip: Save <b>0995 484 6174</b> to your contacts so you don't miss our call. GHL automation will also text you a confirmation.</p>
+</main>
+
+<script>
+// Personalize from query string (GHL form sends name/city/mobile)
+const qs=new URLSearchParams(location.search);
+const n=qs.get('name'), c=qs.get('city');
+if(n) document.getElementById('nameEcho').textContent=n+',';
+if(c) document.getElementById('cityEcho').textContent='from '+c+' —';
+// Fire lead event if pixel is loaded
+if(window.fbq) fbq('track','Lead');
+if(window.gtag) gtag('event','generate_lead');
+</script>
+</body>
+</html>

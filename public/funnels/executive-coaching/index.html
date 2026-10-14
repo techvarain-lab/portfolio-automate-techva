@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NORTH STAR EXECUTIVE | Executive Consulting &amp; Leadership Architecture</title>
+<!-- Tailwind CSS v3 CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              vermilion: '#E64A27',
+              'vermilion-hover': '#cf3f1e',
+              black: '#111827',
+              slate: '#1E293B',
+              surface: '#FAFAFA',
+              card: '#FFFFFF',
+              border: '#E5E7EB',
+              muted: '#6B7280'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography and Custom Layout Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.011em;
+    }
+    .font-serif-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .watermark-text {
+      user-select: none;
+      pointer-events: none;
+      font-size: clamp(6rem, 16vw, 14rem);
+      line-height: 0.8;
+      letter-spacing: -0.05em;
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-brand-black antialiased selection:bg-brand-vermilion selection:text-white">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FAFAFA]/90 backdrop-blur-md border-b border-brand-border transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center space-x-3 text-lg font-bold tracking-widest uppercase group" href="#">
+<span class="text-brand-black font-semibold tracking-[0.24em] group-hover:text-brand-vermilion transition-colors">NORTH STAR</span>
+<span class="text-[11px] font-medium text-brand-muted tracking-[0.28em] pl-3 border-l border-brand-border">EXECUTIVE</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-9 text-xs font-semibold uppercase tracking-wider text-brand-slate/80">
+<a class="hover:text-brand-vermilion transition-colors duration-150" href="#services">Services</a>
+<a class="hover:text-brand-vermilion transition-colors duration-150" href="#overview">Program Overview</a>
+<a class="hover:text-brand-vermilion transition-colors duration-150" href="#framework">Curriculum</a>
+<a class="hover:text-brand-vermilion transition-colors duration-150" href="#criteria">Selection Criteria</a>
+</nav>
+<!-- Action Button -->
+<div class="flex items-center">
+<a class="text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-none border border-brand-black bg-brand-black text-white hover:bg-brand-vermilion hover:border-brand-vermilion transition-all duration-200" href="#apply">
+        Apply for Strategy Call
+      </a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="pt-32 pb-16 px-6 lg:px-12 border-b border-brand-border bg-[#FAFAFA]">
+<div class="max-w-7xl mx-auto">
+<!-- Top Badge & Minimal Meta Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-brand-border mb-12">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white border border-brand-border text-xs text-brand-slate font-medium">
+<span class="inline-block w-2 h-2 rounded-full bg-brand-vermilion"></span>
+<span><strong class="text-brand-black font-semibold">Who it's for:</strong> Business owners making $10k+ a month stuck doing everything themselves.</span>
+</div>
+<p class="text-xs text-brand-muted tracking-wide">
+          Spots are strictly limited. Applications are reviewed within 24 hours.
+        </p>
+</div>
+<!-- Hero Grid: Editorial Typography + Actions -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
+<div class="lg:col-span-8">
+<h1 class="font-serif-heading text-4xl sm:text-6xl lg:text-7xl font-normal text-brand-black leading-[1.06] tracking-tight">
+            Stop being the bottleneck <br class="hidden sm:inline"/><span class="italic font-normal">in your own business.</span>
+</h1>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end space-y-6">
+<p class="text-base sm:text-lg text-brand-muted font-normal leading-relaxed">
+            A 12-week one-on-one coaching program for owners and managers who want a clear growth plan, a team that runs without them, and their weekends back.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<a class="inline-flex items-center justify-center gap-3 bg-brand-vermilion hover:bg-brand-vermilion-hover text-white font-medium text-xs tracking-wider uppercase px-7 py-4 transition-all duration-200 group" href="#apply">
+<span>Apply for Your Strategy Call</span>
+<span class="group-hover:translate-x-1 transition-transform duration-150">→</span>
+</a>
+<a class="inline-flex items-center justify-center text-xs font-medium tracking-wider uppercase px-6 py-4 border border-brand-border bg-white text-brand-black hover:border-brand-black transition-all duration-200" href="#framework">
+              Explore Framework
+            </a>
+</div>
+</div>
+</div>
+<!-- Architectural Full-Width Hero Media Banner -->
+<div class="relative w-full aspect-[16/8] sm:aspect-[21/9] overflow-hidden border border-brand-border bg-stone-900 shadow-sm">
+<img alt="High-end executive boardroom consulting session, sleek minimalist architectural glass office, deep navy and warm amber lighting, luxury advisory setting, sharp editorial photography, cinematic 8k" class="w-full h-full object-cover object-center filter grayscale contrast-[1.12] hover:grayscale-0 hover:scale-[1.01] transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgiTlvm01SJFz1GArDGgtsp7iWijtukzOKJAzyUEohQGnDZdShohb6-kk8GjihDzIXV4aTR8se6HpGQULVXFo8i04y2_NlteEnjadmLy4bGYX9cMV0GhCx2b_k_OtAQok5F80-tSNsEYuPDhwws7B-m_fNmQUSdH3BuVDLvG2b8O_mrYYPj5gqOpMWceBeCN7QIuNyZ8SSOmWh0_Q2icxjDDX0E4s4bZLzpzlwlF9P7cFteAeymj5mXg"/>
+<div class="absolute bottom-4 right-4 bg-brand-black/90 text-white px-3 py-1.5 text-[10px] tracking-widest uppercase font-mono backdrop-blur-sm">
+          Advisory Session / London &amp; Zurich
+        </div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ClientLogosBar -->
+<section class="bg-white py-12 px-6 lg:px-12 border-b border-brand-border">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-baseline justify-between gap-8">
+<span class="text-[11px] uppercase tracking-[0.25em] text-brand-muted font-semibold shrink-0">
+        Recognized by Leaders At
+      </span>
+<div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 items-center justify-items-start sm:justify-items-center gap-8 text-brand-black/70">
+<span class="text-base tracking-normal font-black uppercase text-brand-black hover:text-brand-vermilion transition-colors">FORBES</span>
+<span class="text-base tracking-tight font-serif italic font-bold hover:text-brand-vermilion transition-colors">Bloomberg</span>
+<span class="text-sm tracking-tight font-serif font-black hover:text-brand-vermilion transition-colors">THE WALL STREET JOURNAL</span>
+<span class="text-base tracking-tight font-sans uppercase font-black hover:text-brand-vermilion transition-colors">ENTREPRENEUR</span>
+<span class="text-sm tracking-widest font-mono font-bold uppercase text-brand-black hover:text-brand-vermilion transition-colors">FAST COMPANY</span>
+<span class="text-base tracking-tight font-extrabold uppercase text-brand-black hover:text-brand-vermilion transition-colors">TECHSTARS</span>
+</div>
+</div>
+</section>
+<!-- END: ClientLogosBar -->
+<!-- BEGIN: OverviewStatsSection -->
+<section class="bg-white text-brand-black py-24 md:py-32 px-6 lg:px-12 relative overflow-hidden border-b border-brand-border" id="overview">
+<!-- Subdued Architectural Watermark -->
+<div class="watermark-text absolute right-6 -bottom-6 font-serif-heading font-bold text-stone-100 opacity-90 pointer-events-none select-none z-0">
+      ABOUT
+    </div>
+<div class="max-w-7xl mx-auto relative z-10">
+<!-- Section Narrative Lead -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+<div class="lg:col-span-4">
+<span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-vermilion block mb-3">Program Thesis</span>
+<h2 class="font-serif-heading text-3xl sm:text-4xl font-normal tracking-tight text-brand-black leading-snug">
+            Transforming Operators into Executive Leaders.
+          </h2>
+</div>
+<div class="lg:col-span-8">
+<p class="text-xl sm:text-2xl font-light leading-relaxed text-brand-slate max-w-3xl">
+            We are a dedicated advisory firm helping business owners break free from daily operational fires, build autonomous management systems, and achieve durable commercial scale without sacrificing personal freedom.
+          </p>
+</div>
+</div>
+<!-- 4 Massive Metric Callouts with Swiss Grid Lines -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-brand-border">
+<!-- Metric 1 -->
+<div class="p-8 lg:p-10 border-r border-b border-brand-border bg-[#FAFAFA] flex flex-col justify-between">
+<div class="font-serif-heading text-5xl sm:text-6xl font-normal text-brand-black mb-6">
+            12
+          </div>
+<div>
+<div class="text-sm font-semibold tracking-wide text-brand-black mb-1">
+              Weeks Duration
+            </div>
+<div class="text-xs text-brand-muted leading-relaxed">
+              Intensive Executive Transformation
+            </div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-8 lg:p-10 border-r border-b border-brand-border bg-[#FAFAFA] flex flex-col justify-between">
+<div class="font-serif-heading text-5xl sm:text-6xl font-normal text-brand-black mb-6">
+            6
+          </div>
+<div>
+<div class="text-sm font-semibold tracking-wide text-brand-black mb-1">
+              Bi-Weekly Deep Dives
+            </div>
+<div class="text-xs text-brand-muted leading-relaxed">
+              1-on-1 Dedicated Strategy Sessions
+            </div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-8 lg:p-10 border-r border-b border-brand-border bg-[#FAFAFA] flex flex-col justify-between">
+<div class="font-serif-heading text-5xl sm:text-6xl font-normal text-brand-black mb-6">
+            20+
+          </div>
+<div>
+<div class="text-sm font-semibold tracking-wide text-brand-black mb-1">
+              Hours Recaptured
+            </div>
+<div class="text-xs text-brand-muted leading-relaxed">
+              Per Week for Business Owners
+            </div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-8 lg:p-10 border-r border-b border-brand-border bg-[#FAFAFA] flex flex-col justify-between">
+<div class="font-serif-heading text-5xl sm:text-6xl font-normal text-brand-black mb-6">
+            100%
+          </div>
+<div>
+<div class="text-sm font-semibold tracking-wide text-brand-black mb-1">
+              Confidentiality
+            </div>
+<div class="text-xs text-brand-muted leading-relaxed">
+              NDA-Guaranteed Advisory
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: OverviewStatsSection -->
+<!-- BEGIN: FrameworkCurriculumSection -->
+<section class="bg-[#FAFAFA] text-brand-black py-24 md:py-32 px-6 lg:px-12 border-b border-brand-border" id="framework">
+<div class="max-w-7xl mx-auto">
+<!-- Section Header -->
+<div class="max-w-3xl mb-16">
+<span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-vermilion block mb-3">
+          What You Receive
+        </span>
+<h2 class="font-serif-heading text-3xl sm:text-5xl font-normal tracking-tight text-brand-black mb-5">
+          Engineered to eliminate bottleneck friction.
+        </h2>
+<p class="text-brand-muted text-base sm:text-lg font-light leading-relaxed">
+          A battle-tested consulting infrastructure tailored to systematically decouple your time from operational throughput.
+        </p>
+</div>
+<!-- 4 Grid Deliverables Cards (Architectural 2x2 Slate Matrix) -->
+<div class="grid grid-cols-1 md:grid-cols-2 border-t border-l border-brand-border bg-white">
+<!-- Card 1 -->
+<div class="p-10 lg:p-12 border-r border-b border-brand-border hover:bg-stone-50 transition-colors duration-200">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-mono font-semibold tracking-widest text-brand-vermilion">PILLAR 01</span>
+<span class="w-2.5 h-2.5 border border-brand-black/30"></span>
+</div>
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black mb-4 leading-tight">
+            6 Private Coaching Sessions, One Every Two Weeks
+          </h3>
+<p class="text-brand-muted leading-relaxed text-sm sm:text-base font-light">
+            Tactical deep-dives designed to dismantle operational paralysis, reconfigure delegation bottlenecks, and install hardened leadership governance across your leadership team.
+          </p>
+</div>
+<!-- Card 2 -->
+<div class="p-10 lg:p-12 border-r border-b border-brand-border hover:bg-stone-50 transition-colors duration-200">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-mono font-semibold tracking-widest text-brand-vermilion">PILLAR 02</span>
+<span class="w-2.5 h-2.5 border border-brand-black/30"></span>
+</div>
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black mb-4 leading-tight">
+            Weekly Worksheets &amp; A 90-Day Plan in Your Member Area
+          </h3>
+<p class="text-brand-muted leading-relaxed text-sm sm:text-base font-light">
+            Standard operating procedures (SOPs), proprietary delegation matrices, and a bespoke execution roadmap giving you total visibility over department heads.
+          </p>
+</div>
+<!-- Card 3 -->
+<div class="p-10 lg:p-12 border-r border-b border-brand-border hover:bg-stone-50 transition-colors duration-200">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-mono font-semibold tracking-widest text-brand-vermilion">PILLAR 03</span>
+<span class="w-2.5 h-2.5 border border-brand-black/30"></span>
+</div>
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black mb-4 leading-tight">
+            Message Support Between Sessions
+          </h3>
+<p class="text-brand-muted leading-relaxed text-sm sm:text-base font-light">
+            Direct priority asynchronous advisory. When key personnel crises, pricing negotiations, or strategic obstacles appear mid-week, you get verified senior counsel within hours.
+          </p>
+</div>
+<!-- Card 4 -->
+<div class="p-10 lg:p-12 border-r border-b border-brand-border hover:bg-stone-50 transition-colors duration-200">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-mono font-semibold tracking-widest text-brand-vermilion">PILLAR 04</span>
+<span class="w-2.5 h-2.5 border border-brand-black/30"></span>
+</div>
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black mb-4 leading-tight">
+            A Final Review to Set Your Next 90 Days
+          </h3>
+<p class="text-brand-muted leading-relaxed text-sm sm:text-base font-light">
+            A comprehensive milestone audit, executive stress test, and sustainable autonomous playbook ensuring your enterprise scales profitably without requiring your physical presence.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FrameworkCurriculumSection -->
+<!-- BEGIN: SelectionCriteriaSection -->
+<section class="py-24 md:py-32 px-6 lg:px-12 bg-white border-b border-brand-border" id="criteria">
+<div class="max-w-7xl mx-auto">
+<div class="text-left max-w-2xl mb-16">
+<span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-vermilion block mb-3">Cohort Curation</span>
+<h2 class="font-serif-heading text-3xl sm:text-5xl font-normal tracking-tight text-brand-black mb-4">Selection Criteria</h2>
+<p class="text-brand-muted text-base font-light">We strictly enforce partner alignment to guarantee high-impact execution.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+<!-- Qualified Box -->
+<div class="p-8 sm:p-12 bg-[#FAFAFA] border-t-2 border-emerald-600 border-x border-b border-brand-border">
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-brand-border">
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black">This Is For You If:</h3>
+<span class="text-emerald-700 font-mono text-xs tracking-wider uppercase font-semibold">Accepted Profile</span>
+</div>
+<ul class="space-y-5 text-sm sm:text-base text-brand-slate">
+<li class="flex items-start gap-4">
+<span class="text-emerald-600 font-bold shrink-0">✓</span>
+<span>You own or manage an active business generating at least <strong>$10,000+ monthly revenue</strong>.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-emerald-600 font-bold shrink-0">✓</span>
+<span>You are working 50–70 hours per week and feel trapped as the sole decision-maker for everything.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-emerald-600 font-bold shrink-0">✓</span>
+<span>You are prepared to implement organizational playbooks and delegate operational authority.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-emerald-600 font-bold shrink-0">✓</span>
+<span>You want scalable systems and want your personal life and weekends back.</span>
+</li>
+</ul>
+</div>
+<!-- Disqualified Box -->
+<div class="p-8 sm:p-12 bg-[#FAFAFA] border-t-2 border-rose-600 border-x border-b border-brand-border">
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-brand-border">
+<h3 class="font-serif-heading text-2xl font-normal text-brand-black">This Is NOT For You If:</h3>
+<span class="text-rose-700 font-mono text-xs tracking-wider uppercase font-semibold">Exclusion Criteria</span>
+</div>
+<ul class="space-y-5 text-sm sm:text-base text-brand-slate">
+<li class="flex items-start gap-4">
+<span class="text-rose-600 font-bold shrink-0">×</span>
+<span>You are an early idea-stage or pre-revenue venture without validated customer traction.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-rose-600 font-bold shrink-0">×</span>
+<span>You are seeking "get-rich-quick" passive income hacks rather than enduring business architecture.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-rose-600 font-bold shrink-0">×</span>
+<span>You are unwilling to relinquish control of day-to-day tasks or micromanage key staff members.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-rose-600 font-bold shrink-0">×</span>
+<span>You cannot commit 2 focused hours per week to strategic recalibration.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SelectionCriteriaSection -->
+<!-- BEGIN: ApplicationSection -->
+<section class="py-24 md:py-32 px-6 lg:px-12 bg-[#FAFAFA] relative overflow-hidden" id="apply">
+<div class="max-w-4xl mx-auto">
+<!-- Header Text -->
+<div class="text-center mb-16">
+<span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-vermilion block mb-3">Confidential Intake</span>
+<h2 class="font-serif-heading text-3xl sm:text-5xl font-normal tracking-tight text-brand-black mb-4">
+          Apply for Your Strategy Call
+        </h2>
+<p class="text-brand-muted text-base max-w-xl mx-auto font-light leading-relaxed">
+          Complete this brief application to evaluate executive alignment. We review all responses within 24 hours.
+        </p>
+</div>
+<!-- Form Card Container -->
+<div class="bg-white border border-brand-border p-8 sm:p-14 shadow-sm relative">
+<!-- Form Submission Success Confirmation State (Hidden by default) -->
+<div class="hidden text-center py-16 px-6" id="application-success-card">
+<div class="w-14 h-14 bg-stone-100 rounded-none border border-brand-black flex items-center justify-center mx-auto mb-6 text-brand-black">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-serif-heading text-3xl font-normal text-brand-black mb-3">Application Received</h3>
+<p class="text-brand-muted text-base max-w-md mx-auto leading-relaxed">
+            Application received. Check your email in the next few minutes for your next step.
+          </p>
+</div>
+<!-- Application Form -->
+<form class="space-y-6" id="strategy-application-form">
+<!-- Full Name & Email -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="fullName">Full Name *</label>
+<input class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="fullName" name="fullName" placeholder="Alexander Wright" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="email">Work Email *</label>
+<input class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="email" name="email" placeholder="alex@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Phone & Business Name -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="phone">Phone Number *</label>
+<input class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="phone" name="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="businessName">Business Name *</label>
+<input class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="businessName" name="businessName" placeholder="Wright Logistics Inc." required="" type="text"/>
+</div>
+</div>
+<!-- Biggest Challenge Textarea -->
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="biggestChallenge">
+              What's the biggest challenge in your business right now? *
+            </label>
+<textarea class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="biggestChallenge" name="biggestChallenge" placeholder="I am working 65 hours a week because my managers escalate every client decision to me..." required="" rows="4"></textarea>
+</div>
+<!-- Monthly Revenue Select -->
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="monthlyRevenue">
+              Revenue: What's your business's monthly revenue? *
+            </label>
+<select class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="monthlyRevenue" name="monthlyRevenue" required="">
+<option disabled="" selected="" value="">Select revenue range</option>
+<option value="$30,000+">$30,000+</option>
+<option value="$10,000 to $30,000">$10,000 to $30,000</option>
+<option value="Under $10,000">Under $10,000</option>
+<option value="Not making revenue yet">Not making revenue yet</option>
+</select>
+</div>
+<!-- Coaching Investment Preparedness -->
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="investmentBudget">
+              Budget: How much are you prepared to invest in coaching? *
+            </label>
+<select class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="investmentBudget" name="investmentBudget" required="">
+<option disabled="" selected="" value="">Select investment tier</option>
+<option value="$3,000 or more">$3,000 or more</option>
+<option value="$1,000 to $3,000">$1,000 to $3,000</option>
+<option value="Under $1,000">Under $1,000</option>
+<option value="I'm not ready to invest right now">I'm not ready to invest right now</option>
+</select>
+</div>
+<!-- Starting Timeline -->
+<div>
+<label class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-2" for="timeline">
+              Timeline: When do you want to start? *
+            </label>
+<select class="w-full bg-[#FAFAFA] border border-brand-border px-4 py-3.5 text-brand-black text-sm focus:outline-none focus:border-brand-black focus:ring-0 transition" id="timeline" name="timeline" required="">
+<option disabled="" selected="" value="">Select timeline</option>
+<option value="Within 2 weeks">Within 2 weeks</option>
+<option value="Within a month">Within a month</option>
+<option value="In 2 to 3 months">In 2 to 3 months</option>
+<option value="Just exploring">Just exploring</option>
+</select>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full py-4 px-8 bg-brand-vermilion hover:bg-brand-vermilion-hover text-white font-medium text-xs uppercase tracking-widest transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
+<span>Apply for Your Strategy Call</span>
+<span class="group-hover:translate-x-1 transition-transform duration-150">→</span>
+</button>
+</div>
+<div class="text-center pt-2">
+<span class="text-[11px] text-brand-muted uppercase tracking-widest flex items-center justify-center gap-2 font-mono">
+<svg class="w-3.5 h-3.5 text-brand-slate" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+              Strict NDA &amp; Discretion Protocol Applied
+            </span>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- END: ApplicationSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-white text-brand-slate py-16 px-6 lg:px-12 border-t border-brand-border">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<!-- Brand & Mission Summary -->
+<div>
+<div class="text-base font-bold tracking-[0.24em] uppercase text-brand-black mb-2">NORTH STAR EXECUTIVE</div>
+<p class="text-xs text-brand-muted max-w-sm leading-relaxed">
+        High-performance executive coaching for growth-stage business owners ready to remove themselves as the bottleneck.
+      </p>
+</div>
+<!-- Footer Links & Legal -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 text-xs font-medium uppercase tracking-wider">
+<a class="hover:text-brand-vermilion transition" href="#overview">Overview</a>
+<a class="hover:text-brand-vermilion transition" href="#framework">Curriculum</a>
+<a class="hover:text-brand-vermilion transition" href="#criteria">Selection</a>
+<a class="hover:text-brand-vermilion transition" href="#apply">Apply</a>
+<span class="text-brand-muted normal-case font-normal">© <span id="current-year"></span> North Star Advisory Group. All rights reserved.</span>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- Application Form Interactive Handling Script -->
+<script data-purpose="form-submission-handler">
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set current year in footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Handle application form submit
+    const form = document.getElementById('strategy-application-form');
+    const successCard = document.getElementById('application-success-card');
+
+    if (form && successCard) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Hide the form fields
+        form.classList.add('hidden');
+        // Reveal the exact required confirmation state
+        successCard.classList.remove('hidden');
+      });
+    }
+  });
+</script>
+</body></html>

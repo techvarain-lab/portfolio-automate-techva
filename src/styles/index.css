@@ -1,5 +1,6 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source('../');
 @import './tokens.css';
+/* Standalone funnel utilities must not be generated into the portfolio stylesheet. */
 
 /* Self-hosted type (public/fonts/, SIL Open Font License, see public/fonts/OFL-*.txt). Geist is one variable file
    (100-900, preloaded in index.html); IBM Plex Mono ships only the four weights the site uses. */
